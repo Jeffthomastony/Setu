@@ -135,6 +135,30 @@
   cursor: not-allowed;
 }
 
+.ask-hint {
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+
+.answer-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.answer-text {
+  font-size: 16px;
+  color: var(--text-h);
+  line-height: 1.5;
+}
+
+.ask-disclaimer {
+  font-size: 12px;
+  color: var(--text);
+  font-style: italic;
+}
+
 .student-form {
   border: 1px solid var(--border);
   border-radius: 12px;

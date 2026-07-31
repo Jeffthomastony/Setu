@@ -25,3 +25,18 @@ export async function searchSchemes(query) {
 
   return res.json();
 }
+
+export async function askQuestion(question) {
+  const res = await fetch(`${API_BASE}/ask`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ question }),
+  });
+
+  if (!res.ok) {
+    const detail = await res.json().catch(() => null);
+    throw new Error(detail?.detail ? JSON.stringify(detail.detail) : `Request failed (${res.status})`);
+  }
+
+  return res.json();
+}

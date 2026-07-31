@@ -3,12 +3,13 @@ import StudentForm from "./components/StudentForm";
 import ResultCard from "./components/ResultCard";
 import LandingPage from "./components/LandingPage";
 import SearchPage from "./components/SearchPage";
+import AskPage from "./components/AskPage";
 import Logo from "./components/Logo";
 import { matchStudent } from "./api";
 import "./App.css";
 
 function App() {
-  const [view, setView] = useState("landing"); // 'landing' | 'search' | 'form'
+  const [view, setView] = useState("landing"); // 'landing' | 'search' | 'ask' | 'form'
   const [results, setResults] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -46,6 +47,8 @@ function App() {
       {view === "landing" && <LandingPage onSelect={setView} />}
 
       {view === "search" && <SearchPage onBack={goHome} />}
+
+      {view === "ask" && <AskPage onBack={goHome} />}
 
       {view === "form" && (
         <main>

@@ -19,6 +19,11 @@ export default function LandingPage({ onSelect }) {
           <span className="landing-option-title">Fill in Details</span>
           <span className="landing-option-desc">Get personalized, ranked matches based on your profile</span>
         </button>
+
+        <button className="landing-option" onClick={() => onSelect("ask")}>
+          <span className="landing-option-title">Ask a Question</span>
+          <span className="landing-option-desc">Ask in plain language about a scheme's eligibility, documents, or deadlines</span>
+        </button>
       </div>
     </div>
   );
