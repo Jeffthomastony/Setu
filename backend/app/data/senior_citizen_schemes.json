@@ -1,0 +1,608 @@
+[
+  {
+    "scheme_id": "SETU-NAT-SEN-001",
+    "scheme_name": "Indira Gandhi National Old Age Pension Scheme (IGNOAPS)",
+    "scheme_type": "old_age_pension",
+    "ministry": "Ministry of Rural Development",
+    "department": "National Social Assistance Programme (NSAP)",
+    "state": "National",
+    "description": "IGNOAPS, under the National Social Assistance Programme, provides a monthly non-contributory pension to destitute senior citizens from Below Poverty Line (BPL) households, with central assistance topped up by most state governments.",
+    "official_website": "https://nsap.nic.in",
+    "application_portal": "https://nsap.nic.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "caste_category": [],
+      "course_type": null,
+      "disability": null,
+      "domicile": "Indian citizen, resident of the applicant's state",
+      "education_level": null,
+      "gender": "All",
+      "income_limit": "Applicant must belong to a Below Poverty Line (BPL) household",
+      "institution_type": null,
+      "other_conditions": [
+        "Applicant should have no regular source of income or family support"
+      ],
+      "age": "Applicants must be above 60 years of age",
+      "year_of_study": null
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹200/month central assistance (age 60-79) or ₹500/month (age 80+); most states add a top-up, with combined amounts ranging from roughly ₹600 to ₹3,500/month depending on the state",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": [
+      "Aadhaar Card",
+      "Age proof",
+      "BPL certificate / ration card",
+      "Bank passbook",
+      "Passport-size photograph"
+    ],
+    "application": {
+      "application_mode": "Online via the NSAP portal / SAMBAL app, or through the local Gram Panchayat or Municipal office",
+      "application_steps": [
+        "Visit nsap.nic.in or the SAMBAL mobile app",
+        "Register with Aadhaar and bank account details",
+        "Select the applicable pension scheme for your state",
+        "Submit BPL and age-proof documents",
+        "Application is verified by the local body before sanction"
+      ],
+      "processing_time": null,
+      "renewal_required": false
+    },
+    "ai_metadata": {
+      "keywords": [
+        "IGNOAPS",
+        "old age pension",
+        "NSAP",
+        "senior citizen pension",
+        "BPL pension"
+      ],
+      "target_students": [
+        "Senior citizens aged 60+ from BPL households across India"
+      ],
+      "eligibility_tags": [
+        "age_60_plus",
+        "bpl_household",
+        "national_scheme"
+      ],
+      "benefit_tags": [
+        "maintenance_allowance"
+      ],
+      "searchable_text": "Indira Gandhi National Old Age Pension Scheme provides a monthly pension to destitute BPL senior citizens aged 60 and above across India, with higher amounts for those aged 80 and above, topped up by state governments."
+    }
+  },
+  {
+    "scheme_id": "SETU-NAT-SEN-002",
+    "scheme_name": "Rashtriya Vayoshri Yojana (RVY)",
+    "scheme_type": "assistive_device_scheme",
+    "ministry": "Ministry of Social Justice and Empowerment",
+    "department": "Department of Social Justice and Empowerment (implemented via ALIMCO)",
+    "state": "National",
+    "description": "RVY provides free assisted-living devices — walking sticks, wheelchairs, hearing aids, spectacles, artificial dentures and more — to BPL/low-income senior citizens suffering from age-related disability or infirmity, distributed through camps organised by ALIMCO (Artificial Limbs Manufacturing Corporation of India).",
+    "official_website": "https://alimco.in",
+    "application_portal": "https://alimco.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "caste_category": [],
+      "course_type": null,
+      "disability": "Age-related disability or infirmity requiring an assisted-living device",
+      "domicile": "Indian citizen",
+      "education_level": null,
+      "gender": "All",
+      "income_limit": "Monthly income not exceeding ₹15,000, or belonging to a BPL household",
+      "institution_type": null,
+      "other_conditions": [],
+      "age": "Applicants must be above 60 years of age",
+      "year_of_study": null
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": null,
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": [
+        "Free assisted-living devices: walking sticks, elbow crutches, walkers, tripods/quadpods, wheelchairs, hearing aids, artificial dentures, spectacles"
+      ]
+    },
+    "required_documents": [
+      "Aadhaar Card",
+      "Age proof",
+      "Income or BPL certificate",
+      "Medical assessment of device requirement"
+    ],
+    "application": {
+      "application_mode": "Camp-based distribution organised through district administration / ALIMCO camps",
+      "application_steps": [
+        "Register interest through the district social welfare office or an RVY camp notification",
+        "Attend the assessment camp for a medical evaluation of device requirement",
+        "Devices are fitted and distributed free of cost at the camp"
+      ],
+      "processing_time": null,
+      "renewal_required": false
+    },
+    "ai_metadata": {
+      "keywords": [
+        "Rashtriya Vayoshri Yojana",
+        "RVY",
+        "ALIMCO",
+        "assistive devices",
+        "senior citizen aids"
+      ],
+      "target_students": [
+        "BPL/low-income senior citizens aged 60+ needing assistive devices"
+      ],
+      "eligibility_tags": [
+        "age_60_plus",
+        "income_below_15000_monthly",
+        "disability_related"
+      ],
+      "benefit_tags": [
+        "assistive_devices"
+      ],
+      "searchable_text": "Rashtriya Vayoshri Yojana provides free walking sticks, wheelchairs, hearing aids and other assisted-living devices to low-income senior citizens aged 60 and above with age-related disability, distributed via ALIMCO camps."
+    }
+  },
+  {
+    "scheme_id": "SETU-NAT-SEN-003",
+    "scheme_name": "Ayushman Vay Vandana Card (AB PM-JAY for Senior Citizens 70+)",
+    "scheme_type": "health_insurance_scheme",
+    "ministry": "Ministry of Health and Family Welfare",
+    "department": "National Health Authority",
+    "state": "National",
+    "description": "Launched in October 2024 as an extension of Ayushman Bharat PM-JAY, this scheme gives every Indian aged 70 and above free health insurance cover of ₹5 lakh per year, regardless of income, covering around 2,000 medical procedures with no waiting period for pre-existing conditions.",
+    "official_website": "https://pmjay.gov.in",
+    "application_portal": "https://beneficiary.nha.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "caste_category": [],
+      "course_type": null,
+      "disability": null,
+      "domicile": "Indian citizen",
+      "education_level": null,
+      "gender": "All",
+      "income_limit": "No income limit — open to all senior citizens aged 70 and above",
+      "institution_type": null,
+      "other_conditions": [],
+      "age": "Applicants must be above 70 years of age",
+      "year_of_study": null
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": null,
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": [
+        "₹5 lakh/year free health cover per household",
+        "Covers ~2,000 medical procedures at empanelled hospitals, no waiting period for pre-existing conditions"
+      ]
+    },
+    "required_documents": [
+      "Aadhaar Card"
+    ],
+    "application": {
+      "application_mode": "Online via the Ayushman App or PM-JAY portal, or at empanelled hospitals and Common Service Centres",
+      "application_steps": [
+        "Download the Ayushman App or visit beneficiary.nha.gov.in",
+        "Verify identity with Aadhaar",
+        "Complete e-KYC to generate the Ayushman Vay Vandana Card",
+        "Present the card at any empanelled hospital for cashless treatment"
+      ],
+      "processing_time": null,
+      "renewal_required": false
+    },
+    "ai_metadata": {
+      "keywords": [
+        "Ayushman Vay Vandana",
+        "AB PM-JAY",
+        "senior citizen health insurance",
+        "70 plus health cover"
+      ],
+      "target_students": [
+        "All Indian senior citizens aged 70 and above, regardless of income"
+      ],
+      "eligibility_tags": [
+        "age_70_plus",
+        "no_income_limit",
+        "national_scheme"
+      ],
+      "benefit_tags": [
+        "health_insurance"
+      ],
+      "searchable_text": "Ayushman Vay Vandana Card gives every senior citizen aged 70 and above free health insurance cover of Rs 5 lakh per year regardless of income, covering about 2000 procedures with no waiting period for pre-existing conditions."
+    }
+  },
+  {
+    "scheme_id": "SETU-KL-SEN-001",
+    "scheme_name": "Sevana Social Welfare Pension (Kerala)",
+    "scheme_type": "old_age_pension",
+    "ministry": null,
+    "department": "Local Self Government Department / Information Kerala Mission, Government of Kerala",
+    "state": "Kerala",
+    "description": "Sevana is Kerala's online social-security pension system, disbursing a monthly welfare pension to elderly, widowed and destitute residents through local self-government institutions across the state.",
+    "official_website": "https://ikm.gov.in/en/sevana-pension",
+    "application_portal": "https://ikm.gov.in/en/sevana-pension",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "caste_category": [],
+      "course_type": null,
+      "disability": null,
+      "domicile": "Permanent resident of Kerala",
+      "education_level": null,
+      "gender": "All",
+      "income_limit": "Annual family income below the state-prescribed welfare-pension threshold",
+      "institution_type": null,
+      "other_conditions": [],
+      "age": "Applicants must be above 60 years of age",
+      "year_of_study": null
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "Monthly welfare pension disbursed through the local self-government institution",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": [
+      "Aadhaar Card",
+      "Age proof",
+      "Income certificate",
+      "Bank passbook",
+      "Residence certificate"
+    ],
+    "application": {
+      "application_mode": "Online through the local self-government institution (Panchayat/Municipality/Corporation) or Akshaya centres",
+      "application_steps": [
+        "Approach the local self-government office or an Akshaya e-service centre",
+        "Submit age, income and residence proof",
+        "Application is verified and entered into the Sevana pension system",
+        "Pension is disbursed monthly on approval"
+      ],
+      "processing_time": null,
+      "renewal_required": false
+    },
+    "ai_metadata": {
+      "keywords": [
+        "Sevana pension",
+        "Kerala old age pension",
+        "welfare pension",
+        "Information Kerala Mission"
+      ],
+      "target_students": [
+        "Elderly, widowed and destitute residents of Kerala aged 60+"
+      ],
+      "eligibility_tags": [
+        "age_60_plus",
+        "kerala_domicile",
+        "welfare_pension"
+      ],
+      "benefit_tags": [
+        "maintenance_allowance"
+      ],
+      "searchable_text": "Sevana Social Welfare Pension provides a monthly pension to elderly, widowed and destitute residents of Kerala aged 60 and above, administered through local self-government institutions."
+    }
+  },
+  {
+    "scheme_id": "SETU-TN-SEN-001",
+    "scheme_name": "Tamil Nadu Old Age Pension Scheme (CMOAP)",
+    "scheme_type": "old_age_pension",
+    "ministry": null,
+    "department": "Commissionerate of Revenue Administration and Disaster Management, Government of Tamil Nadu",
+    "state": "Tamil Nadu",
+    "description": "A monthly financial-assistance pension for destitute elderly residents of Tamil Nadu with no other means of support, administered by the Revenue Department through Taluk offices.",
+    "official_website": "https://www.cra.tn.gov.in",
+    "application_portal": "https://www.cra.tn.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "caste_category": [],
+      "course_type": null,
+      "disability": null,
+      "domicile": "Permanent resident of Tamil Nadu",
+      "education_level": null,
+      "gender": "All",
+      "income_limit": null,
+      "institution_type": null,
+      "other_conditions": [
+        "Applicant must be destitute with no regular means of support"
+      ],
+      "age": "Applicants must be above 60 years of age",
+      "year_of_study": null
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹1,200 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": [
+      "Aadhaar Card",
+      "Age proof",
+      "Income certificate",
+      "Bank passbook",
+      "Residence certificate"
+    ],
+    "application": {
+      "application_mode": "Offline — apply in person at the nearest Taluk/Revenue office",
+      "application_steps": [
+        "Obtain the application form from the local Taluk office",
+        "Attach age, income and residence proof",
+        "Submit to the Taluk office for verification",
+        "Village Administrative Officer/Revenue Inspector conducts a field verification"
+      ],
+      "processing_time": null,
+      "renewal_required": false
+    },
+    "ai_metadata": {
+      "keywords": [
+        "Tamil Nadu old age pension",
+        "CMOAP",
+        "destitute pension",
+        "Revenue Department pension"
+      ],
+      "target_students": [
+        "Destitute senior citizens aged 60+ resident in Tamil Nadu"
+      ],
+      "eligibility_tags": [
+        "age_60_plus",
+        "tamil_nadu_domicile",
+        "destitute"
+      ],
+      "benefit_tags": [
+        "maintenance_allowance"
+      ],
+      "searchable_text": "Tamil Nadu Old Age Pension Scheme provides Rs 1200 per month to destitute senior citizens aged 60 and above resident in Tamil Nadu, applied through the local Taluk office."
+    }
+  },
+  {
+    "scheme_id": "SETU-DL-SEN-001",
+    "scheme_name": "Delhi Old Age Pension Scheme",
+    "scheme_type": "old_age_pension",
+    "ministry": null,
+    "department": "Department of Social Welfare, Government of NCT of Delhi",
+    "state": "Delhi",
+    "description": "A monthly financial-assistance pension for eligible senior citizens resident in Delhi, with a higher amount for those aged 70 and above.",
+    "official_website": "https://edistrict.delhigovt.nic.in",
+    "application_portal": "https://edistrict.delhigovt.nic.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "caste_category": [],
+      "course_type": null,
+      "disability": null,
+      "domicile": "Resident of Delhi",
+      "education_level": null,
+      "gender": "All",
+      "income_limit": null,
+      "institution_type": null,
+      "other_conditions": [],
+      "age": "Applicants must be above 60 years of age",
+      "year_of_study": null
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹2,500/month (age 60-69) or ₹3,000/month (age 70+)",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": [
+      "Aadhaar Card",
+      "Age proof",
+      "Residence proof",
+      "Bank passbook",
+      "Income certificate"
+    ],
+    "application": {
+      "application_mode": "Online via the e-District Delhi portal, or through the District Social Welfare Office",
+      "application_steps": [
+        "Register/login on edistrict.delhigovt.nic.in",
+        "Fill the old-age pension application form",
+        "Upload age, residence and income proof",
+        "Submit for verification by the District Social Welfare Office"
+      ],
+      "processing_time": null,
+      "renewal_required": false
+    },
+    "ai_metadata": {
+      "keywords": [
+        "Delhi old age pension",
+        "e-District Delhi",
+        "senior citizen pension Delhi"
+      ],
+      "target_students": [
+        "Senior citizens aged 60+ resident in Delhi"
+      ],
+      "eligibility_tags": [
+        "age_60_plus",
+        "delhi_domicile"
+      ],
+      "benefit_tags": [
+        "maintenance_allowance"
+      ],
+      "searchable_text": "Delhi Old Age Pension Scheme provides Rs 2500 to Rs 3000 per month to senior citizens aged 60 and above resident in Delhi, applied through the e-District Delhi portal."
+    }
+  },
+  {
+    "scheme_id": "SETU-MH-SEN-001",
+    "scheme_name": "Shravan Bal Seva Rajya Nivruttivetan Yojana (Maharashtra)",
+    "scheme_type": "old_age_pension",
+    "ministry": null,
+    "department": "Social Justice and Special Assistance Department, Government of Maharashtra",
+    "state": "Maharashtra",
+    "description": "A state old-age pension scheme for destitute senior citizens in Maharashtra with no regular source of income, administered by the Social Justice and Special Assistance Department.",
+    "official_website": "https://sjsa.maharashtra.gov.in",
+    "application_portal": "https://sjsa.maharashtra.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "caste_category": [],
+      "course_type": null,
+      "disability": null,
+      "domicile": "Resident of Maharashtra for at least 15 years",
+      "education_level": null,
+      "gender": "All",
+      "income_limit": "Annual family income below ₹21,000, or belonging to a BPL household",
+      "institution_type": null,
+      "other_conditions": [],
+      "age": "Applicants must be above 65 years of age",
+      "year_of_study": null
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹1,500 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": [
+      "Aadhaar Card",
+      "Age proof",
+      "Income/BPL certificate",
+      "Residence proof (15 years)",
+      "Bank passbook"
+    ],
+    "application": {
+      "application_mode": "Offline — apply at the local Talathi office or the Block/District Social Justice and Special Assistance office",
+      "application_steps": [
+        "Obtain the application form from the Talathi or Social Justice office",
+        "Attach age, income/BPL and 15-year residence proof",
+        "Submit for verification"
+      ],
+      "processing_time": null,
+      "renewal_required": false
+    },
+    "ai_metadata": {
+      "keywords": [
+        "Shravan Bal Yojana",
+        "Maharashtra old age pension",
+        "Nivruttivetan"
+      ],
+      "target_students": [
+        "Destitute senior citizens aged 65+ resident in Maharashtra for 15+ years"
+      ],
+      "eligibility_tags": [
+        "age_65_plus",
+        "maharashtra_domicile",
+        "income_below_21000"
+      ],
+      "benefit_tags": [
+        "maintenance_allowance"
+      ],
+      "searchable_text": "Shravan Bal Seva Rajya Nivruttivetan Yojana provides Rs 1500 per month to destitute senior citizens aged 65 and above who have lived in Maharashtra for at least 15 years and have annual income below Rs 21,000."
+    }
+  },
+  {
+    "scheme_id": "SETU-WB-SEN-001",
+    "scheme_name": "Jai Bangla Old Age Pension Scheme (West Bengal)",
+    "scheme_type": "old_age_pension",
+    "ministry": null,
+    "department": "Women & Child Development and Social Welfare Department, Government of West Bengal",
+    "state": "West Bengal",
+    "description": "A monthly old-age pension for senior citizens resident in West Bengal, disbursed under the state's unified Jai Bangla pension platform.",
+    "official_website": "https://wbpension.net",
+    "application_portal": "https://wbpension.net",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "caste_category": [],
+      "course_type": null,
+      "disability": null,
+      "domicile": "Permanent resident of West Bengal",
+      "education_level": null,
+      "gender": "All",
+      "income_limit": "BPL card holder or income certificate as prescribed by the scheme",
+      "institution_type": null,
+      "other_conditions": [],
+      "age": "Applicants must be above 60 years of age",
+      "year_of_study": null
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹1,000 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": [
+      "Aadhaar Card",
+      "Age proof",
+      "BPL card / income certificate",
+      "Bank passbook"
+    ],
+    "application": {
+      "application_mode": "Online via wbpension.net, or at Duare Sarkar camps / the local Gram Panchayat or Urban Local Body office",
+      "application_steps": [
+        "Visit wbpension.net or a Duare Sarkar camp",
+        "Fill the application with age, income/BPL and bank details",
+        "Submit at the Gram Panchayat/Urban Local Body office for verification"
+      ],
+      "processing_time": null,
+      "renewal_required": false
+    },
+    "ai_metadata": {
+      "keywords": [
+        "Jai Bangla pension",
+        "West Bengal old age pension",
+        "wbpension.net"
+      ],
+      "target_students": [
+        "Senior citizens aged 60+ resident in West Bengal"
+      ],
+      "eligibility_tags": [
+        "age_60_plus",
+        "west_bengal_domicile"
+      ],
+      "benefit_tags": [
+        "maintenance_allowance"
+      ],
+      "searchable_text": "Jai Bangla Old Age Pension Scheme provides Rs 1000 per month to senior citizens aged 60 and above resident in West Bengal, applied via wbpension.net or Duare Sarkar camps."
+    }
+  }
+]

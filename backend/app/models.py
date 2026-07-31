@@ -44,6 +44,16 @@ class StudentProfile(BaseModel):
         return None
 
 
+class SeniorCitizenProfile(BaseModel):
+    age: int = Field(..., ge=60, le=120)
+    family_income: float = Field(..., ge=0, description="Annual family income in INR")
+    category: Literal["General", "OBC", "SC", "ST", "OEC"]
+    state: str
+    residence_area: Literal["rural", "urban"]
+    gender: Literal["male", "female", "other"]
+    disability: bool = False
+
+
 class CriterionCheck(BaseModel):
     criterion: str
     matched: bool

@@ -4,14 +4,16 @@ from pathlib import Path
 
 from fastapi import APIRouter, HTTPException, Query
 
-from app.matching.matcher import match_student
+from app.matching.matcher import match_senior_citizen, match_student
 from app.matching.embedder import cosine_similarity, embed_texts
-from app.models import MatchResult, SchemeSearchResult, StudentProfile
+from app.models import MatchResult, SchemeSearchResult, SeniorCitizenProfile, StudentProfile
 
 router = APIRouter()
 
 SCHEMES_PATH = Path(__file__).resolve().parent.parent / "data" / "schemes.json"
+SENIOR_SCHEMES_PATH = Path(__file__).resolve().parent.parent / "data" / "senior_citizen_schemes.json"
 _schemes_cache: list[dict] | None = None
+_senior_schemes_cache: list[dict] | None = None
 
 MIN_MATCH_SCORE = 70.0
 MIN_SEARCH_SCORE = 30.0  # lower bar for keyword/semantic search
@@ -48,6 +50,22 @@ def load_schemes() -> list[dict]:
     return _schemes_cache
 
 
+def load_senior_schemes() -> list[dict]:
+    global _senior_schemes_cache
+    if _senior_schemes_cache is None:
+        with open(SENIOR_SCHEMES_PATH, encoding="utf-8") as f:
+            _senior_schemes_cache = json.load(f)
+    return _senior_schemes_cache
+
+
+def find_scheme_by_id(scheme_id: str) -> dict | None:
+    """Look up a scheme by ID across every beneficiary dataset."""
+    return next(
+        (s for s in load_schemes() + load_senior_schemes() if s["scheme_id"] == scheme_id),
+        None,
+    )
+
+
 @router.get("/health")
 def health():
     return {"status": "ok", "version": "0.2.0"}
@@ -58,7 +76,7 @@ def list_schemes():
     """Lightweight listing — used for admin / debug views (not the match flow)."""
     return [
         {"scheme_id": s["scheme_id"], "scheme_name": s["scheme_name"], "state": s["state"]}
-        for s in load_schemes()
+        for s in load_schemes() + load_senior_schemes()
     ]
 
 
@@ -85,6 +103,24 @@ def match(student: StudentProfile):
     return [r for r in results if r.overall_score >= MIN_MATCH_SCORE]
 
 
+@router.post("/match/senior", response_model=list[MatchResult])
+def match_senior(senior: SeniorCitizenProfile):
+    """Match a senior citizen profile against senior-citizen welfare schemes.
+
+    Mirrors /match: the profile is used only in-memory for this request and
+    is never persisted or logged. Uses the same adaptive criteria+semantic
+    matching engine as the student flow, scored against age, income,
+    category, state, gender and disability instead of education criteria.
+    """
+    schemes = load_senior_schemes()
+    senior = senior.model_copy(update={"state": normalize_state(senior.state)})
+    try:
+        results = match_senior_citizen(senior, schemes)
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=f"Matching failed: {exc}") from exc
+    return [r for r in results if r.overall_score >= MIN_MATCH_SCORE]
+
+
 @router.get("/search", response_model=list[SchemeSearchResult])
 def search(q: str = Query(..., min_length=1, description="Free-text search query")):
     """Semantic keyword search over the scheme catalogue.
@@ -94,9 +130,11 @@ def search(q: str = Query(..., min_length=1, description="Free-text search query
       eligibility text (case-insensitive).
     - Semantic vector similarity via spaCy word embeddings.
 
+    Searches across every beneficiary dataset (students and senior citizens),
+    so a general query surfaces relevant schemes regardless of citizen group.
     Returns up to 10 results, ranked by combined relevance score.
     """
-    schemes = load_schemes()
+    schemes = load_schemes() + load_senior_schemes()
     query_lower = q.lower()
 
     results: list[SchemeSearchResult] = []
@@ -178,8 +216,7 @@ def ask_scheme(
     """
     from app.qa.qa_engine import answer_question
 
-    schemes = load_schemes()
-    scheme = next((s for s in schemes if s["scheme_id"] == scheme_id), None)
+    scheme = find_scheme_by_id(scheme_id)
     if not scheme:
         raise HTTPException(status_code=404, detail=f"Scheme '{scheme_id}' not found")
 
@@ -197,8 +234,7 @@ def explain_scheme(scheme_id: str):
     """
     from app.extraction.criteria_extractor import extract_criteria
 
-    schemes = load_schemes()
-    scheme = next((s for s in schemes if s["scheme_id"] == scheme_id), None)
+    scheme = find_scheme_by_id(scheme_id)
     if not scheme:
         raise HTTPException(status_code=404, detail=f"Scheme '{scheme_id}' not found")
 
@@ -207,18 +243,20 @@ def explain_scheme(scheme_id: str):
     # NLG: build a natural-language description from extracted criteria
     parts: list[str] = []
 
-    if criteria.state:
+    if criteria.state and criteria.state.lower() not in ("national", "all", "india", "pan india"):
         parts.append(f"for residents of {criteria.state}")
+    else:
+        parts.append("open nationwide")
 
     if criteria.eligible_categories:
         cats = ", ".join(criteria.eligible_categories)
-        parts.append(f"open to {cats} category students")
+        parts.append(f"open to {cats} category applicants")
     else:
         parts.append("open to all categories")
 
     if criteria.no_income_limit_categories:
         parts.append(
-            f"with no income ceiling for {', '.join(criteria.no_income_limit_categories)} students"
+            f"with no income ceiling for {', '.join(criteria.no_income_limit_categories)} applicants"
         )
     if criteria.income_ceiling_general is not None:
         parts.append(f"requiring annual family income below \u20b9{criteria.income_ceiling_general:,.0f}")
@@ -248,11 +286,11 @@ def explain_scheme(scheme_id: str):
         parts.append(f"restricted to {criteria.gender_restriction} applicants")
 
     if criteria.min_age is not None and criteria.max_age is not None:
-        parts.append(f"for students aged {criteria.min_age}\u2013{criteria.max_age}")
+        parts.append(f"for applicants aged {criteria.min_age}\u2013{criteria.max_age}")
     elif criteria.max_age is not None:
-        parts.append(f"for students under {criteria.max_age} years old")
+        parts.append(f"for applicants under {criteria.max_age} years old")
     elif criteria.min_age is not None:
-        parts.append(f"for students at least {criteria.min_age} years old")
+        parts.append(f"for applicants aged {criteria.min_age} and above")
 
     if criteria.requires_disability:
         parts.append("specifically for persons with a registered disability")
@@ -267,7 +305,7 @@ def explain_scheme(scheme_id: str):
     else:
         explanation = (
             f"{scheme['scheme_name']} has broad eligibility with few specific restrictions "
-            "— most students may qualify."
+            "— most applicants may qualify."
         )
 
     return {

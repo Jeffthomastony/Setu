@@ -66,6 +66,16 @@ export async function matchStudent(profile) {
   return res.json();
 }
 
+export async function matchSeniorCitizen(profile) {
+  const url = `${API_BASE}/match/senior`;
+  const res = await guardedFetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(profile),
+  });
+  return res.json();
+}
+
 export async function searchSchemes(query) {
   const url = `${API_BASE}/search?q=${encodeURIComponent(query)}`;
   const res = await guardedFetch(url);

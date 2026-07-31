@@ -48,6 +48,15 @@ const FormIcon = () => (
   </svg>
 );
 
+const SeniorIcon = () => (
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <circle cx="12" cy="8" r="4" />
+    <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8" />
+    <path d="M9 21v-3M15 21v-3" />
+  </svg>
+);
+
 export default function LandingPage({ onSelect }) {
   return (
     <div className="landing">
@@ -63,8 +72,9 @@ export default function LandingPage({ onSelect }) {
         </div>
 
         <p className="landing-tagline">
-          <em>"Setu"</em> means bridge — we connect students with scholarships and
-          government schemes they qualify for but never hear about.
+          <em>"Setu"</em> means bridge — we connect students and senior citizens
+          with scholarships and government schemes they qualify for but never
+          hear about.
         </p>
 
         <div className="landing-trust animate-fade-up delay-300">
@@ -96,6 +106,13 @@ export default function LandingPage({ onSelect }) {
             desc="Fill in your profile and get personalized, AI-ranked scholarships and government schemes"
             onClick={() => onSelect("form")}
             delay="400"
+          />
+          <OptionCard
+            icon={<SeniorIcon />}
+            title="Schemes For Senior Citizens"
+            desc="Fill in a senior citizen's profile and get personalized pension, health, and welfare schemes"
+            onClick={() => onSelect("senior-form")}
+            delay="500"
           />
         </div>
       </section>
