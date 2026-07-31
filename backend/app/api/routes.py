@@ -11,6 +11,8 @@ router = APIRouter()
 SCHEMES_PATH = Path(__file__).resolve().parent.parent / "data" / "schemes.json"
 _schemes_cache: list[dict] | None = None
 
+MIN_MATCH_SCORE = 70.0
+
 
 def load_schemes() -> list[dict]:
     global _schemes_cache
@@ -40,6 +42,10 @@ def match(student: StudentProfile):
 
     The student profile is used only in-memory for this request and is never
     persisted or logged, per Setu's privacy-first design.
+
+    Only schemes scoring at or above MIN_MATCH_SCORE are returned, so
+    students see confident matches rather than every low-relevance scheme.
     """
     schemes = load_schemes()
-    return match_student(student, schemes)
+    results = match_student(student, schemes)
+    return [r for r in results if r.overall_score >= MIN_MATCH_SCORE]
