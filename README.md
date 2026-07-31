@@ -13,9 +13,9 @@ The hackathon prototype focuses on students and government scholarships/schemes;
 A student either fills in a short profile, or searches by keyword. Setu:
 
 1. **Extracts** structured eligibility criteria from each scheme's raw eligibility text using an NLP pipeline (spaCy) — turning prose like *"No income limit for SC, ST and OEC students; annual family income below ₹1,00,000 for OBC students"* into clean, comparable rules: income ceilings (general/by-category/rural-urban), academic percentage thresholds, class/education ranges, gender restrictions, age ranges, disability requirements, and orphan/single-parent targeting.
-2. **Ranks** every scheme against the student's profile using a semantic embedding model (spaCy word vectors) combined with the extracted eligibility checks. The two are blended with an **adaptive weight**: schemes with richer extracted criteria lean more on the rule-based score (up to 65%), while schemes with sparse/ambiguous eligibility text lean more on semantic similarity (down to 40% criteria weight) — so the AI compensates when the structured extraction has less to go on.
+2. **Ranks** every scheme against the student's profile using a sentence-transformer embedding model (`all-MiniLM-L6-v2`) combined with the extracted eligibility checks. The two are blended with an **adaptive weight**: schemes with richer extracted criteria lean more on the rule-based score (up to 65%), while schemes with sparse/ambiguous eligibility text lean more on semantic similarity (down to 40% criteria weight) — so the AI compensates when the structured extraction has less to go on.
 3. **Explains** every match with a criterion-by-criterion breakdown (✅/❌ per rule), a plain-language AI-generated match summary ("Strong match — you qualify on 4 of 5 criteria..."), and the documents needed to apply.
-4. **Searches** by keyword using a hybrid of literal keyword hits (name/department/description/eligibility text) and semantic embedding similarity, so both exact scheme names and loosely-worded queries surface relevant results.
+4. **Searches** by keyword using a hybrid of literal keyword hits (name/department/description/eligibility text) and sentence-transformer semantic similarity, so both exact scheme names and loosely-worded queries surface relevant results.
 5. **Generates a plain-language explanation** of any scheme on demand (`/explain/{scheme_id}`) — synthesizing the extracted structured criteria into a natural-language paragraph describing who the scheme targets, without re-reading the raw eligibility text.
 
 The student's state input is also fuzzy-normalized against the canonical list of Indian states/UTs (e.g. "Kerla" → "Kerala") before matching, so small typos don't silently produce zero results.
@@ -62,12 +62,13 @@ python3 -m venv .venv
 source .venv/bin/activate        # on Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 python -m spacy download en_core_web_sm
-python -m spacy download en_core_web_md
 
 uvicorn app.main:app --reload --port 8000
 ```
 
 The API is now running at `http://localhost:8000`. Check `http://localhost:8000/health`.
+
+**First run needs internet once**: the semantic-matching engine uses a sentence-transformer model (`all-MiniLM-L6-v2`, ~90MB) that downloads automatically from the Hugging Face Hub the first time the server starts, then caches locally under `~/.cache/huggingface` — no further internet needed after that. If the download can't complete (offline, blocked network), the app still runs; semantic scoring just falls back to neutral so rule-based eligibility matching keeps working.
 
 **Windows + Python 3.13 note**: `requirements.txt` pins `spacy==3.7.5`, which doesn't have prebuilt wheels for Python 3.13 and will fail to compile from source. If `pip install -r requirements.txt` fails on spaCy/thinc/blis build errors, install spaCy unpinned instead: `pip install fastapi "uvicorn[standard]" pydantic numpy spacy`, then continue with the spaCy model downloads above.
 
@@ -107,7 +108,7 @@ Add a new entry to `backend/app/data/schemes.json` following the same shape as t
 ## Why this counts as "AI, not just an API wrapper"
 
 - **NLP extraction**: eligibility fields (income ceilings, percentage thresholds, class/education ranges, age ranges, gender/disability restrictions) are free text in the source data; `app/extraction/criteria_extractor.py` uses spaCy (sentence segmentation, tokenization, lemmatization) plus targeted parsing to turn that prose into structured, comparable values.
-- **Adaptive recommendation system**: `app/matching/matcher.py` blends hard eligibility-criteria scoring with a semantic embedding similarity score, weighting each dynamically based on how much structured criteria could actually be extracted for a given scheme — not a fixed rule set.
+- **Adaptive recommendation system**: `app/matching/matcher.py` blends hard eligibility-criteria scoring with a sentence-transformer semantic similarity score (`app/matching/embedder.py`, `all-MiniLM-L6-v2` via Hugging Face), weighting each dynamically based on how much structured criteria could actually be extracted for a given scheme — not a fixed rule set.
 - **Generative explanation**: `/explain/{scheme_id}` turns the extracted structured criteria back into a natural-language paragraph (NLG), grounded in the actual extracted data, not free-form generation from an external model. (The frontend's match/profile summary text is plain client-side templating over the real match results — not a model — and is labelled as such in the code.)
 - **Retrieval-grounded Q&A**: `/ask/{scheme_id}` (`app/qa/qa_engine.py`) turns a scheme's structured fields into a set of fact sentences, ranks them against a free-text question with the same semantic + keyword blend as search, and returns the top-matching facts verbatim — so answers are always traceable to a real field in the scheme record, never freely generated.
 - **Explainable AI**: every match returns a full criterion-by-criterion breakdown of why it did or didn't qualify.
