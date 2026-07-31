@@ -1,0 +1,197 @@
+.app-shell {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+  text-align: left;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.app-header h1 {
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.tagline {
+  max-width: 520px;
+  margin: 0 auto;
+  color: var(--text);
+}
+
+.student-form {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  background: var(--code-bg);
+}
+
+.privacy-note {
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  border-left: 3px solid var(--accent);
+  background: var(--accent-bg);
+  border-radius: 4px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--text-h);
+}
+
+.form-grid input,
+.form-grid select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  font-size: 15px;
+}
+
+.checkbox-label {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 8px !important;
+}
+
+.checkbox-label input {
+  width: auto;
+}
+
+.student-form button {
+  font-size: 16px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+}
+
+.student-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error-banner {
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 6px;
+  background: rgba(255, 0, 0, 0.08);
+  color: #b3261e;
+}
+
+.results-section {
+  margin-top: 32px;
+}
+
+.results-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.result-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.result-card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.result-card h3 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--text-h);
+}
+
+.score-badge {
+  flex-shrink: 0;
+  background: var(--accent);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.department {
+  font-size: 13px;
+  color: var(--text);
+  margin-top: 4px;
+}
+
+.score-breakdown-summary {
+  display: flex;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--text);
+  margin: 10px 0;
+}
+
+.criteria-list {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.criteria-list li {
+  display: flex;
+  gap: 8px;
+  font-size: 14px;
+  align-items: baseline;
+}
+
+.criteria-list li.unmatched {
+  color: var(--text);
+}
+
+.result-card details {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.result-card details summary {
+  cursor: pointer;
+  color: var(--accent);
+}
+
+.result-links {
+  margin-top: 14px;
+  display: flex;
+  gap: 16px;
+}
+
+.result-links a {
+  color: var(--accent);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.result-links a:hover {
+  text-decoration: underline;
+}
