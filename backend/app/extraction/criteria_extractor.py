@@ -9,12 +9,14 @@ that prose into clean, comparable values the matching engine can use.
 """
 
 import re
+import threading
 from dataclasses import dataclass, field
 from typing import Optional
 
 import spacy
 
 _nlp = None
+_lock = threading.Lock()
 
 CATEGORY_ALIASES = {
     "sc": "SC",
@@ -27,6 +29,9 @@ CATEGORY_ALIASES = {
 CURRENCY_RE = re.compile(r"[₹Rs.]*\s?([\d,]{3,}(?:\.\d+)?)")
 PERCENT_RE = re.compile(r"(\d{1,3})\s?%")
 CLASS_RE = re.compile(r"class\s*(\d{1,2})", re.IGNORECASE)
+AGE_RANGE_RE = re.compile(r"(\d{1,2})\s*(?:to|-)\s*(\d{1,2})\s*years?", re.IGNORECASE)
+AGE_MAX_RE = re.compile(r"(?:below|under|up to|upto)\s*(\d{1,2})\s*years?", re.IGNORECASE)
+AGE_MIN_RE = re.compile(r"(?:above|atleast|at least|minimum)\s*(\d{1,2})\s*years?", re.IGNORECASE)
 
 # Presence of any of these alongside a numeric class mention means the range
 # actually extends into higher education (e.g. "Class 1 to Degree/
@@ -46,11 +51,14 @@ HIGHER_ED_CLASS_CEILING = 20
 
 
 def get_nlp():
-    """Lazily load spaCy, falling back to a blank pipeline + sentencizer if
-    the pretrained English model isn't installed (keeps the app usable even
-    without a network download during the hackathon)."""
+    """Lazily load spaCy in a thread-safe manner, falling back to a blank
+    pipeline + sentencizer if the pretrained English model isn't installed."""
     global _nlp
-    if _nlp is None:
+    if _nlp is not None:
+        return _nlp
+    with _lock:
+        if _nlp is not None:
+            return _nlp
         try:
             _nlp = spacy.load("en_core_web_sm")
         except OSError:
@@ -64,6 +72,20 @@ def _parse_amount(text: str) -> Optional[float]:
     if not m:
         return None
     return float(m.group(1).replace(",", ""))
+
+
+def _extract_gender_restriction(gender_field: Optional[str]) -> Optional[str]:
+    """Return 'female', 'male', or None (open to all) from the gender field."""
+    if not gender_field:
+        return None
+    lower = gender_field.lower().strip()
+    if lower in ("all", "any", "both", "no restriction", ""):
+        return None
+    if "female" in lower or "girl" in lower or "women" in lower or "woman" in lower:
+        return "female"
+    if "male" in lower or "boy" in lower or "men" in lower or "man" in lower:
+        return "male"
+    return None
 
 
 @dataclass
@@ -81,6 +103,11 @@ class StructuredCriteria:
     eligible_categories: list = field(default_factory=list)
     requires_orphan_or_single_parent: bool = False
     state: Optional[str] = None
+    # New fields
+    gender_restriction: Optional[str] = None   # 'female', 'male', or None=open
+    min_age: Optional[int] = None
+    max_age: Optional[int] = None
+    requires_disability: bool = False
 
 
 def extract_criteria(scheme: dict) -> StructuredCriteria:
@@ -106,7 +133,7 @@ def extract_criteria(scheme: dict) -> StructuredCriteria:
         amount = _parse_amount(sent.text)
         mentioned_cats = [full for alias, full in CATEGORY_ALIASES.items() if alias in lower]
 
-        if "no income limit" in lower or "no  limit" in lower:
+        if "no income limit" in lower or "no limit" in lower:
             no_limit_cats.extend(mentioned_cats)
             continue
 
@@ -152,6 +179,34 @@ def extract_criteria(scheme: dict) -> StructuredCriteria:
     other_conditions_text = " ".join(elig.get("other_conditions") or [])
     if re.search(r"lost (one or both|a|one)?\s?parent", other_conditions_text, re.IGNORECASE):
         criteria.requires_orphan_or_single_parent = True
+
+    # --- Gender restriction ---
+    criteria.gender_restriction = _extract_gender_restriction(elig.get("gender"))
+
+    # --- Age range ---
+    age_text = elig.get("age") or ""
+    if not age_text and elig.get("other_conditions"):
+        age_text = " ".join(elig.get("other_conditions"))
+
+    if age_text:
+        range_match = AGE_RANGE_RE.search(age_text)
+        if range_match:
+            criteria.min_age = int(range_match.group(1))
+            criteria.max_age = int(range_match.group(2))
+        else:
+            max_match = AGE_MAX_RE.search(age_text)
+            if max_match:
+                criteria.max_age = int(max_match.group(1))
+            min_match = AGE_MIN_RE.search(age_text)
+            if min_match:
+                criteria.min_age = int(min_match.group(1))
+
+    # --- Disability-specific schemes ---
+    disability_field = elig.get("disability") or ""
+    if disability_field and str(disability_field).strip().lower() not in ("null", "none", ""):
+        disability_lower = str(disability_field).lower()
+        if any(kw in disability_lower for kw in ("required", "only", "must", "persons with")):
+            criteria.requires_disability = True
 
     return criteria
 

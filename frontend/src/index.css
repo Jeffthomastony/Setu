@@ -1,105 +1,356 @@
+/* ============================================================
+   SETU — Global Design System
+   AMD-inspired: dark-first, sharp geometry, bold red-orange accent
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* ── CSS Custom Properties ── */
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  /* ── Core Palette — AMD-inspired dark-first ── */
+  --clr-bg:           #0d0d14;
+  --clr-bg-2:         #111118;
+  --clr-surface:      #16161f;
+  --clr-surface-2:    #1c1c28;
+  --clr-surface-alt:  #1e1e2c;
+  --clr-border:       #2a2a3a;
+  --clr-border-hover: #3d3d55;
+  --clr-border-focus: #ED1C24;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  /* ── Text ── */
+  --clr-text-muted:   #7a7a99;
+  --clr-text:         #b8b8d4;
+  --clr-text-strong:  #f0f0ff;
 
-  font: 18px/145% var(--sans);
-  letter-spacing: 0.18px;
-  color-scheme: light dark;
-  color: var(--text);
-  background: var(--bg);
+  /* ── AMD Red-Orange Accent ── */
+  --clr-accent:       #ED1C24;
+  --clr-accent-2:     #FF6B35;
+  --clr-accent-light: rgba(237, 28, 36, 0.10);
+  --clr-accent-dark:  #c0141b;
+  --clr-accent-glow:  rgba(237, 28, 36, 0.28);
+  --clr-accent-glow2: rgba(255, 107, 53, 0.18);
+
+  /* ── Status ── */
+  --clr-success:      #22c55e;
+  --clr-success-bg:   rgba(34, 197, 94, 0.08);
+  --clr-warn:         #f59e0b;
+  --clr-warn-bg:      rgba(245, 158, 11, 0.08);
+  --clr-error:        #ef4444;
+  --clr-error-bg:     rgba(239, 68, 68, 0.08);
+
+  /* ── Gradients ── */
+  --gradient-hero:    linear-gradient(135deg, #0d0d14 0%, #1a0508 40%, #2d0a0d 70%, #0d0d14 100%);
+  --gradient-accent:  linear-gradient(90deg, #ED1C24 0%, #FF6B35 100%);
+  --gradient-accent-v: linear-gradient(180deg, #ED1C24 0%, #FF6B35 100%);
+  --gradient-card:    linear-gradient(135deg, #16161f 0%, #1c1c28 100%);
+  --gradient-glow:    radial-gradient(ellipse at 50% 0%, rgba(237,28,36,0.15) 0%, transparent 60%);
+
+  /* ── Typography ── */
+  --font-sans:        'Inter', 'Barlow', system-ui, -apple-system, sans-serif;
+  --font-mono:        ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  /* ── Border radius — AMD uses sharper corners ── */
+  --radius-xs:        3px;
+  --radius-sm:        5px;
+  --radius-md:        8px;
+  --radius-lg:        12px;
+  --radius-xl:        16px;
+  --radius-full:      9999px;
+
+  /* ── Shadows ── */
+  --shadow-xs:        0 1px 3px rgba(0,0,0,0.4);
+  --shadow-sm:        0 2px 8px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md:        0 8px 24px rgba(0,0,0,0.6), 0 2px 8px rgba(0,0,0,0.4);
+  --shadow-lg:        0 20px 56px rgba(0,0,0,0.7), 0 6px 16px rgba(0,0,0,0.4);
+  --shadow-accent:    0 4px 20px var(--clr-accent-glow), 0 1px 4px rgba(0,0,0,0.4);
+
+  /* ── Transitions ── */
+  --ease-out:         cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring:      cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-sharp:       cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── Layout ── */
+  --max-width:        900px;
+  --header-height:    60px;
+
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  color-scheme: dark;
+  color: var(--clr-text);
+  background: var(--clr-bg);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  @media (max-width: 1024px) {
-    font-size: 16px;
-  }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
-  }
-}
+/* ── Base Reset ── */
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
   margin: 0;
+  min-height: 100svh;
+  background: var(--clr-bg);
 }
 
 #root {
   width: 100%;
   min-height: 100svh;
-  box-sizing: border-box;
 }
 
-h1,
-h2 {
-  font-family: var(--heading);
-  font-weight: 500;
-  color: var(--text-h);
-}
-
-h1 {
-  font-size: 56px;
-  letter-spacing: -1.68px;
-  margin: 32px 0;
-  @media (max-width: 1024px) {
-    font-size: 36px;
-    margin: 20px 0;
-  }
-}
-h2 {
-  font-size: 24px;
-  line-height: 118%;
-  letter-spacing: -0.24px;
-  margin: 0 0 8px;
-  @media (max-width: 1024px) {
-    font-size: 20px;
-  }
-}
-p {
+/* ── Headings — heavy Inter weight, tight tracking ── */
+h1, h2, h3, h4 {
+  font-family: var(--font-sans);
+  font-weight: 800;
+  color: var(--clr-text-strong);
   margin: 0;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
 }
 
-code,
-.counter {
-  font-family: var(--mono);
-  display: inline-flex;
-  border-radius: 4px;
-  color: var(--text-h);
+h1 { font-size: clamp(2rem, 5vw, 3.2rem); }
+h2 { font-size: clamp(1.2rem, 3vw, 1.6rem); }
+h3 { font-size: 1.05rem; }
+
+p { margin: 0; }
+a { color: var(--clr-accent); text-decoration: none; }
+
+/* ── Focus ── */
+:focus-visible {
+  outline: 2px solid var(--clr-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-xs);
 }
 
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--clr-bg-2); }
+::-webkit-scrollbar-thumb { background: var(--clr-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--clr-border-hover); }
+
+/* ── Global Animations ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position: 600px 0; }
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(1);   opacity: 0.8; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes countUp {
+  from { opacity: 0; transform: scale(0.75); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes scan {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes indeterminate {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(400%); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.6; }
+  50%       { opacity: 1; }
+}
+
+@keyframes cornerFlash {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+
+/* ── Animation utility classes ── */
+.animate-fade-up  { animation: fadeUp 0.45s var(--ease-out) both; }
+.animate-fade-in  { animation: fadeIn 0.35s var(--ease-out) both; }
+
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* ── Code ── */
 code {
-  font-size: 15px;
-  line-height: 135%;
-  padding: 4px 8px;
-  background: var(--code-bg);
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  padding: 2px 6px;
+  background: var(--clr-surface-alt);
+  border-radius: var(--radius-sm);
+  color: var(--clr-accent-2);
+}
+
+/* ── Loading Screen ── */
+.loading-screen {
+  position: fixed;
+  inset: 0;
+  background: var(--clr-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.loading-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+}
+
+.loading-scanline {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    transparent 0%,
+    rgba(237, 28, 36, 0.03) 50%,
+    transparent 100%);
+  height: 120px;
+  animation: scan 3.5s linear infinite;
+  pointer-events: none;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  z-index: 1;
+}
+
+.loading-logo-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+}
+
+.loading-logo-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid var(--clr-accent);
+}
+
+.loading-logo-ring-1 {
+  width: 96px; height: 96px;
+  opacity: 0.3;
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+.loading-logo-ring-2 {
+  width: 80px; height: 80px;
+  opacity: 0.2;
+  animation: pulse-ring 2s ease-out 0.5s infinite;
+}
+
+.loading-wordmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.loading-wordmark-setu {
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: var(--clr-text-strong);
+  line-height: 1;
+}
+
+.loading-wordmark-sub {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--clr-accent);
+}
+
+.loading-progress-track {
+  width: 240px;
+  height: 2px;
+  background: var(--clr-surface-2);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.loading-progress-bar {
+  height: 100%;
+  background: var(--gradient-accent);
+  border-radius: var(--radius-full);
+  transition: width 0.3s var(--ease-sharp);
+  box-shadow: 0 0 8px var(--clr-accent-glow);
+}
+
+.loading-progress-indeterminate {
+  position: absolute;
+  top: 0; left: 0;
+  width: 25%;
+  height: 100%;
+  background: var(--gradient-accent);
+  border-radius: var(--radius-full);
+  animation: indeterminate 1.4s var(--ease-sharp) infinite;
+  box-shadow: 0 0 8px var(--clr-accent-glow);
+}
+
+.loading-message {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+  min-width: 200px;
+  text-align: center;
+}
+
+/* Corner accent brackets — AMD style */
+.loading-corner {
+  position: absolute;
+  width: 20px; height: 20px;
+  border-color: var(--clr-accent);
+  border-style: solid;
+  opacity: 0.5;
+  animation: cornerFlash 2s ease-in-out infinite;
+}
+
+.loading-corner-tl { top: 24px; left: 24px; border-width: 1.5px 0 0 1.5px; }
+.loading-corner-tr { top: 24px; right: 24px; border-width: 1.5px 1.5px 0 0; }
+.loading-corner-bl { bottom: 24px; left: 24px; border-width: 0 0 1.5px 1.5px; }
+.loading-corner-br { bottom: 24px; right: 24px; border-width: 0 1.5px 1.5px 0; }
+
+/* ── Inline Spinner (replaces .spinner) ── */
+.setu-spinner {
+  display: inline-block;
+  border: 2px solid rgba(255,255,255,0.25);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.65s linear infinite;
+  flex-shrink: 0;
 }

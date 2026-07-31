@@ -31,6 +31,9 @@ class StudentProfile(BaseModel):
     parent_status: Literal["both_parents", "single_parent", "orphan"]
     gender: Literal["male", "female", "other"]
     disability: bool = False
+    # Optional enrichment fields — improve semantic matching accuracy
+    religion: Optional[str] = None
+    institution_type: Optional[str] = None
 
     def effective_percentage(self) -> Optional[float]:
         """Normalize CGPA to a percentage if percentage wasn't given directly."""

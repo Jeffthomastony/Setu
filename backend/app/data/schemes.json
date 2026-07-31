@@ -1045,5 +1045,2969 @@
       "benefit_tags": ["tuition_fee_support"],
       "searchable_text": "Andhra Pradesh Jagananna Vidya Deevena provides full tuition fee reimbursement to undergraduate students with family income below ₹2.5 lakh, across all categories."
     }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-010",
+    "scheme_name": "Central Sector Scholarship for College and University Students (CSSS)",
+    "scheme_type": "merit_scholarship",
+    "ministry": "Ministry of Education, Government of India",
+    "department": "Department of Higher Education",
+    "state": "National",
+    "description": "Provides financial assistance to meritorious students from economically weaker families who score in the top 80th percentile in Class 12 board exams, to continue education at UG/PG level.",
+    "official_website": "https://scholarships.gov.in",
+    "application_portal": "https://scholarships.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Undergraduate and Postgraduate regular degree courses",
+      "course_type": "Regular degree (not distance/correspondence)",
+      "year_of_study": "1st year of UG onwards",
+      "institution_type": "Government or Government-aided colleges and universities",
+      "income_limit": "Annual family income below ₹4,50,000",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Indian citizen",
+      "academic_percentage": "Must have scored in top 80th percentile in Class 12 board exams",
+      "attendance_requirement": null,
+      "other_conditions": ["Must be pursuing a regular degree course", "Not eligible for students receiving another central government scholarship"]
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹12,000 per year for UG 1st and 2nd year; ₹20,000 per year for UG 3rd year and PG",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Class 12 mark sheet", "Income Certificate", "Bank account passbook", "Bonafide certificate"],
+    "application": {
+      "application_mode": "Online via National Scholarship Portal (scholarships.gov.in)",
+      "application_steps": ["Register on NSP", "Fill application form", "Upload documents", "Submit for institution verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Central Sector Scholarship", "CSSS", "NSP", "merit scholarship", "top 80 percentile", "undergraduate"],
+      "target_students": ["Top-performing Class 12 students with family income below ₹4.5 lakh pursuing UG/PG"],
+      "eligibility_tags": ["national", "income_below_450000", "merit_top_80_percentile", "undergraduate", "postgraduate"],
+      "benefit_tags": ["maintenance_allowance"],
+      "searchable_text": "Central Sector Scholarship for meritorious college and university students who scored in top 80th percentile in Class 12 with family income below ₹4.5 lakh, providing ₹12,000 to ₹20,000 per year via National Scholarship Portal."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-011",
+    "scheme_name": "Post Matric Scholarship for SC Students (National)",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": "Ministry of Social Justice and Empowerment, Government of India",
+    "department": "Department of Social Justice and Empowerment",
+    "state": "National",
+    "description": "A centrally sponsored scheme providing financial assistance to Scheduled Caste students pursuing post-matric education to enable them to complete their education.",
+    "official_website": "https://scholarships.gov.in",
+    "application_portal": "https://scholarships.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Post-Matric: Class 11 and above including ITI, Polytechnic, UG, PG, Professional and Doctoral",
+      "course_type": "All post-matric courses",
+      "year_of_study": "Any year",
+      "institution_type": "Government, Government-aided and recognized private institutions",
+      "income_limit": "Annual family income below ₹2,50,000",
+      "caste_category": ["SC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Indian citizen belonging to Scheduled Caste",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": ["Must not be receiving any other scholarship", "Must be studying in a recognized institution"]
+    },
+    "benefits": {
+      "tuition_fee_support": "Full tuition fee reimbursement",
+      "hostel_fee_support": "Hostel charges covered",
+      "maintenance_allowance": "₹380 to ₹1,200 per month depending on course level",
+      "book_allowance": "Book allowance as applicable",
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "SC Caste Certificate", "Income Certificate", "Bank passbook", "Previous mark sheet", "Bonafide certificate"],
+    "application": {
+      "application_mode": "Online via National Scholarship Portal",
+      "application_steps": ["Register on NSP", "Select the SC Post Matric scheme", "Fill details and upload documents", "Submit for verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Post Matric SC scholarship", "National SC scholarship", "Scheduled Caste scholarship", "NSP SC"],
+      "target_students": ["SC students pursuing post-matric education with family income below ₹2.5 lakh"],
+      "eligibility_tags": ["national", "sc_only", "income_below_250000", "post_matric"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "hostel_support"],
+      "searchable_text": "National Post Matric Scholarship for Scheduled Caste students studying from Class 11 to Doctoral level with family income below ₹2.5 lakh, providing tuition fee, hostel fee and maintenance allowance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-012",
+    "scheme_name": "Post Matric Scholarship for ST Students (National)",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": "Ministry of Tribal Affairs, Government of India",
+    "department": "Ministry of Tribal Affairs",
+    "state": "National",
+    "description": "Centrally sponsored scheme providing financial assistance to Scheduled Tribe students to pursue post-matric level education and reduce educational dropout.",
+    "official_website": "https://scholarships.gov.in",
+    "application_portal": "https://scholarships.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Post-Matric: Class 11 and above including ITI, Polytechnic, Degree, PG, Professional",
+      "course_type": "All post-matric courses in recognized institutions",
+      "year_of_study": "Any year",
+      "institution_type": "Government, Government-aided and recognized institutions",
+      "income_limit": "Annual family income below ₹2,50,000",
+      "caste_category": ["ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Indian citizen belonging to Scheduled Tribe",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": ["Must not be availing any other scholarship", "Student must be a regular student"]
+    },
+    "benefits": {
+      "tuition_fee_support": "Full tuition and special fee reimbursement",
+      "hostel_fee_support": "Hostel charges as applicable",
+      "maintenance_allowance": "₹380 to ₹1,200 per month",
+      "book_allowance": "Book and stationery allowance",
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "ST Caste Certificate", "Income Certificate", "Bank passbook", "Previous mark sheet"],
+    "application": {
+      "application_mode": "Online via National Scholarship Portal",
+      "application_steps": ["Register on NSP", "Select ST Post Matric scheme", "Fill and upload documents", "Submit for verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Post Matric ST scholarship", "Scheduled Tribe scholarship", "Tribal scholarship India", "NSP ST"],
+      "target_students": ["ST students pursuing post-matric education with family income below ₹2.5 lakh"],
+      "eligibility_tags": ["national", "st_only", "income_below_250000", "post_matric"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "hostel_support"],
+      "searchable_text": "National Post Matric Scholarship for Scheduled Tribe students from Class 11 to Doctoral level with family income below ₹2.5 lakh providing tuition fee reimbursement and maintenance allowance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-013",
+    "scheme_name": "Post Matric Scholarship for OBC Students (National)",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": "Ministry of Social Justice and Empowerment, Government of India",
+    "department": "Department of Social Justice and Empowerment",
+    "state": "National",
+    "description": "A centrally sponsored scheme for Other Backward Classes students to pursue post-matric education by providing financial assistance for fee and maintenance.",
+    "official_website": "https://scholarships.gov.in",
+    "application_portal": "https://scholarships.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Post-Matric: Class 11 and above through Doctoral level",
+      "course_type": "All post-matric courses",
+      "year_of_study": "Any year",
+      "institution_type": "Government and Government-aided recognized institutions",
+      "income_limit": "Annual family income below ₹1,00,000",
+      "caste_category": ["OBC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Indian citizen belonging to OBC",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": ["Must not be availing any other scholarship"]
+    },
+    "benefits": {
+      "tuition_fee_support": "Tuition fee reimbursement (ad hoc grants)",
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹300 to ₹1,000 per month depending on course level",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "OBC Certificate", "Income Certificate", "Bank passbook", "Mark sheet"],
+    "application": {
+      "application_mode": "Online via National Scholarship Portal",
+      "application_steps": ["Register on NSP", "Select OBC Post Matric scheme", "Fill and upload documents", "Submit for verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["OBC Post Matric Scholarship", "Other Backward Classes scholarship", "NSP OBC"],
+      "target_students": ["OBC students in post-matric education with family income below ₹1 lakh"],
+      "eligibility_tags": ["national", "obc_only", "income_below_100000", "post_matric"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance"],
+      "searchable_text": "National Post Matric Scholarship for Other Backward Classes students pursuing education from Class 11 to Doctoral level with income below ₹1 lakh."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-014",
+    "scheme_name": "Pre Matric Scholarship for SC Students (National)",
+    "scheme_type": "pre_matric_scholarship",
+    "ministry": "Ministry of Social Justice and Empowerment, Government of India",
+    "department": "Department of Social Justice and Empowerment",
+    "state": "National",
+    "description": "Encourages parents of SC communities to send their children to school and support the children to continue their education at the pre-matric stage (Class 9 and 10).",
+    "official_website": "https://scholarships.gov.in",
+    "application_portal": "https://scholarships.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Class 9 to Class 10",
+      "course_type": "General secondary school education",
+      "year_of_study": "Class 9 or 10",
+      "institution_type": "Government and Government-aided schools",
+      "income_limit": "Annual family income below ₹2,50,000",
+      "caste_category": ["SC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Indian citizen belonging to SC",
+      "academic_percentage": null,
+      "attendance_requirement": "Minimum 60% attendance",
+      "other_conditions": []
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": "Day Scholar: ₹150/month; Hosteller: ₹750/month",
+      "maintenance_allowance": "₹150 per month for day scholars, ₹750 for hostellers",
+      "book_allowance": "₹750 per annum",
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "SC Caste Certificate", "Income Certificate", "School Certificate"],
+    "application": {
+      "application_mode": "Online via National Scholarship Portal",
+      "application_steps": ["Register on NSP", "Select SC Pre Matric scheme", "Fill details and upload", "Submit"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Pre Matric SC scholarship", "Class 9 10 SC scholarship", "NSP pre matric SC"],
+      "target_students": ["SC students in Class 9 and 10 with family income below ₹2.5 lakh"],
+      "eligibility_tags": ["national", "sc_only", "income_below_250000", "class_9_10"],
+      "benefit_tags": ["maintenance_allowance", "book_allowance"],
+      "searchable_text": "National Pre Matric Scholarship for Scheduled Caste students in Class 9 and 10 with family income below ₹2.5 lakh providing maintenance allowance and book grant."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-015",
+    "scheme_name": "Pre Matric Scholarship for ST Students (National)",
+    "scheme_type": "pre_matric_scholarship",
+    "ministry": "Ministry of Tribal Affairs, Government of India",
+    "department": "Ministry of Tribal Affairs",
+    "state": "National",
+    "description": "Provides financial assistance to Scheduled Tribe students in Class 9 and 10 to prevent dropout and improve educational outcomes.",
+    "official_website": "https://scholarships.gov.in",
+    "application_portal": "https://scholarships.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Class 9 to Class 10",
+      "course_type": "Secondary school education",
+      "year_of_study": "Class 9 or 10",
+      "institution_type": "Government and Government-aided schools",
+      "income_limit": "Annual family income below ₹2,50,000",
+      "caste_category": ["ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Indian citizen belonging to ST",
+      "academic_percentage": null,
+      "attendance_requirement": "Minimum 60% attendance",
+      "other_conditions": []
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": "Hosteller: ₹750/month",
+      "maintenance_allowance": "₹150 per month for day scholars",
+      "book_allowance": "₹750 per annum",
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "ST Certificate", "Income Certificate", "School Certificate"],
+    "application": {
+      "application_mode": "Online via National Scholarship Portal",
+      "application_steps": ["Register on NSP", "Select ST Pre Matric scheme", "Upload documents", "Submit"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Pre Matric ST scholarship", "Tribal Class 9 10 scholarship", "NSP pre matric ST"],
+      "target_students": ["ST students in Class 9 and 10 with family income below ₹2.5 lakh"],
+      "eligibility_tags": ["national", "st_only", "income_below_250000", "class_9_10"],
+      "benefit_tags": ["maintenance_allowance", "book_allowance"],
+      "searchable_text": "National Pre Matric Scholarship for Scheduled Tribe students in Class 9 and 10 with family income below ₹2.5 lakh providing maintenance allowance and book allowance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-016",
+    "scheme_name": "Scholarship for Top Class Education for SC Students",
+    "scheme_type": "merit_scholarship",
+    "ministry": "Ministry of Social Justice and Empowerment, Government of India",
+    "department": "Department of Social Justice and Empowerment",
+    "state": "National",
+    "description": "Supports meritorious SC students studying in top institutions (IITs, IIMs, NITs, AIIMS, Law schools, etc.) by fully covering their education expenses so financial constraints do not hinder them.",
+    "official_website": "https://scholarships.gov.in",
+    "application_portal": "https://scholarships.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Undergraduate and Postgraduate courses in notified top institutions",
+      "course_type": "Full-time courses at IITs, IIMs, NITs, AIIMS, NLUs and other top-ranked institutions",
+      "year_of_study": "Any year",
+      "institution_type": "Notified top-class institutions only",
+      "income_limit": "Annual family income below ₹6,00,000",
+      "caste_category": ["SC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Indian citizen belonging to SC",
+      "academic_percentage": "As required by the top institution for admission",
+      "attendance_requirement": null,
+      "other_conditions": ["Limited slots (1000 slots per year for UG and PG combined)"]
+    },
+    "benefits": {
+      "tuition_fee_support": "Full tuition fee",
+      "hostel_fee_support": "Full hostel and mess charges",
+      "maintenance_allowance": "₹2,220 per month",
+      "book_allowance": "₹3,000 per annum",
+      "laptop_or_device_support": "One-time laptop grant of ₹45,000",
+      "travel_allowance": "Study tours, project work support",
+      "other_benefits": ["Coaching and remedial charges"]
+    },
+    "required_documents": ["Aadhaar Card", "SC Certificate", "Income Certificate", "Admission letter from top institution", "Bank passbook"],
+    "application": {
+      "application_mode": "Online via NSP",
+      "application_steps": ["Register on NSP", "Select Top Class Education for SC", "Upload admission proof and documents", "Submit"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Top Class Education SC", "IIT IIM NIT scholarship SC", "SC top institution scholarship"],
+      "target_students": ["SC students studying in top-tier institutions like IIT, IIM, NIT, AIIMS with income below ₹6 lakh"],
+      "eligibility_tags": ["national", "sc_only", "income_below_600000", "top_institution", "undergraduate", "postgraduate"],
+      "benefit_tags": ["tuition_fee_support", "hostel_support", "maintenance_allowance", "laptop_support"],
+      "searchable_text": "Top Class Education Scholarship for SC students studying in IITs, IIMs, NITs, AIIMS and other top institutions with family income below ₹6 lakh, covering full tuition, hostel, maintenance and a laptop grant."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-017",
+    "scheme_name": "DST-INSPIRE Scholarship for Higher Education (SHE)",
+    "scheme_type": "merit_scholarship",
+    "ministry": "Ministry of Science and Technology, Government of India",
+    "department": "Department of Science and Technology (DST)",
+    "state": "National",
+    "description": "INSPIRE-SHE scholarship attracts talented youth to study basic and natural sciences at undergraduate and postgraduate level to build a strong scientific pool in India.",
+    "official_website": "https://online-inspire.gov.in",
+    "application_portal": "https://online-inspire.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Undergraduate (1st to 3rd year) and Postgraduate in natural and basic sciences",
+      "course_type": "B.Sc., M.Sc., B.S.-M.S. dual degree in natural/basic science streams only",
+      "year_of_study": "1st year UG to final year PG",
+      "institution_type": "Recognized colleges and universities",
+      "income_limit": "No income limit",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Indian citizen",
+      "academic_percentage": "Must be in top 1% of Class 12 board exam OR a rank holder in national competitive exams (JEE/NEET/KVPY/Olympiads)",
+      "attendance_requirement": null,
+      "other_conditions": ["Applicable only to natural sciences (Physics, Chemistry, Biology, Math, Earth Sciences, etc.)"]
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹80,000 per year (₹6,667 per month) for up to 5 years",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": "Summer research attachment support",
+      "other_benefits": ["Summer research attachment at premier laboratories"]
+    },
+    "required_documents": ["Class 12 mark sheet", "Aadhaar Card", "Bank passbook", "Proof of top 1% or qualifying exam result"],
+    "application": {
+      "application_mode": "Online at online-inspire.gov.in",
+      "application_steps": ["Register on INSPIRE portal", "Upload Class 12 marks / qualifying exam result", "Attach institution enrollment certificate", "Submit application"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["INSPIRE scholarship", "DST INSPIRE SHE", "science scholarship India", "natural sciences scholarship"],
+      "target_students": ["Top-performing students in Class 12 pursuing basic/natural sciences at UG or PG level"],
+      "eligibility_tags": ["national", "no_income_limit", "all_categories", "science_stream", "merit_top_1_percent", "undergraduate", "postgraduate"],
+      "benefit_tags": ["maintenance_allowance", "research_attachment"],
+      "searchable_text": "DST INSPIRE SHE Scholarship provides ₹80,000 per year for up to 5 years to top 1% Class 12 students pursuing natural sciences at UG and PG level in India."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-018",
+    "scheme_name": "Kishore Vaigyanik Protsahan Yojana (KVPY) Fellowship",
+    "scheme_type": "research_fellowship",
+    "ministry": "Ministry of Science and Technology, Government of India",
+    "department": "Department of Science and Technology — administered by IISc Bangalore",
+    "state": "National",
+    "description": "KVPY is a national fellowship programme to encourage students with talent and aptitude for research to pursue careers in basic science. Fellows receive fellowship from UG to pre-PhD level.",
+    "official_website": "https://kvpy.iisc.ac.in",
+    "application_portal": "https://kvpy.iisc.ac.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Class 11, Class 12, or 1st year of UG in science",
+      "course_type": "Basic science streams (B.Sc./B.S./B.Math/B.Stat/Int. M.Sc./M.S.)",
+      "year_of_study": "Class 11 through 1st year BSc",
+      "institution_type": "Recognized schools and colleges",
+      "income_limit": "No income limit",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Indian citizen",
+      "academic_percentage": "Minimum 75% in Class 10 (65% for SC/ST/PwD); must clear KVPY aptitude test",
+      "attendance_requirement": null,
+      "other_conditions": ["Selection based on KVPY aptitude test and interview", "Must pursue basic sciences at recognized institutions"]
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹5,000/month for SX/SA stream (pre-final year); ₹7,000/month for SB stream; increases at PG level",
+      "book_allowance": "Annual contingency grant of ₹20,000 to ₹28,000",
+      "laptop_or_device_support": null,
+      "travel_allowance": "Research visits to national laboratories",
+      "other_benefits": ["Summer research camp at IITs and IISc"]
+    },
+    "required_documents": ["Class 10/12 mark sheet", "Aadhaar Card", "College enrollment certificate", "KVPY Admit Card"],
+    "application": {
+      "application_mode": "Online at kvpy.iisc.ac.in",
+      "application_steps": ["Apply online on KVPY portal", "Download admit card", "Appear for aptitude test", "Attend interview if shortlisted"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["KVPY fellowship", "Kishore Vaigyanik Protsahan", "science aptitude test", "IISc fellowship"],
+      "target_students": ["Talented Class 11/12 and 1st-year BSc students interested in research careers in basic sciences"],
+      "eligibility_tags": ["national", "no_income_limit", "all_categories", "science_stream", "aptitude_test", "class_11_12", "undergraduate"],
+      "benefit_tags": ["maintenance_allowance", "book_allowance", "research_attachment"],
+      "searchable_text": "KVPY Fellowship from IISc Bangalore for science students in Class 11, 12 or 1st year BSc interested in research, providing monthly stipend and annual contingency grant."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-019",
+    "scheme_name": "Pragati Scholarship Scheme for Girl Students (Technical Education)",
+    "scheme_type": "merit_cum_means_scholarship",
+    "ministry": "Ministry of Education, Government of India",
+    "department": "AICTE (All India Council for Technical Education)",
+    "state": "National",
+    "description": "Pragati scholarship is for girl students who have secured admission to technical education (Degree and Diploma) at AICTE-approved institutions to advance and promote girls in technical education.",
+    "official_website": "https://www.aicte-india.org/schemes/students-development-schemes/PragatiScholarship",
+    "application_portal": "https://www.aicte-pragati-saksham-gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "1st year of Degree or Diploma technical programme OR 2nd year lateral entry",
+      "course_type": "AICTE-approved Degree (BE/BTech) or Diploma engineering/pharmacy programmes",
+      "year_of_study": "1st year (or 2nd year for lateral entry)",
+      "institution_type": "AICTE-approved institutions only",
+      "income_limit": "Annual family income below ₹8,00,000",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "female",
+      "disability": null,
+      "domicile": "Indian citizen",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": ["Only one scholarship per family (maximum two daughters)", "Not eligible for students already receiving any other central scholarship"]
+    },
+    "benefits": {
+      "tuition_fee_support": "Tuition fee as charged by institution or ₹30,000 per year, whichever is less",
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹2,000 per month for 10 months per year",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "10+2/Class 12 mark sheet", "Income Certificate", "Admission letter", "Bank passbook"],
+    "application": {
+      "application_mode": "Online via AICTE Pragati-Saksham portal",
+      "application_steps": ["Register on AICTE portal", "Fill application form", "Upload required documents", "Submit for institution verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Pragati scholarship", "AICTE girls scholarship", "female engineering scholarship", "technical education girls"],
+      "target_students": ["Girl students in AICTE-approved engineering or diploma programmes with family income below ₹8 lakh"],
+      "eligibility_tags": ["national", "income_below_800000", "female_only", "technical_education", "undergraduate"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance"],
+      "searchable_text": "Pragati Scholarship for girl students in AICTE-approved degree and diploma technical programmes with family income below ₹8 lakh, providing tuition fee and ₹2,000 monthly allowance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-020",
+    "scheme_name": "Saksham Scholarship for Differently-Abled Students (Technical Education)",
+    "scheme_type": "disability_scholarship",
+    "ministry": "Ministry of Education, Government of India",
+    "department": "AICTE (All India Council for Technical Education)",
+    "state": "National",
+    "description": "Saksham is AICTE's scholarship programme to encourage differently-abled students to pursue technical education at degree and diploma level.",
+    "official_website": "https://www.aicte-india.org/schemes/students-development-schemes/SakshamScholarship",
+    "application_portal": "https://www.aicte-pragati-saksham-gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "1st year of Degree or Diploma technical programme",
+      "course_type": "AICTE-approved engineering, technology, pharmacy or management programmes",
+      "year_of_study": "1st year (or 2nd year for lateral entry)",
+      "institution_type": "AICTE-approved institutions",
+      "income_limit": "Annual family income below ₹8,00,000",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": "Disability certificate with 40% or more disability from competent authority required",
+      "domicile": "Indian citizen",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": ["Must possess valid disability certificate of 40%+ disability"]
+    },
+    "benefits": {
+      "tuition_fee_support": "Tuition fee up to ₹30,000 per year",
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹2,000 per month for 10 months",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Disability Certificate (40%+)", "Income Certificate", "Admission letter", "Bank passbook"],
+    "application": {
+      "application_mode": "Online via AICTE Pragati-Saksham portal",
+      "application_steps": ["Register on AICTE portal", "Select Saksham scheme", "Upload disability certificate and other documents", "Submit"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Saksham scholarship", "AICTE disability scholarship", "differently abled engineering scholarship", "PwD technical scholarship"],
+      "target_students": ["Differently-abled students (40%+ disability) in AICTE-approved technical programmes with income below ₹8 lakh"],
+      "eligibility_tags": ["national", "income_below_800000", "disability_required", "technical_education", "undergraduate"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance"],
+      "searchable_text": "Saksham AICTE Scholarship for differently-abled students with 40%+ disability pursuing engineering and technical degree or diploma programmes with family income below ₹8 lakh."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-021",
+    "scheme_name": "Ishan Uday Special Scholarship for North-East Region",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": "Ministry of Education, Government of India",
+    "department": "University Grants Commission (UGC)",
+    "state": "National",
+    "description": "Special scholarship scheme exclusively for students from North-Eastern states pursuing general degree courses at colleges and universities outside the North-East region.",
+    "official_website": "https://ishan.ugc.ac.in",
+    "application_portal": "https://ishan.ugc.ac.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Undergraduate and Postgraduate degree courses",
+      "course_type": "General degree (not technical) courses at colleges and universities",
+      "year_of_study": "1st year UG",
+      "institution_type": "Recognized colleges and universities outside North-East India",
+      "income_limit": "Annual family income below ₹4,50,000",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Must be a domicile of Arunachal Pradesh, Assam, Manipur, Meghalaya, Mizoram, Nagaland, Sikkim or Tripura",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": ["Studying in a college/university outside the North-East region", "Must have passed Class 12 from North-East state"]
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹54,000 per annum for general stream; ₹78,000 for technical/medical",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Domicile certificate of NE state", "Income Certificate", "Class 12 mark sheet", "Bank passbook"],
+    "application": {
+      "application_mode": "Online at ishan.ugc.ac.in",
+      "application_steps": ["Register on Ishan Uday portal", "Fill application", "Upload domicile and income proof", "Submit"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Ishan Uday scholarship", "North East scholarship", "NE region scholarship UGC", "Assam Meghalaya scholarship outside"],
+      "target_students": ["Students from North-Eastern states pursuing UG/PG outside the NE region with income below ₹4.5 lakh"],
+      "eligibility_tags": ["national", "income_below_450000", "north_east_domicile", "undergraduate", "postgraduate"],
+      "benefit_tags": ["maintenance_allowance"],
+      "searchable_text": "Ishan Uday UGC Scholarship for students from North-Eastern states studying outside the NE region with family income below ₹4.5 lakh providing ₹54,000 to ₹78,000 per year."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-022",
+    "scheme_name": "Maulana Azad National Fellowship (MANF)",
+    "scheme_type": "research_fellowship",
+    "ministry": "Ministry of Minority Affairs, Government of India",
+    "department": "Ministry of Minority Affairs",
+    "state": "National",
+    "description": "Five-year fellowship for students belonging to minority communities to pursue M.Phil and Ph.D. degrees in universities and institutions recognized by UGC.",
+    "official_website": "https://manf.ugc.ac.in",
+    "application_portal": "https://manf.ugc.ac.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "M.Phil and Ph.D. (Doctoral) programmes",
+      "course_type": "Research degrees — M.Phil and Ph.D.",
+      "year_of_study": "1st year of M.Phil or Ph.D.",
+      "institution_type": "UGC-recognized universities and institutions",
+      "income_limit": "Annual family income below ₹6,00,000",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Indian citizen belonging to a notified minority community (Muslim, Christian, Sikh, Buddhist, Jain, Parsi)",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": ["Must have been selected for M.Phil/Ph.D. at a recognized university", "Limited 756 slots per year across communities"]
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": "HRA as applicable",
+      "maintenance_allowance": "JRF rate ₹31,000/month for first 2 years; SRF rate ₹35,000/month for next 3 years",
+      "book_allowance": "Contingency grant ₹10,000/year for science; ₹8,000/year for humanities",
+      "laptop_or_device_support": null,
+      "travel_allowance": "Field work support",
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Minority community certificate", "Income Certificate", "Ph.D./M.Phil admission letter", "UGC NET/GATE scorecard if available"],
+    "application": {
+      "application_mode": "Online at MANF UGC portal",
+      "application_steps": ["Register on MANF portal", "Fill fellowship application", "Upload admission and community certificate", "Submit"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Maulana Azad Fellowship", "MANF", "minority PhD fellowship", "Muslim Christian Sikh research fellowship"],
+      "target_students": ["Minority community students pursuing M.Phil or Ph.D. with income below ₹6 lakh"],
+      "eligibility_tags": ["national", "income_below_600000", "minority_community", "doctoral", "research"],
+      "benefit_tags": ["maintenance_allowance", "book_allowance"],
+      "searchable_text": "Maulana Azad National Fellowship for minority community students pursuing M.Phil and Ph.D. degrees providing ₹31,000 to ₹35,000 monthly stipend for 5 years."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-023",
+    "scheme_name": "Begum Hazrat Mahal National Scholarship",
+    "scheme_type": "merit_cum_means_scholarship",
+    "ministry": "Ministry of Minority Affairs, Government of India",
+    "department": "Maulana Azad Education Foundation (MAEF)",
+    "state": "National",
+    "description": "Scholarship for meritorious girl students belonging to minority communities who have secured 50% or more marks in Class 10 and are continuing their education in Class 11 and 12.",
+    "official_website": "https://maef.nic.in",
+    "application_portal": "https://maef.nic.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Class 11 and Class 12",
+      "course_type": "Secondary and higher secondary education",
+      "year_of_study": "Class 11 or Class 12",
+      "institution_type": "Recognized schools and colleges",
+      "income_limit": "Annual family income below ₹2,00,000",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "female",
+      "disability": null,
+      "domicile": "Indian citizen belonging to minority community",
+      "academic_percentage": "Minimum 50% marks in Class 10 examination",
+      "attendance_requirement": null,
+      "other_conditions": ["Only for girl students from minority communities (Muslim, Christian, Sikh, Buddhist, Jain, Parsi)", "Must not be receiving any other scholarship"]
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹5,000 for Class 11; ₹6,000 for Class 12",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Minority community certificate", "Class 10 mark sheet", "Income Certificate", "Bank passbook"],
+    "application": {
+      "application_mode": "Online at maef.nic.in",
+      "application_steps": ["Register on MAEF portal", "Fill application", "Upload documents", "Submit for verification"],
+      "processing_time": null,
+      "renewal_required": false
+    },
+    "ai_metadata": {
+      "keywords": ["Begum Hazrat Mahal scholarship", "MAEF minority girl scholarship", "Muslim girl scholarship Class 11 12"],
+      "target_students": ["Minority community girl students in Class 11 and 12 with minimum 50% in Class 10 and income below ₹2 lakh"],
+      "eligibility_tags": ["national", "income_below_200000", "minority_community", "female_only", "class_11_12", "min_50_percent"],
+      "benefit_tags": ["maintenance_allowance"],
+      "searchable_text": "Begum Hazrat Mahal Scholarship for minority community girl students in Class 11 and 12 with minimum 50% in Class 10 and family income below ₹2 lakh."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-024",
+    "scheme_name": "Post Matric Scholarship for Minorities (National)",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": "Ministry of Minority Affairs, Government of India",
+    "department": "Ministry of Minority Affairs",
+    "state": "National",
+    "description": "Provides financial assistance to minority community students pursuing post-matric studies to enable them to complete education without financial hardship.",
+    "official_website": "https://scholarships.gov.in",
+    "application_portal": "https://scholarships.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Post-Matric: Class 11 and above through Doctoral level",
+      "course_type": "All post-matric courses in recognized institutions",
+      "year_of_study": "Any year",
+      "institution_type": "Government and Government-aided and recognized institutions",
+      "income_limit": "Annual family income below ₹2,00,000",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Indian citizen belonging to minority community (Muslim, Christian, Sikh, Buddhist, Jain, Parsi)",
+      "academic_percentage": "Minimum 50% marks in previous examination",
+      "attendance_requirement": null,
+      "other_conditions": ["Only for students belonging to notified minority communities", "Not eligible for students availing other scholarships"]
+    },
+    "benefits": {
+      "tuition_fee_support": "Admission/tuition fee as per actuals subject to ceiling",
+      "hostel_fee_support": "Maintenance allowance for hostellers",
+      "maintenance_allowance": "₹600 to ₹1,200 per month depending on course",
+      "book_allowance": "Book grant ₹1,000 to ₹3,000",
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Minority community certificate", "Income Certificate", "Previous mark sheet", "Bank passbook"],
+    "application": {
+      "application_mode": "Online via National Scholarship Portal",
+      "application_steps": ["Register on NSP", "Select Minority Post Matric scheme", "Fill and upload documents", "Submit"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Minority Post Matric Scholarship", "Muslim scholarship", "NSP minority", "Christian Sikh scholarship"],
+      "target_students": ["Minority community students from Class 11 to Doctoral level with income below ₹2 lakh"],
+      "eligibility_tags": ["national", "income_below_200000", "minority_community", "post_matric", "min_50_percent"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "book_allowance"],
+      "searchable_text": "National Post Matric Scholarship for students from minority communities pursuing post-matric education with family income below ₹2 lakh and minimum 50% in previous exam."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-025",
+    "scheme_name": "Pre Matric Scholarship for Minorities (National)",
+    "scheme_type": "pre_matric_scholarship",
+    "ministry": "Ministry of Minority Affairs, Government of India",
+    "department": "Ministry of Minority Affairs",
+    "state": "National",
+    "description": "Financial assistance to minority students in Classes 1 to 10 to prevent early dropout and promote basic education among minority communities.",
+    "official_website": "https://scholarships.gov.in",
+    "application_portal": "https://scholarships.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Class 1 to Class 10",
+      "course_type": "Primary and secondary school education",
+      "year_of_study": "Any class from 1 to 10",
+      "institution_type": "Government and Government-aided schools",
+      "income_limit": "Annual family income below ₹1,00,000",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Indian citizen from minority community",
+      "academic_percentage": "Minimum 50% attendance in previous year",
+      "attendance_requirement": "Minimum 50% attendance",
+      "other_conditions": ["Minority community certificate required"]
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹100/month for Class 1-5 day scholar; ₹600/month for hosteller",
+      "book_allowance": "₹750 per annum",
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Minority community certificate", "Income Certificate", "School certificate"],
+    "application": {
+      "application_mode": "Online via National Scholarship Portal",
+      "application_steps": ["Register on NSP", "Select Minority Pre Matric scheme", "Upload documents", "Submit"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Minority Pre Matric scholarship", "Class 1-10 minority scholarship", "NSP minority primary"],
+      "target_students": ["Minority community students in Class 1 to 10 with family income below ₹1 lakh"],
+      "eligibility_tags": ["national", "income_below_100000", "minority_community", "class_1_10"],
+      "benefit_tags": ["maintenance_allowance", "book_allowance"],
+      "searchable_text": "National Pre Matric Scholarship for minority community students in Class 1 to 10 with income below ₹1 lakh providing monthly allowance and book grant."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-026",
+    "scheme_name": "Indira Gandhi Scholarship for Single Girl Child (PG)",
+    "scheme_type": "merit_scholarship",
+    "ministry": "Ministry of Education, Government of India",
+    "department": "University Grants Commission (UGC)",
+    "state": "National",
+    "description": "UGC scholarship for the single girl child of a family pursuing a full-time PG degree course, to promote higher education and recognize single-child girl families.",
+    "official_website": "https://www.ugc.ac.in/schemeofugc",
+    "application_portal": "https://scholarships.ugc.ac.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Postgraduate (MA/M.Sc./M.Com and similar 2-year PG programmes)",
+      "course_type": "Full-time PG degree courses (excluding M.Phil, Ph.D, M.Tech, MBA)",
+      "year_of_study": "1st year of PG programme",
+      "institution_type": "UGC-recognized universities and colleges",
+      "income_limit": "No income limit",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "female",
+      "disability": null,
+      "domicile": "Indian citizen",
+      "academic_percentage": "Minimum 55% at UG level (50% for SC/ST/PwD)",
+      "attendance_requirement": null,
+      "other_conditions": ["Applicant must be the only child in the family (single girl child)", "Age below 30 years at the time of admission to PG"]
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹36,200 per year (₹3,100 per month) for 2 years",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Affidavit/certificate confirming single girl child status", "UG mark sheet", "Admission letter to PG", "Bank passbook"],
+    "application": {
+      "application_mode": "Online via UGC scholarships portal",
+      "application_steps": ["Apply on UGC scholarship portal", "Upload single girl child affidavit", "Upload UG mark sheet and PG admission proof", "Submit"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Indira Gandhi Single Girl Child scholarship", "UGC single girl scholarship", "PG girl scholarship single child"],
+      "target_students": ["Single girl child pursuing full-time PG degree with minimum 55% at UG level"],
+      "eligibility_tags": ["national", "no_income_limit", "female_only", "single_girl_child", "postgraduate", "min_55_percent"],
+      "benefit_tags": ["maintenance_allowance"],
+      "searchable_text": "Indira Gandhi UGC Scholarship for single girl child pursuing full-time PG degree providing ₹36,200 per year for 2 years regardless of income."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-027",
+    "scheme_name": "National Scholarship for Persons with Disabilities",
+    "scheme_type": "disability_scholarship",
+    "ministry": "Ministry of Social Justice and Empowerment, Government of India",
+    "department": "Department of Empowerment of Persons with Disabilities (DEPwD)",
+    "state": "National",
+    "description": "Financial support to students with disabilities pursuing pre-matric, post-matric and professional/technical courses to help them complete their education.",
+    "official_website": "https://scholarships.gov.in",
+    "application_portal": "https://scholarships.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Class 9 to Class 12 (pre-matric component) and Post-Matric including professional courses",
+      "course_type": "All recognized courses from Class 9 to Doctoral level",
+      "year_of_study": "Any",
+      "institution_type": "Government and recognized private institutions",
+      "income_limit": "Annual family income below ₹2,50,000",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": "Must have at least 40% disability certified by a government medical authority",
+      "domicile": "Indian citizen",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": ["Must possess valid disability certificate of 40%+"]
+    },
+    "benefits": {
+      "tuition_fee_support": "Tuition fee as per actuals",
+      "hostel_fee_support": "Hostel charges for hostellers",
+      "maintenance_allowance": "₹500 to ₹2,000 per month depending on course level",
+      "book_allowance": "Book and stationery allowance",
+      "laptop_or_device_support": null,
+      "travel_allowance": "Escort allowance if required",
+      "other_benefits": ["Reader allowance for visually impaired students"]
+    },
+    "required_documents": ["Aadhaar Card", "Disability Certificate (40%+ from govt medical authority)", "Income Certificate", "Mark sheet", "Bank passbook"],
+    "application": {
+      "application_mode": "Online via National Scholarship Portal",
+      "application_steps": ["Register on NSP", "Select PwD scholarship scheme", "Upload disability certificate", "Submit for verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Disability scholarship India", "PwD scholarship NSP", "DEPwD scholarship", "differently abled student scholarship"],
+      "target_students": ["Students with 40%+ disability from Class 9 to Doctoral level with family income below ₹2.5 lakh"],
+      "eligibility_tags": ["national", "income_below_250000", "disability_required", "all_levels"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "hostel_support"],
+      "searchable_text": "National Scholarship for Persons with Disabilities for students with 40%+ disability studying from Class 9 to Doctoral level with income below ₹2.5 lakh covering tuition, maintenance and escort allowance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-028",
+    "scheme_name": "National Talent Search Examination (NTSE) Scholarship",
+    "scheme_type": "merit_scholarship",
+    "ministry": "Ministry of Education, Government of India",
+    "department": "National Council of Educational Research and Training (NCERT)",
+    "state": "National",
+    "description": "NTSE is a national-level scholarship programme to identify and support talented students of Class 10 through a two-stage selection process, supporting them through secondary and higher education.",
+    "official_website": "https://ncert.nic.in/national-talent-examination.php",
+    "application_portal": "https://ncert.nic.in/national-talent-examination.php",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Class 10 (at the time of examination); scholarship continues through Class 11, 12 and UG",
+      "course_type": "General secondary and higher education",
+      "year_of_study": "Class 10 for exam; scholarship through UG",
+      "institution_type": "Government and recognized schools",
+      "income_limit": "No income limit",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Indian citizen",
+      "academic_percentage": "Minimum 55% in Class 9 (50% for SC/ST/PwD); must clear Stage 1 and Stage 2 NTSE exam",
+      "attendance_requirement": null,
+      "other_conditions": ["Two-stage selection: Stage 1 (state level) and Stage 2 (national level)", "Approximately 2,000 scholarships awarded nationally per year"]
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹1,250/month for Class 11-12; ₹2,000/month for UG and PG; ₹2,000/month for Doctoral and above",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Class 9 mark sheet", "Class 10 roll number", "Aadhaar Card", "NTSE Stage 1 result"],
+    "application": {
+      "application_mode": "Application through state education department for Stage 1; Stage 2 centrally administered by NCERT",
+      "application_steps": ["Apply for Stage 1 exam through state education department", "Appear for State-level exam", "If qualified, appear for Stage 2 national exam", "Merit list published by NCERT"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["NTSE scholarship", "National Talent Search", "NCERT scholarship Class 10", "talent search exam scholarship"],
+      "target_students": ["Talented Class 10 students aspiring to pursue higher education through competitive talent search examination"],
+      "eligibility_tags": ["national", "no_income_limit", "all_categories", "class_10", "aptitude_test"],
+      "benefit_tags": ["maintenance_allowance"],
+      "searchable_text": "NTSE National Talent Search Examination scholarship by NCERT for talented Class 10 students selected through two-stage exam, providing ₹1,250 to ₹2,000 monthly stipend through higher education."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-029",
+    "scheme_name": "National Overseas Scholarship for SC Students",
+    "scheme_type": "overseas_scholarship",
+    "ministry": "Ministry of Social Justice and Empowerment, Government of India",
+    "department": "Department of Social Justice and Empowerment",
+    "state": "National",
+    "description": "Provides financial assistance to SC students who wish to pursue Masters degree and Ph.D. from abroad by covering tuition fees, maintenance, visa and other related charges.",
+    "official_website": "https://nosmsje.gov.in",
+    "application_portal": "https://nosmsje.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Masters and Ph.D. programmes abroad",
+      "course_type": "Natural sciences, engineering, technology, social sciences, humanities at overseas universities",
+      "year_of_study": "1st year of overseas programme",
+      "institution_type": "Reputed overseas universities and institutions",
+      "income_limit": "Annual family income below ₹6,00,000",
+      "caste_category": ["SC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Indian citizen belonging to SC",
+      "academic_percentage": "Minimum 60% at qualifying degree level",
+      "attendance_requirement": null,
+      "other_conditions": ["Age not above 35 years", "Must have secured admission to a reputed overseas university", "30 slots per year"]
+    },
+    "benefits": {
+      "tuition_fee_support": "Full tuition fee as charged by the overseas institution",
+      "hostel_fee_support": "Living allowance: USD 15,400 per year (USA/Canada) or equivalent",
+      "maintenance_allowance": "Maintenance included in living allowance",
+      "book_allowance": "Book and contingency grant",
+      "laptop_or_device_support": null,
+      "travel_allowance": "Economy class return airfare",
+      "other_benefits": ["Medical insurance", "Visa charges"]
+    },
+    "required_documents": ["Aadhaar Card", "SC Certificate", "Income Certificate", "Offer letter from overseas university", "Academic certificates", "Bank passbook"],
+    "application": {
+      "application_mode": "Online at nosmsje.gov.in",
+      "application_steps": ["Apply on NOS portal", "Upload overseas admission offer letter", "Upload academic and income documents", "Submit"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["National Overseas Scholarship SC", "abroad scholarship SC students", "overseas PhD scholarship India SC"],
+      "target_students": ["SC students with minimum 60% who have received admission to overseas universities for Masters or PhD"],
+      "eligibility_tags": ["national", "income_below_600000", "sc_only", "postgraduate", "doctoral", "overseas"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "travel_allowance"],
+      "searchable_text": "National Overseas Scholarship for SC students pursuing Masters or PhD abroad covering full tuition fee, living allowance, return airfare and medical insurance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-030",
+    "scheme_name": "National Scheme of Incentive to Girls for Secondary Education",
+    "scheme_type": "girl_education_scheme",
+    "ministry": "Ministry of Education, Government of India",
+    "department": "Department of School Education and Literacy",
+    "state": "National",
+    "description": "Incentivizes girl students belonging to SC/ST communities and girls who pass Class 8 from Kasturba Gandhi Balika Vidyalayas to enrol in secondary schools and continue up to Class 10.",
+    "official_website": "https://dsel.education.gov.in",
+    "application_portal": "https://scholarships.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Class 9 (upon enrolment); amount deposited and withdrawn after passing Class 10",
+      "course_type": "Secondary school education",
+      "year_of_study": "Enrolment in Class 9",
+      "institution_type": "Government and Government-aided schools",
+      "income_limit": "No income limit for SC/ST girls; means-tested for others",
+      "caste_category": ["SC", "ST"],
+      "gender": "female",
+      "disability": null,
+      "domicile": "Indian citizen",
+      "academic_percentage": "Must have passed Class 8",
+      "attendance_requirement": null,
+      "other_conditions": ["Amount deposited as fixed deposit in name of student — withdrawable only after passing Class 10 at age 18"]
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": null,
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": ["₹3,000 deposited as fixed deposit in student's name; withdrawable with interest after passing Class 10 at age 18+"]
+    },
+    "required_documents": ["Aadhaar Card", "SC/ST Certificate", "Class 8 pass certificate", "Bank passbook"],
+    "application": {
+      "application_mode": "Through school/district education office",
+      "application_steps": ["Enrol in Class 9", "School submits details to district education office", "Fixed deposit created in student's name"],
+      "processing_time": null,
+      "renewal_required": false
+    },
+    "ai_metadata": {
+      "keywords": ["Girls secondary education incentive", "SC ST girl Class 9 scholarship", "NSIGSE", "incentive girls Class 10"],
+      "target_students": ["SC and ST girl students enrolling in Class 9 in government schools"],
+      "eligibility_tags": ["national", "sc_st_only", "female_only", "class_9_10"],
+      "benefit_tags": ["fixed_deposit_incentive"],
+      "searchable_text": "National Scheme of Incentive to Girls for Secondary Education provides a ₹3,000 fixed deposit to SC and ST girl students enrolling in Class 9, withdrawable after passing Class 10."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-MH-EDU-001",
+    "scheme_name": "Maharashtra Post-Matric Scholarship for SC/ST Students",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": null,
+    "department": "Social Justice and Special Assistance Department, Government of Maharashtra",
+    "state": "Maharashtra",
+    "description": "Maharashtra state scheme providing post-matric scholarships to SC and ST students to support their education from Class 11 through to professional courses.",
+    "official_website": "https://mahadbt.maharashtra.gov.in",
+    "application_portal": "https://mahadbt.maharashtra.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Post-Matric: Class 11 through Professional and Doctoral courses",
+      "course_type": "All post-matric courses",
+      "year_of_study": "Any year",
+      "institution_type": "Government and recognized institutions in Maharashtra",
+      "income_limit": "No income limit for SC, ST; annual income below ₹2,50,000 for SBC/VJ/NT/OBC",
+      "caste_category": ["SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Maharashtra",
+      "academic_percentage": null,
+      "attendance_requirement": "Minimum 75% attendance",
+      "other_conditions": ["Must apply through the MahaDBT portal"]
+    },
+    "benefits": {
+      "tuition_fee_support": "Full tuition fee reimbursement",
+      "hostel_fee_support": "Hostel allowance for outstation students",
+      "maintenance_allowance": "₹300 to ₹1,000 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Caste Certificate", "Domicile Certificate", "Income Certificate", "Bank passbook", "Previous mark sheet"],
+    "application": {
+      "application_mode": "Online via MahaDBT portal (mahadbt.maharashtra.gov.in)",
+      "application_steps": ["Register on MahaDBT", "Fill the scholarship application", "Upload documents", "Submit for institution and district verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Maharashtra SC ST scholarship", "MahaDBT scholarship", "Maharashtra post matric scholarship"],
+      "target_students": ["SC and ST students in Maharashtra pursuing post-matric education"],
+      "eligibility_tags": ["maharashtra_domicile", "sc_st", "post_matric", "no_income_limit_sc_st"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "hostel_support"],
+      "searchable_text": "Maharashtra Post-Matric Scholarship via MahaDBT portal for SC and ST students covering full tuition fee, hostel charges and monthly maintenance allowance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-MH-EDU-002",
+    "scheme_name": "Rajarshi Chhatrapati Shahu Maharaj Scholarship (Maharashtra)",
+    "scheme_type": "merit_cum_means_scholarship",
+    "ministry": null,
+    "department": "Higher and Technical Education Department, Government of Maharashtra",
+    "state": "Maharashtra",
+    "description": "Scholarship for economically weaker students pursuing higher and professional education in Maharashtra, named after the reformist ruler Chhatrapati Shahu Maharaj.",
+    "official_website": "https://mahadbt.maharashtra.gov.in",
+    "application_portal": "https://mahadbt.maharashtra.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Undergraduate and Professional degree courses",
+      "course_type": "Degree, engineering, medical and other professional courses",
+      "year_of_study": "Any year",
+      "institution_type": "Government-aided and recognized institutions in Maharashtra",
+      "income_limit": "Annual family income below ₹8,00,000",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Domicile of Maharashtra",
+      "academic_percentage": "Minimum 50% in previous examination",
+      "attendance_requirement": null,
+      "other_conditions": []
+    },
+    "benefits": {
+      "tuition_fee_support": "Tuition fee reimbursement",
+      "hostel_fee_support": null,
+      "maintenance_allowance": null,
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Domicile Certificate", "Income Certificate", "Previous mark sheet", "Bank passbook"],
+    "application": {
+      "application_mode": "Online via MahaDBT portal",
+      "application_steps": ["Register on MahaDBT", "Select Shahu Maharaj scheme", "Fill and upload documents", "Submit"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Chhatrapati Shahu Maharaj scholarship", "Maharashtra higher education scholarship", "MahaDBT merit scholarship"],
+      "target_students": ["Students in Maharashtra pursuing UG and professional courses with income below ₹8 lakh"],
+      "eligibility_tags": ["maharashtra_domicile", "all_categories", "income_below_800000", "undergraduate", "professional"],
+      "benefit_tags": ["tuition_fee_support"],
+      "searchable_text": "Rajarshi Chhatrapati Shahu Maharaj Scholarship in Maharashtra for UG and professional course students with family income below ₹8 lakh and minimum 50% in previous exam."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-MH-EDU-003",
+    "scheme_name": "Maharashtra Swadhar Yojana",
+    "scheme_type": "state_scheme",
+    "ministry": null,
+    "department": "Social Justice and Special Assistance Department, Government of Maharashtra",
+    "state": "Maharashtra",
+    "description": "Provides financial assistance to SC and Nav-Buddha students staying outside their home town to pursue post-10th education, covering boarding, lodging and other expenses.",
+    "official_website": "https://sjsa.maharashtra.gov.in",
+    "application_portal": "https://mahadbt.maharashtra.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Class 11, Diploma, ITI, Undergraduate and Postgraduate",
+      "course_type": "Any recognized course after Class 10",
+      "year_of_study": "Any year",
+      "institution_type": "Government-aided and recognized institutions in Maharashtra",
+      "income_limit": "Annual family income below ₹2,50,000",
+      "caste_category": ["SC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Maharashtra belonging to SC or Nav-Buddha community",
+      "academic_percentage": "Minimum 60% in previous examination",
+      "attendance_requirement": null,
+      "other_conditions": ["Applicable to students staying outside their home district", "Must not be staying in a government hostel"]
+    },
+    "benefits": {
+      "tuition_fee_support": "Tuition fee up to ₹5,000",
+      "hostel_fee_support": "Boarding and lodging up to ₹28,000 per year in cities; ₹20,000 in other areas",
+      "maintenance_allowance": "₹6,000 per year for other miscellaneous expenses",
+      "book_allowance": "₹5,000 per year",
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "SC/Nav-Buddha Certificate", "Income Certificate", "Rent/lease agreement for accommodation", "Previous mark sheet"],
+    "application": {
+      "application_mode": "Online via MahaDBT portal",
+      "application_steps": ["Register on MahaDBT", "Apply for Swadhar Yojana", "Upload domicile and income documents", "Submit"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Swadhar Yojana Maharashtra", "SC student boarding allowance Maharashtra", "out-of-home scholarship Maharashtra SC"],
+      "target_students": ["SC and Nav-Buddha students in Maharashtra living outside home district for education with income below ₹2.5 lakh"],
+      "eligibility_tags": ["maharashtra_domicile", "sc_only", "income_below_250000", "post_matric", "min_60_percent"],
+      "benefit_tags": ["tuition_fee_support", "hostel_support", "book_allowance"],
+      "searchable_text": "Maharashtra Swadhar Yojana for SC and Nav-Buddha students living away from home for studies, covering boarding, lodging, tuition fee and book allowance up to ₹44,000 per year."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-TN-EDU-001",
+    "scheme_name": "Tamil Nadu Post-Matric Scholarship for SC/SCA Students",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": null,
+    "department": "Adi Dravidar and Tribal Welfare Department, Government of Tamil Nadu",
+    "state": "Tamil Nadu",
+    "description": "Tamil Nadu government's scholarship for SC and SCA students pursuing post-matric education covering tuition fee, maintenance and examination fee.",
+    "official_website": "https://adidravidarwelfare.tn.gov.in",
+    "application_portal": "https://adidravidarwelfare.tn.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Post-Matric: Class 11 through Doctoral level",
+      "course_type": "All post-matric courses",
+      "year_of_study": "Any year",
+      "institution_type": "Government and recognized institutions in Tamil Nadu",
+      "income_limit": "No income limit for SC students",
+      "caste_category": ["SC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Tamil Nadu",
+      "academic_percentage": null,
+      "attendance_requirement": "Minimum 75% attendance",
+      "other_conditions": []
+    },
+    "benefits": {
+      "tuition_fee_support": "Full tuition fee reimbursement",
+      "hostel_fee_support": "Hostel and boarding charges",
+      "maintenance_allowance": "₹300 to ₹800 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": ["Examination fee reimbursement"]
+    },
+    "required_documents": ["Aadhaar Card", "Community Certificate", "Income Certificate", "Bank passbook", "Previous mark sheet"],
+    "application": {
+      "application_mode": "Online through Adi Dravidar Welfare portal",
+      "application_steps": ["Register on welfare portal", "Fill scholarship form", "Upload documents", "Submit for verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Tamil Nadu SC scholarship", "Adi Dravidar scholarship TN", "TN post matric SC SCA"],
+      "target_students": ["SC students in Tamil Nadu pursuing post-matric education"],
+      "eligibility_tags": ["tamil_nadu_domicile", "sc_only", "post_matric", "no_income_limit"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "hostel_support"],
+      "searchable_text": "Tamil Nadu Post-Matric Scholarship for SC and SCA students covering full tuition fee, hostel charges and maintenance allowance with no income limit."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-TN-EDU-002",
+    "scheme_name": "Tamil Nadu First Graduate Scholarship",
+    "scheme_type": "merit_cum_means_scholarship",
+    "ministry": null,
+    "department": "Higher Education Department, Government of Tamil Nadu",
+    "state": "Tamil Nadu",
+    "description": "Scholarship for students who are the first graduates in their family to pursue higher education, to encourage first-generation college-going students from disadvantaged backgrounds.",
+    "official_website": "https://www.tn.gov.in",
+    "application_portal": "https://www.tn.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Undergraduate degree courses",
+      "course_type": "General and professional degree courses",
+      "year_of_study": "1st year",
+      "institution_type": "Government and Government-aided colleges in Tamil Nadu",
+      "income_limit": "Annual family income below ₹1,00,000",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Tamil Nadu",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": ["Student must be the first graduate in the family — neither parent should have a degree"]
+    },
+    "benefits": {
+      "tuition_fee_support": "Tuition fee waiver",
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹1,000 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Affidavit confirming first graduate status", "Income Certificate", "Admission letter", "Bank passbook"],
+    "application": {
+      "application_mode": "Through college/institution",
+      "application_steps": ["Apply through college office", "Submit first graduate affidavit and income proof", "College forwards to education department"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Tamil Nadu first graduate scholarship", "first generation college student TN", "TN higher education scholarship low income"],
+      "target_students": ["First-generation college-going students in Tamil Nadu from families with income below ₹1 lakh"],
+      "eligibility_tags": ["tamil_nadu_domicile", "income_below_100000", "first_graduate", "undergraduate"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance"],
+      "searchable_text": "Tamil Nadu First Graduate Scholarship for students who are the first graduates in their family pursuing UG degree, with family income below ₹1 lakh."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-TN-EDU-003",
+    "scheme_name": "Tamil Nadu Chief Minister's Merit Scholarship",
+    "scheme_type": "merit_scholarship",
+    "ministry": null,
+    "department": "School Education Department, Government of Tamil Nadu",
+    "state": "Tamil Nadu",
+    "description": "Merit scholarship for students who score high marks in Class 10 and Class 12 board examinations in Tamil Nadu, rewarding academic excellence.",
+    "official_website": "https://www.tnscholarship.tn.gov.in",
+    "application_portal": "https://www.tnscholarship.tn.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Students who have passed Class 10 or Class 12 from Tamil Nadu state board",
+      "course_type": "General higher secondary or higher education",
+      "year_of_study": "Upon passing Class 10 or 12",
+      "institution_type": "Government schools and colleges",
+      "income_limit": "No income limit",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Student studying in Tamil Nadu state board school",
+      "academic_percentage": "Minimum 90% in Class 10 or Class 12 Tamil Nadu board examination",
+      "attendance_requirement": null,
+      "other_conditions": ["Top scorers in state board receive priority"]
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹5,000 to ₹10,000 as one-time merit award",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": ["Merit certificate from CM"]
+    },
+    "required_documents": ["Class 10/12 mark sheet", "Aadhaar Card", "School bonafide certificate", "Bank passbook"],
+    "application": {
+      "application_mode": "Through school",
+      "application_steps": ["School nominates top scorers", "Details submitted to education department", "Scholarship disbursed to bank account"],
+      "processing_time": null,
+      "renewal_required": false
+    },
+    "ai_metadata": {
+      "keywords": ["Tamil Nadu CM merit scholarship", "TN board topper scholarship", "Class 10 12 merit award Tamil Nadu"],
+      "target_students": ["Top-scoring students in Tamil Nadu Class 10 and 12 board examinations"],
+      "eligibility_tags": ["tamil_nadu_domicile", "no_income_limit", "merit_90_percent", "class_10", "class_11_12"],
+      "benefit_tags": ["merit_award"],
+      "searchable_text": "Tamil Nadu Chief Minister Merit Scholarship for students scoring minimum 90% in Class 10 or 12 Tamil Nadu board examinations."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-KA-EDU-001",
+    "scheme_name": "Karnataka Post-Matric Scholarship for SC/ST Students",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": null,
+    "department": "Department of Social Welfare and Department of Tribal Welfare, Government of Karnataka",
+    "state": "Karnataka",
+    "description": "Karnataka state scholarship for SC and ST students pursuing post-matric education, covering fee and maintenance expenses through the State Scholarship Portal.",
+    "official_website": "https://ssp.karnataka.gov.in",
+    "application_portal": "https://ssp.karnataka.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Post-Matric: Class 11 through Doctoral level",
+      "course_type": "All post-matric courses in recognized institutions",
+      "year_of_study": "Any year",
+      "institution_type": "Government and recognized institutions in Karnataka",
+      "income_limit": "No income limit for SC, ST",
+      "caste_category": ["SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Karnataka",
+      "academic_percentage": null,
+      "attendance_requirement": "Minimum 75% attendance",
+      "other_conditions": ["Must apply via Karnataka State Scholarship Portal (SSP)"]
+    },
+    "benefits": {
+      "tuition_fee_support": "Full tuition fee reimbursement",
+      "hostel_fee_support": "Hostel charges covered for eligible students",
+      "maintenance_allowance": "₹300 to ₹1,200 per month",
+      "book_allowance": "Book grant as applicable",
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Caste Certificate", "Income Certificate", "Bank passbook", "Previous mark sheet"],
+    "application": {
+      "application_mode": "Online via Karnataka State Scholarship Portal (ssp.karnataka.gov.in)",
+      "application_steps": ["Register on SSP portal", "Apply for SC/ST post-matric scheme", "Upload required documents", "Submit for verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Karnataka SC ST scholarship", "SSP Karnataka scholarship", "Karnataka post matric scholarship"],
+      "target_students": ["SC and ST students in Karnataka pursuing post-matric education"],
+      "eligibility_tags": ["karnataka_domicile", "sc_st", "post_matric", "no_income_limit"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "hostel_support"],
+      "searchable_text": "Karnataka Post-Matric Scholarship via State Scholarship Portal for SC and ST students covering full tuition fee and maintenance allowance with no income limit."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-KA-EDU-002",
+    "scheme_name": "Rajiv Gandhi Scholarship for SC/ST Students (Karnataka)",
+    "scheme_type": "merit_cum_means_scholarship",
+    "ministry": null,
+    "department": "Department of Social Welfare, Government of Karnataka",
+    "state": "Karnataka",
+    "description": "Merit-cum-means scholarship for SC and ST students studying in top institutions, named after former PM Rajiv Gandhi, to encourage academic excellence.",
+    "official_website": "https://ssp.karnataka.gov.in",
+    "application_portal": "https://ssp.karnataka.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Undergraduate and Postgraduate degree courses",
+      "course_type": "General and professional degree courses",
+      "year_of_study": "1st year",
+      "institution_type": "Reputed colleges and universities in Karnataka and across India",
+      "income_limit": "Annual family income below ₹4,50,000",
+      "caste_category": ["SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Karnataka",
+      "academic_percentage": "Minimum 60% in Class 12",
+      "attendance_requirement": null,
+      "other_conditions": []
+    },
+    "benefits": {
+      "tuition_fee_support": "Tuition fee as per institution up to ₹50,000",
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹2,000 per month",
+      "book_allowance": "₹3,000 per year",
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "SC/ST Certificate", "Income Certificate", "Class 12 mark sheet", "Admission letter", "Bank passbook"],
+    "application": {
+      "application_mode": "Online via Karnataka SSP portal",
+      "application_steps": ["Apply on SSP portal", "Upload all required documents", "Submit for verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Rajiv Gandhi Scholarship Karnataka", "Karnataka SC ST merit scholarship"],
+      "target_students": ["SC and ST students in Karnataka scoring 60%+ in Class 12 pursuing UG/PG with income below ₹4.5 lakh"],
+      "eligibility_tags": ["karnataka_domicile", "sc_st", "income_below_450000", "min_60_percent", "undergraduate", "postgraduate"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "book_allowance"],
+      "searchable_text": "Rajiv Gandhi Scholarship for Karnataka SC and ST students with minimum 60% in Class 12 and income below ₹4.5 lakh, providing tuition fee, monthly maintenance and book grant."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-WB-EDU-001",
+    "scheme_name": "Swami Vivekananda Merit-cum-Means Scholarship (West Bengal)",
+    "scheme_type": "merit_cum_means_scholarship",
+    "ministry": null,
+    "department": "Higher Education Department, Government of West Bengal",
+    "state": "West Bengal",
+    "description": "West Bengal's flagship merit-cum-means scholarship for students pursuing higher education, available from 11th standard to postgraduate level, providing substantial monthly support.",
+    "official_website": "https://svmcm.wbhed.gov.in",
+    "application_portal": "https://svmcm.wbhed.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Class 11 through Postgraduate and Professional courses",
+      "course_type": "General, technical and professional courses",
+      "year_of_study": "1st year of each level",
+      "institution_type": "Government and Government-aided institutions in West Bengal",
+      "income_limit": "Annual family income below ₹2,50,000",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of West Bengal",
+      "academic_percentage": "Minimum 75% in last qualifying examination",
+      "attendance_requirement": "Minimum 75% attendance",
+      "other_conditions": ["Must be studying in West Bengal institution"]
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹1,000/month for Class 11-12; ₹1,500/month for UG; ₹2,000/month for PG; ₹5,000/month for medical",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Domicile certificate of West Bengal", "Income Certificate", "Previous mark sheet (75%+)", "Bank passbook"],
+    "application": {
+      "application_mode": "Online at svmcm.wbhed.gov.in",
+      "application_steps": ["Register on SVMCM portal", "Fill application form", "Upload mark sheet and income documents", "Submit for institution verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Swami Vivekananda Scholarship WB", "SVMCM West Bengal", "West Bengal merit scholarship", "WB scholarship Class 11 PG"],
+      "target_students": ["Merit students in West Bengal institutions with minimum 75% marks and family income below ₹2.5 lakh"],
+      "eligibility_tags": ["west_bengal_domicile", "all_categories", "income_below_250000", "min_75_percent", "class_11_12", "undergraduate", "postgraduate"],
+      "benefit_tags": ["maintenance_allowance"],
+      "searchable_text": "Swami Vivekananda Merit-cum-Means Scholarship in West Bengal for students scoring 75%+ with income below ₹2.5 lakh, providing ₹1,000 to ₹5,000 monthly allowance from Class 11 to PG."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-WB-EDU-002",
+    "scheme_name": "OASIS Scholarship (West Bengal SC/ST/OBC)",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": null,
+    "department": "Backward Classes Welfare Department, Government of West Bengal",
+    "state": "West Bengal",
+    "description": "Online Application for Scholarship (OASIS) is West Bengal's integrated scholarship platform for SC, ST and OBC students pursuing post-matric education.",
+    "official_website": "https://oasis.gov.in",
+    "application_portal": "https://oasis.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Post-Matric: Class 11 through Doctoral level",
+      "course_type": "All post-matric courses",
+      "year_of_study": "Any year",
+      "institution_type": "Government and recognized institutions in West Bengal",
+      "income_limit": "Annual family income below ₹2,50,000 for SC/ST; ₹1,50,000 for OBC",
+      "caste_category": ["SC", "ST", "OBC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of West Bengal",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": []
+    },
+    "benefits": {
+      "tuition_fee_support": "Tuition fee reimbursement",
+      "hostel_fee_support": "Hostel allowance",
+      "maintenance_allowance": "₹200 to ₹1,200 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Caste Certificate", "Income Certificate", "Previous mark sheet", "Bank passbook"],
+    "application": {
+      "application_mode": "Online via OASIS portal (oasis.gov.in)",
+      "application_steps": ["Register on OASIS portal", "Fill scholarship application", "Upload documents", "Submit for institution verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["OASIS scholarship West Bengal", "WB SC ST OBC post matric scholarship", "oasis.gov.in scholarship"],
+      "target_students": ["SC, ST and OBC students in West Bengal pursuing post-matric education"],
+      "eligibility_tags": ["west_bengal_domicile", "sc_st_obc", "post_matric", "income_below_250000"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "hostel_support"],
+      "searchable_text": "OASIS Scholarship West Bengal for SC, ST and OBC students pursuing post-matric education with income below ₹2.5 lakh, providing tuition fee, hostel allowance and maintenance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-WB-EDU-003",
+    "scheme_name": "Aikyashree Minority Scholarship (West Bengal)",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": null,
+    "department": "West Bengal Minorities Development and Finance Corporation (WBMDFCL)",
+    "state": "West Bengal",
+    "description": "State scholarship for minority community students in West Bengal pursuing pre-matric and post-matric education through the WBMDFC Aikyashree portal.",
+    "official_website": "https://wbmdfcscholarship.in",
+    "application_portal": "https://wbmdfcscholarship.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Class 1 through Doctoral level (pre-matric and post-matric components)",
+      "course_type": "All courses in recognized institutions",
+      "year_of_study": "Any year",
+      "institution_type": "Government and recognized institutions in West Bengal",
+      "income_limit": "Annual family income below ₹2,00,000",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of West Bengal from a minority community",
+      "academic_percentage": "Minimum 50% in previous examination",
+      "attendance_requirement": null,
+      "other_conditions": ["Only for Muslim, Christian, Sikh, Buddhist, Jain and Parsi communities"]
+    },
+    "benefits": {
+      "tuition_fee_support": "Admission fee as applicable",
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹100 to ₹600 per month depending on level",
+      "book_allowance": "Book grant ₹500 to ₹1,000",
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Minority community certificate", "Income Certificate", "Previous mark sheet", "Bank passbook"],
+    "application": {
+      "application_mode": "Online via WBMDFC Aikyashree portal",
+      "application_steps": ["Register on Aikyashree portal", "Fill application form", "Upload documents", "Submit for verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Aikyashree scholarship WB", "West Bengal minority scholarship", "WBMDFC scholarship Muslim Christian"],
+      "target_students": ["Minority community students in West Bengal with income below ₹2 lakh and minimum 50% in previous exam"],
+      "eligibility_tags": ["west_bengal_domicile", "minority_community", "income_below_200000", "min_50_percent"],
+      "benefit_tags": ["maintenance_allowance", "book_allowance"],
+      "searchable_text": "Aikyashree Scholarship for minority community students in West Bengal with income below ₹2 lakh and 50%+ marks covering maintenance allowance and book grant."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-WB-EDU-004",
+    "scheme_name": "Kanyashree Prakalpa (West Bengal)",
+    "scheme_type": "girl_education_scheme",
+    "ministry": null,
+    "department": "Women and Child Development and Social Welfare Department, Government of West Bengal",
+    "state": "West Bengal",
+    "description": "Kanyashree Prakalpa is West Bengal's award-winning conditional cash transfer scheme to keep girl students enrolled in school and prevent early marriage, with an annual stipend and a one-time grant.",
+    "official_website": "https://kanyashree.gov.in",
+    "application_portal": "https://kanyashree.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Class 8 through Class 12 (K1 annual stipend) and for 18-19 year olds (K2 one-time grant)",
+      "course_type": "Secondary and higher secondary school education; vocational training also eligible",
+      "year_of_study": "Class 8 to Class 12",
+      "institution_type": "Government and recognized schools, colleges and vocational centres",
+      "income_limit": "Annual family income below ₹1,20,000",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "female",
+      "disability": null,
+      "domicile": "Resident of West Bengal",
+      "academic_percentage": null,
+      "attendance_requirement": "Enrolled and regular student",
+      "other_conditions": ["Must be unmarried", "Age 13-18 for K1 stipend; 18-19 for K2 one-time grant"]
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹1,000 per year (K1 annual stipend for ages 13-18)",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": ["₹25,000 one-time grant (K2) on turning 18 if still unmarried and continuing education"]
+    },
+    "required_documents": ["Birth certificate", "Aadhaar Card", "Income Certificate", "School enrollment proof", "Bank passbook"],
+    "application": {
+      "application_mode": "Online via Kanyashree portal or through school",
+      "application_steps": ["Apply on kanyashree.gov.in or through school office", "Submit age and enrollment proof", "Bank account opened in girl's name"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Kanyashree Prakalpa", "WB girl student scheme", "West Bengal girl scholarship Class 8-12", "conditional cash transfer girls WB"],
+      "target_students": ["Unmarried girl students aged 13-18 in Class 8-12 in West Bengal from families with income below ₹1.2 lakh"],
+      "eligibility_tags": ["west_bengal_domicile", "income_below_120000", "female_only", "class_8_12", "unmarried"],
+      "benefit_tags": ["annual_stipend", "one_time_grant"],
+      "searchable_text": "Kanyashree Prakalpa West Bengal for unmarried girl students in Class 8-12 with income below ₹1.2 lakh providing ₹1,000 annual stipend and ₹25,000 one-time grant at age 18."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-UP-EDU-001",
+    "scheme_name": "Uttar Pradesh Post-Matric Scholarship for SC/ST/OBC/General",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": null,
+    "department": "Social Welfare Department, Government of Uttar Pradesh",
+    "state": "Uttar Pradesh",
+    "description": "Uttar Pradesh government's comprehensive post-matric scholarship for students from various categories pursuing higher education, administered through the UP Scholarship portal.",
+    "official_website": "https://scholarship.up.gov.in",
+    "application_portal": "https://scholarship.up.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Post-Matric: Class 11 through Doctoral level",
+      "course_type": "All post-matric courses in recognized institutions",
+      "year_of_study": "Any year",
+      "institution_type": "Government and recognized institutions in Uttar Pradesh",
+      "income_limit": "Annual income below ₹2,50,000 for SC/ST; ₹2,50,000 for OBC; ₹2,00,000 for General category",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Uttar Pradesh",
+      "academic_percentage": null,
+      "attendance_requirement": "Minimum 75% attendance",
+      "other_conditions": ["Must apply on UP scholarship portal before the deadline"]
+    },
+    "benefits": {
+      "tuition_fee_support": "Tuition fee reimbursement",
+      "hostel_fee_support": "Hostel fee for outstation students",
+      "maintenance_allowance": "₹230 to ₹1,200 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Caste Certificate", "Income Certificate", "Bank passbook", "Previous mark sheet", "Bonafide certificate"],
+    "application": {
+      "application_mode": "Online via scholarship.up.gov.in",
+      "application_steps": ["Register on UP scholarship portal", "Fill application", "Upload documents", "Submit for institution and district verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["UP post matric scholarship", "Uttar Pradesh scholarship portal", "UP scholarship SC ST OBC General"],
+      "target_students": ["SC, ST, OBC and General category students in Uttar Pradesh pursuing post-matric education with income below threshold"],
+      "eligibility_tags": ["uttar_pradesh_domicile", "all_categories", "income_below_250000", "post_matric"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "hostel_support"],
+      "searchable_text": "Uttar Pradesh Post-Matric Scholarship for SC, ST, OBC and General students via scholarship.up.gov.in covering tuition fee and maintenance allowance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-UP-EDU-002",
+    "scheme_name": "UP Chief Minister's Scholarship for Meritorious Students",
+    "scheme_type": "merit_scholarship",
+    "ministry": null,
+    "department": "Secondary Education Department, Government of Uttar Pradesh",
+    "state": "Uttar Pradesh",
+    "description": "Merit scholarship awarded by the UP government to students who top their Class 10 and Class 12 board examinations, rewarding academic excellence.",
+    "official_website": "https://scholarship.up.gov.in",
+    "application_portal": "https://scholarship.up.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Students who have passed Class 10 or Class 12 from UP board",
+      "course_type": "Higher secondary or higher education",
+      "year_of_study": "After Class 10 or 12",
+      "institution_type": "UP Board-affiliated schools",
+      "income_limit": "Annual family income below ₹3,00,000",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Resident of Uttar Pradesh",
+      "academic_percentage": "Minimum 75% in Class 10 or 12 UP board examination",
+      "attendance_requirement": null,
+      "other_conditions": []
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹2,000 to ₹4,000 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["UP Board mark sheet", "Aadhaar Card", "Income Certificate", "Bank passbook"],
+    "application": {
+      "application_mode": "Online via UP scholarship portal",
+      "application_steps": ["Apply on UP scholarship portal", "Upload board mark sheet and income proof", "Submit for verification"],
+      "processing_time": null,
+      "renewal_required": false
+    },
+    "ai_metadata": {
+      "keywords": ["UP CM merit scholarship", "UP board topper scholarship", "Uttar Pradesh merit scholarship"],
+      "target_students": ["UP board toppers scoring 75%+ in Class 10 or 12 from families with income below ₹3 lakh"],
+      "eligibility_tags": ["uttar_pradesh_domicile", "income_below_300000", "merit_75_percent", "class_10", "class_11_12"],
+      "benefit_tags": ["maintenance_allowance"],
+      "searchable_text": "UP Chief Minister Merit Scholarship for UP board students scoring 75%+ in Class 10 or 12 with family income below ₹3 lakh."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-RJ-EDU-001",
+    "scheme_name": "Rajasthan Mukhyamantri Ucch Shiksha Scholarship",
+    "scheme_type": "merit_cum_means_scholarship",
+    "ministry": null,
+    "department": "Department of College Education, Government of Rajasthan",
+    "state": "Rajasthan",
+    "description": "Scholarship for Rajasthan students who have passed Class 12 from the Rajasthan Board and are pursuing graduation, to encourage higher education attendance.",
+    "official_website": "https://hte.rajasthan.gov.in",
+    "application_portal": "https://sje.rajasthan.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Undergraduate degree (1st year)",
+      "course_type": "General degree courses",
+      "year_of_study": "1st year of graduation",
+      "institution_type": "Government and recognized colleges in Rajasthan",
+      "income_limit": "Annual family income below ₹2,50,000",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Resident of Rajasthan who passed Class 12 from Rajasthan Board",
+      "academic_percentage": "Minimum 60% in Class 12 Rajasthan Board",
+      "attendance_requirement": null,
+      "other_conditions": ["Not applicable for professional courses", "Not eligible if availing any other scholarship"]
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹5,000 per year",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Class 12 Rajasthan Board mark sheet", "Income Certificate", "Bank passbook", "College admission proof"],
+    "application": {
+      "application_mode": "Online via SJE portal (sje.rajasthan.gov.in)",
+      "application_steps": ["Apply on SJE Rajasthan portal", "Fill details and upload Class 12 mark sheet", "Submit for verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Rajasthan Mukhyamantri Ucch Shiksha", "Rajasthan graduation scholarship", "Rajasthan Board scholarship higher education"],
+      "target_students": ["Rajasthan Board Class 12 passouts with 60%+ joining graduation with income below ₹2.5 lakh"],
+      "eligibility_tags": ["rajasthan_domicile", "income_below_250000", "min_60_percent", "undergraduate"],
+      "benefit_tags": ["maintenance_allowance"],
+      "searchable_text": "Rajasthan Mukhyamantri Ucch Shiksha Scholarship for Class 12 board students scoring 60%+ pursuing graduation with income below ₹2.5 lakh providing ₹5,000 per year."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-RJ-EDU-002",
+    "scheme_name": "Rajasthan Anuprati Coaching Scheme",
+    "scheme_type": "coaching_support",
+    "ministry": null,
+    "department": "Social Justice and Empowerment Department, Government of Rajasthan",
+    "state": "Rajasthan",
+    "description": "Provides free coaching support and financial assistance to SC/ST/OBC/EWS students to prepare for competitive examinations like UPSC, Rajasthan PSC, IIT, NEET, etc.",
+    "official_website": "https://sje.rajasthan.gov.in/anuprati",
+    "application_portal": "https://sso.rajasthan.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Class 10 passed and above (targeting professional/competitive exams)",
+      "course_type": "Coaching for UPSC, RAS/RTS, SI/Constable, REET, IIT, NIT, NEET, CLAT, CA/CS",
+      "year_of_study": "Any",
+      "institution_type": "Rajasthan government approved coaching institutes",
+      "income_limit": "Annual family income below ₹8,00,000",
+      "caste_category": ["SC", "ST", "OBC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Domicile of Rajasthan",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": ["Selection based on merit in a state-level competitive test", "30,000 beneficiaries per year"]
+    },
+    "benefits": {
+      "tuition_fee_support": "Free coaching at approved institutions (₹40,000 to ₹1,00,000 per year covered)",
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹10,000 to ₹40,000 per year as living and food allowance",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Caste Certificate", "Income Certificate", "Class 10 or 12 mark sheet", "Bank passbook"],
+    "application": {
+      "application_mode": "Online via SSO portal (sso.rajasthan.gov.in)",
+      "application_steps": ["Login to SSO portal", "Apply for Anuprati scheme", "Upload documents", "Appear for selection test"],
+      "processing_time": null,
+      "renewal_required": false
+    },
+    "ai_metadata": {
+      "keywords": ["Anuprati Coaching Scheme Rajasthan", "Rajasthan free coaching SC ST OBC", "competitive exam coaching Rajasthan"],
+      "target_students": ["SC, ST and OBC students in Rajasthan preparing for competitive exams with income below ₹8 lakh"],
+      "eligibility_tags": ["rajasthan_domicile", "income_below_800000", "sc_st_obc", "coaching_scheme"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance"],
+      "searchable_text": "Rajasthan Anuprati Coaching Scheme for SC, ST and OBC students providing free coaching for UPSC, IIT, NEET, CLAT and other competitive exams with living allowance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-BR-EDU-001",
+    "scheme_name": "Bihar Post-Matric Scholarship for SC/ST Students",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": null,
+    "department": "SC/ST Welfare Department, Government of Bihar",
+    "state": "Bihar",
+    "description": "Bihar government scholarship for SC and ST students pursuing post-matric education, administered through the Bihar State Scholarship Portal.",
+    "official_website": "https://pmsonline.bih.nic.in",
+    "application_portal": "https://pmsonline.bih.nic.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Post-Matric: Class 11 through Doctoral level",
+      "course_type": "All post-matric courses",
+      "year_of_study": "Any year",
+      "institution_type": "Government and recognized institutions",
+      "income_limit": "No income limit for SC, ST",
+      "caste_category": ["SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Bihar",
+      "academic_percentage": null,
+      "attendance_requirement": "Minimum 75% attendance",
+      "other_conditions": []
+    },
+    "benefits": {
+      "tuition_fee_support": "Tuition fee reimbursement",
+      "hostel_fee_support": "Hostel maintenance allowance",
+      "maintenance_allowance": "₹300 to ₹1,200 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Caste Certificate", "Residential Certificate", "Bank passbook", "Previous mark sheet"],
+    "application": {
+      "application_mode": "Online via Bihar PMS portal",
+      "application_steps": ["Register on pmsonline.bih.nic.in", "Fill scholarship application", "Upload documents", "Submit"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Bihar SC ST scholarship", "Bihar post matric scholarship", "Bihar PMS scholarship"],
+      "target_students": ["SC and ST students in Bihar pursuing post-matric education"],
+      "eligibility_tags": ["bihar_domicile", "sc_st", "post_matric", "no_income_limit"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "hostel_support"],
+      "searchable_text": "Bihar Post-Matric Scholarship for SC and ST students covering tuition fee, hostel and maintenance allowance with no income limit."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-BR-EDU-002",
+    "scheme_name": "Bihar Mukhyamantri Kanya Utthan Yojana",
+    "scheme_type": "girl_education_scheme",
+    "ministry": null,
+    "department": "Women Development Corporation, Government of Bihar",
+    "state": "Bihar",
+    "description": "Conditional cash transfer scheme to incentivise girl child education at various stages — from birth through graduation — providing cash grants at key milestones to prevent dropout.",
+    "official_website": "https://medhasoft.bih.nic.in",
+    "application_portal": "https://medhasoft.bih.nic.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "All stages — Class 1 through Graduation",
+      "course_type": "General school and higher education",
+      "year_of_study": "Various milestone stages",
+      "institution_type": "Government schools and colleges in Bihar",
+      "income_limit": "No income limit",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "female",
+      "disability": null,
+      "domicile": "Resident of Bihar",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": ["Unmarried at the time of receiving the graduation grant", "Graduation grant: ₹50,000 for unmried girl graduates"]
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": null,
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": ["₹2,000 at birth", "₹1,000 for immunization", "₹2,000 for Class 1 enrollment", "₹4,000 for Class 10 pass (sanitary kit)", "₹10,000 for Class 12 pass (unmarried)", "₹50,000 for graduation completion (unmarried)"]
+    },
+    "required_documents": ["Aadhaar Card", "Birth certificate", "Graduation mark sheet/certificate", "Bank passbook", "Unmarried affidavit for graduation grant"],
+    "application": {
+      "application_mode": "Online at medhasoft.bih.nic.in (for graduation grant)",
+      "application_steps": ["Apply on Medhasoft portal after graduation", "Upload graduation certificate and unmarried affidavit", "Submit for verification"],
+      "processing_time": null,
+      "renewal_required": false
+    },
+    "ai_metadata": {
+      "keywords": ["Kanya Utthan Yojana Bihar", "Bihar girl scholarship graduation", "Bihar women education scheme", "Bihar girl cash transfer"],
+      "target_students": ["Girl students in Bihar at various stages of education including graduation"],
+      "eligibility_tags": ["bihar_domicile", "no_income_limit", "female_only", "all_levels"],
+      "benefit_tags": ["cash_incentive", "graduation_grant"],
+      "searchable_text": "Bihar Mukhyamantri Kanya Utthan Yojana for girl students providing cash grants at educational milestones including ₹50,000 for unmarried girl graduates."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-GJ-EDU-001",
+    "scheme_name": "Gujarat Post-Matric Scholarship for SC/ST Students",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": null,
+    "department": "Social Justice and Empowerment Department, Government of Gujarat",
+    "state": "Gujarat",
+    "description": "Gujarat government scholarship for SC and ST students pursuing post-matric education through the Sarkari Shiksha Sahay portal.",
+    "official_website": "https://esamajkalyan.gujarat.gov.in",
+    "application_portal": "https://esamajkalyan.gujarat.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Post-Matric: Class 11 through Professional and Doctoral courses",
+      "course_type": "All post-matric recognized courses",
+      "year_of_study": "Any year",
+      "institution_type": "Government and recognized institutions in Gujarat",
+      "income_limit": "No income limit for SC, ST; ₹2,50,000 for SEBC/OBC",
+      "caste_category": ["SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Gujarat",
+      "academic_percentage": null,
+      "attendance_requirement": "Minimum 75% attendance",
+      "other_conditions": []
+    },
+    "benefits": {
+      "tuition_fee_support": "Full tuition fee reimbursement",
+      "hostel_fee_support": "Hostel maintenance",
+      "maintenance_allowance": "₹200 to ₹1,000 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Caste Certificate", "Domicile Certificate", "Income Certificate", "Bank passbook", "Previous mark sheet"],
+    "application": {
+      "application_mode": "Online via e-Samaj Kalyan portal",
+      "application_steps": ["Register on e-Samaj Kalyan portal", "Apply for post-matric scholarship", "Upload documents", "Submit"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Gujarat SC ST scholarship", "e-Samaj Kalyan Gujarat", "Gujarat post matric scholarship"],
+      "target_students": ["SC and ST students in Gujarat pursuing post-matric education"],
+      "eligibility_tags": ["gujarat_domicile", "sc_st", "post_matric", "no_income_limit"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "hostel_support"],
+      "searchable_text": "Gujarat Post-Matric Scholarship via e-Samaj Kalyan for SC and ST students covering full tuition fee and maintenance allowance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-GJ-EDU-002",
+    "scheme_name": "Mukhyamantri Yuva Swavalamban Yojana (MYSY) — Gujarat",
+    "scheme_type": "merit_cum_means_scholarship",
+    "ministry": null,
+    "department": "Higher and Technical Education Department, Government of Gujarat",
+    "state": "Gujarat",
+    "description": "MYSY provides financial assistance to economically weaker students in Gujarat with good academic performance pursuing professional education to reduce dropout.",
+    "official_website": "https://mysy.guj.nic.in",
+    "application_portal": "https://mysy.guj.nic.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Undergraduate and Diploma (Engineering, Medical, Pharmacy, Architecture, Agriculture, Management)",
+      "course_type": "Professional and technical degree/diploma courses",
+      "year_of_study": "1st year of professional course",
+      "institution_type": "Government and recognized self-financed institutes in Gujarat",
+      "income_limit": "Annual family income below ₹6,00,000",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Resident of Gujarat who passed from Gujarat board/university",
+      "academic_percentage": "Minimum 80% in Class 12 (Gujarat Board)",
+      "attendance_requirement": null,
+      "other_conditions": ["Not eligible if receiving any other scholarship"]
+    },
+    "benefits": {
+      "tuition_fee_support": "Tuition fee up to ₹50,000 per year",
+      "hostel_fee_support": "Hostel allowance for students living in hostels",
+      "maintenance_allowance": "₹10,000 per year",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Gujarat Board Class 12 mark sheet (80%+)", "Income Certificate", "Admission letter to professional course", "Bank passbook"],
+    "application": {
+      "application_mode": "Online via MYSY portal (mysy.guj.nic.in)",
+      "application_steps": ["Register on MYSY portal", "Fill application form", "Upload documents", "Submit for verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["MYSY Gujarat scholarship", "Mukhyamantri Yuva Swavalamban Yojana", "Gujarat professional education scholarship"],
+      "target_students": ["Gujarat board students with 80%+ in Class 12 pursuing professional courses with income below ₹6 lakh"],
+      "eligibility_tags": ["gujarat_domicile", "income_below_600000", "min_80_percent", "all_categories", "undergraduate", "technical_education"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance"],
+      "searchable_text": "MYSY Gujarat Scholarship for students with 80%+ in Class 12 pursuing professional education with income below ₹6 lakh, covering tuition fee up to ₹50,000 and ₹10,000 annual maintenance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-DL-EDU-001",
+    "scheme_name": "Delhi Post-Matric Scholarship for SC/ST Students",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": null,
+    "department": "SC/ST Welfare Department, Government of Delhi",
+    "state": "Delhi",
+    "description": "Delhi government scholarship for SC and ST students pursuing post-matric education in recognized institutions in Delhi.",
+    "official_website": "https://edistrict.delhigovt.nic.in",
+    "application_portal": "https://edistrict.delhigovt.nic.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Post-Matric: Class 11 through Doctoral level",
+      "course_type": "All post-matric courses",
+      "year_of_study": "Any year",
+      "institution_type": "Government and recognized institutions in Delhi",
+      "income_limit": "No income limit for SC, ST",
+      "caste_category": ["SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Delhi/NCT",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": []
+    },
+    "benefits": {
+      "tuition_fee_support": "Tuition fee reimbursement",
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹300 to ₹1,000 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "SC/ST Caste Certificate", "Delhi Domicile Certificate", "Income Certificate", "Bank passbook", "Previous mark sheet"],
+    "application": {
+      "application_mode": "Online via Delhi e-District portal",
+      "application_steps": ["Apply on e-District portal", "Upload all required certificates", "Submit for district verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Delhi SC ST scholarship", "Delhi post matric scholarship", "e-District Delhi scholarship"],
+      "target_students": ["SC and ST students resident in Delhi pursuing post-matric education"],
+      "eligibility_tags": ["delhi_domicile", "sc_st", "post_matric", "no_income_limit"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance"],
+      "searchable_text": "Delhi Post-Matric Scholarship for SC and ST students covering tuition fee reimbursement and monthly maintenance allowance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-OD-EDU-001",
+    "scheme_name": "PRERANA Scholarship — Odisha (SC/ST)",
+    "scheme_type": "merit_scholarship",
+    "ministry": null,
+    "department": "ST and SC Development Department, Government of Odisha",
+    "state": "Odisha",
+    "description": "PRERANA scholarship rewards meritorious SC and ST students in Odisha who excel in Class 10 and Class 12 board examinations to continue their higher education.",
+    "official_website": "https://scholarship.odisha.gov.in",
+    "application_portal": "https://scholarship.odisha.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Students who have passed Class 10 or Class 12 from Odisha board",
+      "course_type": "General and professional higher education",
+      "year_of_study": "After Class 10 or 12",
+      "institution_type": "Recognized institutions in Odisha",
+      "income_limit": "No income limit",
+      "caste_category": ["SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Odisha",
+      "academic_percentage": "Minimum 60% in Class 10 or 12 Odisha board",
+      "attendance_requirement": null,
+      "other_conditions": []
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹2,000 to ₹5,000 per year as merit award",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Caste Certificate", "Class 10/12 mark sheet", "Bank passbook"],
+    "application": {
+      "application_mode": "Online via Odisha scholarship portal",
+      "application_steps": ["Apply on scholarship.odisha.gov.in", "Upload board mark sheet", "Submit for district verification"],
+      "processing_time": null,
+      "renewal_required": false
+    },
+    "ai_metadata": {
+      "keywords": ["PRERANA scholarship Odisha", "Odisha SC ST merit scholarship", "Odisha board scholarship"],
+      "target_students": ["SC and ST toppers in Odisha Class 10 and 12 board exams"],
+      "eligibility_tags": ["odisha_domicile", "sc_st", "merit_60_percent", "class_10", "class_11_12"],
+      "benefit_tags": ["merit_award"],
+      "searchable_text": "PRERANA Merit Scholarship for SC and ST students scoring 60%+ in Odisha Class 10 and 12 board examinations."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-OD-EDU-002",
+    "scheme_name": "MEDHABRUTI Scholarship — Odisha",
+    "scheme_type": "merit_cum_means_scholarship",
+    "ministry": null,
+    "department": "Higher Education Department, Government of Odisha",
+    "state": "Odisha",
+    "description": "Odisha government merit-cum-means scholarship for students pursuing higher education in the state, providing financial assistance to reduce dropout at graduation level.",
+    "official_website": "https://scholarship.odisha.gov.in",
+    "application_portal": "https://scholarship.odisha.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Undergraduate degree courses (1st year)",
+      "course_type": "General degree and professional courses",
+      "year_of_study": "1st year",
+      "institution_type": "Government and aided colleges in Odisha",
+      "income_limit": "Annual family income below ₹2,50,000",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Resident of Odisha",
+      "academic_percentage": "Minimum 60% in Class 12",
+      "attendance_requirement": null,
+      "other_conditions": []
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹1,000 per month (₹12,000 per year)",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Class 12 mark sheet", "Income Certificate", "Admission certificate", "Bank passbook"],
+    "application": {
+      "application_mode": "Online via Odisha scholarship portal",
+      "application_steps": ["Apply on scholarship.odisha.gov.in", "Fill application and upload documents", "Submit"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["MEDHABRUTI scholarship Odisha", "Odisha graduation scholarship", "Odisha merit scholarship undergraduate"],
+      "target_students": ["Students in Odisha with 60%+ in Class 12 pursuing graduation with income below ₹2.5 lakh"],
+      "eligibility_tags": ["odisha_domicile", "income_below_250000", "min_60_percent", "undergraduate", "all_categories"],
+      "benefit_tags": ["maintenance_allowance"],
+      "searchable_text": "MEDHABRUTI Odisha Scholarship for graduation students with 60%+ in Class 12 and income below ₹2.5 lakh providing ₹1,000 monthly maintenance allowance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-TS-EDU-001",
+    "scheme_name": "Telangana ePass Scholarship for SC/ST/BC/EBC",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": null,
+    "department": "BC Welfare Department / SC Development Department, Government of Telangana",
+    "state": "Telangana",
+    "description": "Telangana's e-Pass (Electronic Payment and Application System for Scholarships) provides post-matric scholarships to SC, ST, BC, EBC and minority students through a digital platform.",
+    "official_website": "https://telanganaepass.cgg.gov.in",
+    "application_portal": "https://telanganaepass.cgg.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Post-Matric: Class 11 through Doctoral level",
+      "course_type": "All post-matric courses in recognized institutions",
+      "year_of_study": "Any year",
+      "institution_type": "Government and recognized institutions in Telangana",
+      "income_limit": "Annual income below ₹2,50,000 for SC/ST; ₹1,50,000 for BC/EBC; ₹2,00,000 for minorities",
+      "caste_category": ["SC", "ST", "OBC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Telangana",
+      "academic_percentage": null,
+      "attendance_requirement": "Minimum 75% attendance",
+      "other_conditions": []
+    },
+    "benefits": {
+      "tuition_fee_support": "Full tuition fee reimbursement",
+      "hostel_fee_support": "Hostel charges",
+      "maintenance_allowance": "₹350 to ₹1,000 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Caste Certificate", "Income Certificate", "Bank passbook", "Bonafide certificate", "Previous mark sheet"],
+    "application": {
+      "application_mode": "Online via Telangana ePass portal",
+      "application_steps": ["Register on telanganaepass.cgg.gov.in", "Fill scholarship application", "Upload documents", "Submit for institution verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Telangana ePass scholarship", "TS SC ST BC scholarship", "telanganaepass scholarship"],
+      "target_students": ["SC, ST, BC and EBC students in Telangana pursuing post-matric education"],
+      "eligibility_tags": ["telangana_domicile", "sc_st_obc", "post_matric", "income_below_250000"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "hostel_support"],
+      "searchable_text": "Telangana ePass Scholarship for SC, ST, BC and EBC students pursuing post-matric education covering full tuition fee and maintenance allowance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-PB-EDU-001",
+    "scheme_name": "Punjab Post-Matric Scholarship for SC/BC Students",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": null,
+    "department": "Department of Welfare of Scheduled Castes and Backward Classes, Government of Punjab",
+    "state": "Punjab",
+    "description": "Punjab state scholarship for SC and Backward Class students pursuing post-matric education, disbursed through the Punjab Scholarship Portal.",
+    "official_website": "https://scholarship.punjab.gov.in",
+    "application_portal": "https://scholarship.punjab.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Post-Matric: Class 11 through Doctoral and Professional level",
+      "course_type": "All post-matric recognized courses",
+      "year_of_study": "Any year",
+      "institution_type": "Government and recognized institutions in Punjab",
+      "income_limit": "No income limit for SC; ₹1,50,000 for BC",
+      "caste_category": ["SC", "OBC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Punjab",
+      "academic_percentage": null,
+      "attendance_requirement": "Minimum 75% attendance",
+      "other_conditions": []
+    },
+    "benefits": {
+      "tuition_fee_support": "Tuition fee reimbursement",
+      "hostel_fee_support": "Hostel maintenance charges",
+      "maintenance_allowance": "₹230 to ₹1,000 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Caste Certificate", "Income Certificate", "Bank passbook", "Previous mark sheet"],
+    "application": {
+      "application_mode": "Online via Punjab Scholarship Portal",
+      "application_steps": ["Register on scholarship.punjab.gov.in", "Apply for SC/BC post-matric scheme", "Upload documents", "Submit"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Punjab SC BC scholarship", "Punjab post matric scholarship", "Punjab scholarship portal"],
+      "target_students": ["SC and BC students in Punjab pursuing post-matric education"],
+      "eligibility_tags": ["punjab_domicile", "sc_obc", "post_matric", "no_income_limit_sc"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "hostel_support"],
+      "searchable_text": "Punjab Post-Matric Scholarship for SC and Backward Class students covering tuition fee and maintenance allowance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-HP-EDU-001",
+    "scheme_name": "Himachal Pradesh Post-Matric Scholarship for SC/ST/OBC",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": null,
+    "department": "Social Justice and Empowerment Department, Government of Himachal Pradesh",
+    "state": "Himachal Pradesh",
+    "description": "Himachal Pradesh scholarship for SC, ST and OBC students pursuing post-matric education in recognized institutions in the state.",
+    "official_website": "https://edistrict.hp.gov.in",
+    "application_portal": "https://edistrict.hp.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Post-Matric: Class 11 through Doctoral level",
+      "course_type": "All post-matric recognized courses",
+      "year_of_study": "Any year",
+      "institution_type": "Government and recognized institutions in Himachal Pradesh",
+      "income_limit": "No income limit for SC, ST; ₹1,00,000 for OBC",
+      "caste_category": ["SC", "ST", "OBC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Himachal Pradesh",
+      "academic_percentage": null,
+      "attendance_requirement": "Minimum 75% attendance",
+      "other_conditions": []
+    },
+    "benefits": {
+      "tuition_fee_support": "Tuition fee reimbursement",
+      "hostel_fee_support": "Hostel charges for outstation students",
+      "maintenance_allowance": "₹200 to ₹1,000 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Caste Certificate", "Income Certificate", "HP Domicile Certificate", "Bank passbook", "Previous mark sheet"],
+    "application": {
+      "application_mode": "Online via HP e-District portal",
+      "application_steps": ["Apply on HP e-District portal", "Fill scholarship form", "Upload documents", "Submit for verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["HP scholarship SC ST OBC", "Himachal Pradesh post matric scholarship", "HP e-District scholarship"],
+      "target_students": ["SC, ST and OBC students in Himachal Pradesh pursuing post-matric education"],
+      "eligibility_tags": ["himachal_pradesh_domicile", "sc_st_obc", "post_matric", "no_income_limit_sc_st"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "hostel_support"],
+      "searchable_text": "Himachal Pradesh Post-Matric Scholarship for SC, ST and OBC students covering tuition fee and maintenance allowance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-JH-EDU-001",
+    "scheme_name": "Jharkhand E-Kalyan Post-Matric Scholarship",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": null,
+    "department": "SC, ST, OBC and Minority Affairs Department, Government of Jharkhand",
+    "state": "Jharkhand",
+    "description": "E-Kalyan is Jharkhand's integrated scholarship portal providing post-matric financial assistance to SC, ST, OBC and BC students through a digital platform.",
+    "official_website": "https://ekalyan.cgg.gov.in",
+    "application_portal": "https://ekalyan.cgg.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Post-Matric: Class 11 through Doctoral and Professional level",
+      "course_type": "All post-matric recognized courses",
+      "year_of_study": "Any year",
+      "institution_type": "Government and recognized institutions",
+      "income_limit": "No income limit for SC, ST; ₹1,50,000 for OBC/BC",
+      "caste_category": ["SC", "ST", "OBC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Jharkhand",
+      "academic_percentage": null,
+      "attendance_requirement": "Minimum 75% attendance",
+      "other_conditions": []
+    },
+    "benefits": {
+      "tuition_fee_support": "Tuition fee reimbursement",
+      "hostel_fee_support": "Hostel maintenance",
+      "maintenance_allowance": "₹230 to ₹1,200 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Caste Certificate", "Income Certificate", "Jharkhand Domicile Certificate", "Bank passbook", "Previous mark sheet"],
+    "application": {
+      "application_mode": "Online via E-Kalyan portal (ekalyan.cgg.gov.in)",
+      "application_steps": ["Register on E-Kalyan portal", "Apply for post-matric scholarship", "Upload documents", "Submit for verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Jharkhand E-Kalyan scholarship", "JH SC ST OBC scholarship", "ekalyan Jharkhand"],
+      "target_students": ["SC, ST and OBC students in Jharkhand pursuing post-matric education"],
+      "eligibility_tags": ["jharkhand_domicile", "sc_st_obc", "post_matric", "no_income_limit_sc_st"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "hostel_support"],
+      "searchable_text": "Jharkhand E-Kalyan Post-Matric Scholarship for SC, ST and OBC students covering tuition fee and maintenance allowance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-MP-EDU-001",
+    "scheme_name": "Madhya Pradesh Post-Matric Scholarship for SC/ST/OBC",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": null,
+    "department": "Tribal Welfare / Social Justice Department, Government of Madhya Pradesh",
+    "state": "Madhya Pradesh",
+    "description": "MP state scholarship for SC, ST and OBC students pursuing post-matric education through the MP Scholarship Portal.",
+    "official_website": "https://scholarshipportal.mp.nic.in",
+    "application_portal": "https://scholarshipportal.mp.nic.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Post-Matric: Class 11 through Doctoral and Professional courses",
+      "course_type": "All post-matric recognized courses",
+      "year_of_study": "Any year",
+      "institution_type": "Government and recognized institutions in MP",
+      "income_limit": "No income limit for SC, ST; ₹1,50,000 for OBC",
+      "caste_category": ["SC", "ST", "OBC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Madhya Pradesh",
+      "academic_percentage": null,
+      "attendance_requirement": "Minimum 75% attendance",
+      "other_conditions": []
+    },
+    "benefits": {
+      "tuition_fee_support": "Tuition fee reimbursement",
+      "hostel_fee_support": "Hostel charges covered",
+      "maintenance_allowance": "₹300 to ₹1,000 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Caste Certificate", "Income Certificate", "MP Domicile Certificate", "Bank passbook", "Previous mark sheet"],
+    "application": {
+      "application_mode": "Online via MP Scholarship Portal",
+      "application_steps": ["Register on scholarshipportal.mp.nic.in", "Apply for post-matric scheme", "Upload documents", "Submit"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["MP scholarship SC ST OBC", "Madhya Pradesh post matric scholarship", "MP scholarship portal"],
+      "target_students": ["SC, ST and OBC students in Madhya Pradesh pursuing post-matric education"],
+      "eligibility_tags": ["madhya_pradesh_domicile", "sc_st_obc", "post_matric", "no_income_limit_sc_st"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "hostel_support"],
+      "searchable_text": "Madhya Pradesh Post-Matric Scholarship for SC, ST and OBC students covering tuition fee and maintenance allowance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-MP-EDU-002",
+    "scheme_name": "MP Gaon Ki Beti Yojana (Village Girl Scholarship)",
+    "scheme_type": "girl_education_scheme",
+    "ministry": null,
+    "department": "Higher Education Department, Government of Madhya Pradesh",
+    "state": "Madhya Pradesh",
+    "description": "Gaon Ki Beti Yojana provides scholarship to girl students who have passed Class 12 from a rural area government school to encourage girls from villages to pursue higher education.",
+    "official_website": "https://scholarshipportal.mp.nic.in",
+    "application_portal": "https://scholarshipportal.mp.nic.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Undergraduate degree (pursuing 1st year onwards)",
+      "course_type": "Any graduate level course",
+      "year_of_study": "Any year of graduation",
+      "institution_type": "Government and aided colleges in MP",
+      "income_limit": "No income limit",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "female",
+      "disability": null,
+      "domicile": "Must have passed Class 12 from a rural area school in MP",
+      "academic_percentage": "Minimum 60% in Class 12",
+      "attendance_requirement": null,
+      "other_conditions": ["Must have studied in a rural government school for Class 12"]
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹500 per month (₹5,000 per year for 10 months)",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Class 12 mark sheet (rural school, 60%+)", "Village domicile certificate", "Admission certificate to college", "Bank passbook"],
+    "application": {
+      "application_mode": "Online via MP Scholarship Portal",
+      "application_steps": ["Apply on scholarship portal", "Upload Class 12 mark sheet from rural school", "Submit income/domicile proof"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Gaon Ki Beti Yojana MP", "MP rural girl scholarship", "Madhya Pradesh village girl scholarship"],
+      "target_students": ["Rural area girl students in MP who scored 60%+ in Class 12 and are pursuing graduation"],
+      "eligibility_tags": ["madhya_pradesh_domicile", "no_income_limit", "female_only", "rural_area", "min_60_percent", "undergraduate"],
+      "benefit_tags": ["maintenance_allowance"],
+      "searchable_text": "MP Gaon Ki Beti Yojana for rural area girl students scoring 60%+ in Class 12 pursuing graduation, providing ₹500 monthly scholarship regardless of income."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-MP-EDU-003",
+    "scheme_name": "MP Pratibha Kiran Scholarship (Urban Girls)",
+    "scheme_type": "merit_scholarship",
+    "ministry": null,
+    "department": "Higher Education Department, Government of Madhya Pradesh",
+    "state": "Madhya Pradesh",
+    "description": "Scholarship for meritorious girl students who scored 60%+ in Class 12 from urban areas of MP and belong to BPL families, to encourage higher education.",
+    "official_website": "https://scholarshipportal.mp.nic.in",
+    "application_portal": "https://scholarshipportal.mp.nic.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Undergraduate degree courses",
+      "course_type": "Any graduate course",
+      "year_of_study": "Any year",
+      "institution_type": "Recognized colleges in MP",
+      "income_limit": "Must belong to BPL (Below Poverty Line) family",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "female",
+      "disability": null,
+      "domicile": "Must have studied Class 12 from an urban area school in MP",
+      "academic_percentage": "Minimum 60% in Class 12",
+      "attendance_requirement": null,
+      "other_conditions": ["Complementary to Gaon Ki Beti — for urban BPL girls (not rural)"]
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹500 per month (₹5,000 per year)",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Class 12 mark sheet (urban school, 60%+)", "BPL card or Income Certificate", "Admission certificate", "Bank passbook"],
+    "application": {
+      "application_mode": "Online via MP Scholarship Portal",
+      "application_steps": ["Apply on MP Scholarship Portal", "Upload documents", "Submit for verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Pratibha Kiran scholarship MP", "MP urban BPL girl scholarship", "Madhya Pradesh girl higher education"],
+      "target_students": ["Urban BPL girl students in MP scoring 60%+ in Class 12 and pursuing graduation"],
+      "eligibility_tags": ["madhya_pradesh_domicile", "bpl_family", "female_only", "urban_area", "min_60_percent", "undergraduate"],
+      "benefit_tags": ["maintenance_allowance"],
+      "searchable_text": "MP Pratibha Kiran Scholarship for urban BPL girl students scoring 60%+ in Class 12 pursuing graduation, providing ₹500 monthly allowance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-AS-EDU-001",
+    "scheme_name": "Assam Post-Matric Scholarship for SC/ST/OBC",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": null,
+    "department": "Welfare of Plain Tribes and Backward Classes Department, Government of Assam",
+    "state": "Assam",
+    "description": "Assam state post-matric scholarship for SC, ST and OBC students to support their education beyond Class 10 in recognized institutions.",
+    "official_website": "https://scholarships.gov.in",
+    "application_portal": "https://scholarships.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Post-Matric: Class 11 through Doctoral level",
+      "course_type": "All post-matric recognized courses",
+      "year_of_study": "Any year",
+      "institution_type": "Government and recognized institutions in Assam",
+      "income_limit": "Annual family income below ₹2,50,000 for SC/ST; ₹1,50,000 for OBC",
+      "caste_category": ["SC", "ST", "OBC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Assam",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": []
+    },
+    "benefits": {
+      "tuition_fee_support": "Tuition fee reimbursement",
+      "hostel_fee_support": "Hostel allowance",
+      "maintenance_allowance": "₹230 to ₹1,000 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Caste Certificate", "Income Certificate", "Assam Domicile Certificate", "Bank passbook", "Previous mark sheet"],
+    "application": {
+      "application_mode": "Online via National Scholarship Portal or state portal",
+      "application_steps": ["Register on NSP", "Apply for Assam SC/ST/OBC post-matric scheme", "Upload documents", "Submit"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["Assam scholarship SC ST OBC", "Assam post matric scholarship"],
+      "target_students": ["SC, ST and OBC students in Assam pursuing post-matric education"],
+      "eligibility_tags": ["assam_domicile", "sc_st_obc", "post_matric", "income_below_250000"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "hostel_support"],
+      "searchable_text": "Assam Post-Matric Scholarship for SC, ST and OBC students covering tuition fee and maintenance allowance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-CG-EDU-001",
+    "scheme_name": "Chhattisgarh Post-Matric Scholarship for SC/ST/OBC",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": null,
+    "department": "SC/ST Development Department, Government of Chhattisgarh",
+    "state": "Chhattisgarh",
+    "description": "Chhattisgarh state scholarship for SC, ST and OBC students pursuing post-matric education through the state scholarship portal.",
+    "official_website": "https://schoolscholarship.cg.nic.in",
+    "application_portal": "https://schoolscholarship.cg.nic.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Post-Matric: Class 11 through Doctoral and Professional level",
+      "course_type": "All post-matric recognized courses",
+      "year_of_study": "Any year",
+      "institution_type": "Government and recognized institutions in Chhattisgarh",
+      "income_limit": "No income limit for SC, ST; ₹1,50,000 for OBC",
+      "caste_category": ["SC", "ST", "OBC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Chhattisgarh",
+      "academic_percentage": null,
+      "attendance_requirement": "Minimum 75% attendance",
+      "other_conditions": []
+    },
+    "benefits": {
+      "tuition_fee_support": "Tuition fee reimbursement",
+      "hostel_fee_support": "Hostel charges covered",
+      "maintenance_allowance": "₹200 to ₹1,000 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Caste Certificate", "Income Certificate", "CG Domicile Certificate", "Bank passbook", "Previous mark sheet"],
+    "application": {
+      "application_mode": "Online via Chhattisgarh scholarship portal",
+      "application_steps": ["Apply on state scholarship portal", "Upload documents", "Submit for verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["CG scholarship SC ST OBC", "Chhattisgarh post matric scholarship"],
+      "target_students": ["SC, ST and OBC students in Chhattisgarh pursuing post-matric education"],
+      "eligibility_tags": ["chhattisgarh_domicile", "sc_st_obc", "post_matric", "no_income_limit_sc_st"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "hostel_support"],
+      "searchable_text": "Chhattisgarh Post-Matric Scholarship for SC, ST and OBC students covering tuition fee and maintenance allowance."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-031",
+    "scheme_name": "UGC National Fellowship for SC Students (Research)",
+    "scheme_type": "research_fellowship",
+    "ministry": "Ministry of Education, Government of India",
+    "department": "University Grants Commission (UGC)",
+    "state": "National",
+    "description": "Five-year fellowship for SC students to pursue M.Phil and Ph.D. in universities recognized by UGC, enabling talented SC researchers to pursue academic careers.",
+    "official_website": "https://nfs.ugc.ac.in",
+    "application_portal": "https://nfs.ugc.ac.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "M.Phil and Ph.D. (Doctoral) programmes",
+      "course_type": "Research degrees at UGC-recognized universities",
+      "year_of_study": "1st year of M.Phil or Ph.D.",
+      "institution_type": "UGC-recognized universities",
+      "income_limit": "Annual family income below ₹6,00,000",
+      "caste_category": ["SC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Indian citizen belonging to Scheduled Caste",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": ["Must have cleared UGC-NET or have been admitted to M.Phil/Ph.D. at recognized university", "667 slots per year"]
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": "HRA as applicable",
+      "maintenance_allowance": "JRF: ₹31,000/month for first 2 years; SRF: ₹35,000/month for next 3 years",
+      "book_allowance": "Annual contingency grant ₹10,000 (science) / ₹8,000 (humanities)",
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "SC Certificate", "Income Certificate", "Ph.D./M.Phil admission letter", "UGC NET scorecard if available"],
+    "application": {
+      "application_mode": "Online via UGC NFS portal",
+      "application_steps": ["Register on nfs.ugc.ac.in", "Fill fellowship application", "Upload SC certificate and university admission proof", "Submit"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["UGC National Fellowship SC", "SC PhD fellowship UGC", "NFS SC research fellowship"],
+      "target_students": ["SC students pursuing M.Phil or Ph.D. at UGC-recognized universities with income below ₹6 lakh"],
+      "eligibility_tags": ["national", "income_below_600000", "sc_only", "doctoral", "research"],
+      "benefit_tags": ["maintenance_allowance", "book_allowance"],
+      "searchable_text": "UGC National Fellowship for SC students pursuing M.Phil and PhD providing ₹31,000 to ₹35,000 monthly stipend and annual contingency grant for 5 years."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-032",
+    "scheme_name": "CSIR Junior Research Fellowship (JRF) — Science",
+    "scheme_type": "research_fellowship",
+    "ministry": "Ministry of Science and Technology, Government of India",
+    "department": "Council of Scientific and Industrial Research (CSIR)",
+    "state": "National",
+    "description": "CSIR-JRF is awarded to the top scorers in the CSIR-UGC NET Joint Exam in science disciplines, providing fellowship for Ph.D. research in basic and applied sciences.",
+    "official_website": "https://csirhrdg.res.in",
+    "application_portal": "https://csirhrdg.res.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "M.Sc. or equivalent (Postgraduate) in science",
+      "course_type": "Ph.D. research in Life Sciences, Chemical Sciences, Physical Sciences, Mathematical Sciences, Earth Sciences",
+      "year_of_study": "Postgraduate level or above",
+      "institution_type": "UGC-recognized universities and CSIR/DST research institutions",
+      "income_limit": "No income limit",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Indian citizen below 28 years of age (relaxation for reserved categories)",
+      "academic_percentage": "Minimum 55% at M.Sc. level (50% for SC/ST/PwD)",
+      "attendance_requirement": null,
+      "other_conditions": ["Must have qualified CSIR-UGC NET exam with JRF rank", "Age below 28 years (SC/ST/OBC/PwD — 5-year relaxation)"]
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": "HRA as per entitlement",
+      "maintenance_allowance": "₹31,000 per month for JRF; ₹35,000 per month for SRF",
+      "book_allowance": "Annual contingency grant as per CSIR norms",
+      "laptop_or_device_support": null,
+      "travel_allowance": "Field work and conference support",
+      "other_benefits": []
+    },
+    "required_documents": ["CSIR-NET JRF rank letter", "M.Sc. mark sheet", "Aadhaar Card", "Ph.D. registration proof"],
+    "application": {
+      "application_mode": "Selection through CSIR-UGC NET exam",
+      "application_steps": ["Apply for CSIR-UGC NET exam", "Clear the exam with JRF rank", "Get admission to Ph.D. at recognized institution", "Activate fellowship through CSIR"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["CSIR JRF fellowship", "CSIR-UGC NET", "science PhD fellowship India", "research fellowship science"],
+      "target_students": ["Science postgraduates who have qualified CSIR-UGC NET exam with JRF rank pursuing Ph.D."],
+      "eligibility_tags": ["national", "no_income_limit", "all_categories", "science_stream", "doctoral", "postgraduate"],
+      "benefit_tags": ["maintenance_allowance", "book_allowance"],
+      "searchable_text": "CSIR JRF Fellowship for science postgraduates who qualify CSIR-UGC NET exam, providing ₹31,000 monthly stipend for PhD research in life, chemical, physical and mathematical sciences."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-033",
+    "scheme_name": "PM Scholarship Scheme for Central Armed Police Forces (CAPF)",
+    "scheme_type": "welfare_scholarship",
+    "ministry": "Ministry of Home Affairs, Government of India",
+    "department": "Ministry of Home Affairs",
+    "state": "National",
+    "description": "Scholarship for children of Central Armed Police Forces (CAPF) and Railway Protection Force (RPF/RPSF) personnel, especially war widows/disabled personnel's wards, to encourage higher education.",
+    "official_website": "https://ksb.gov.in",
+    "application_portal": "https://ksb.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Undergraduate: Technical (BE/B.Tech/B.Sc. Engineering, MBBS, BDS, BCA, B.Pharma) and non-technical courses",
+      "course_type": "1st professional degree courses (not PG/distance)",
+      "year_of_study": "1st year of 1st professional degree",
+      "institution_type": "AICTE/UGC/MCI-recognized institutions",
+      "income_limit": "Annual family income below ₹6,00,000",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Ward of CAPF/RPF/RPSF personnel",
+      "academic_percentage": "Minimum 60% in Class 12",
+      "attendance_requirement": null,
+      "other_conditions": ["Parent must be serving or retired CAPF/RPF/RPSF personnel", "Priority to wards of killed/disabled in line of duty"]
+    },
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹36,200 per year for boys; ₹41,800 per year for girls",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+    "required_documents": ["Aadhaar Card", "Service certificate of parent from CAPF unit", "Class 12 mark sheet", "Admission letter", "Bank passbook"],
+    "application": {
+      "application_mode": "Online via KSB portal (ksb.gov.in)",
+      "application_steps": ["Register on KSB portal", "Fill application with service details of parent", "Upload all documents", "Submit for unit verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["PM Scholarship CAPF", "Central Armed Police Forces scholarship", "CRPF BSF CISF ward scholarship", "RPF scholarship"],
+      "target_students": ["Wards of CAPF and RPF/RPSF personnel with family income below ₹6 lakh pursuing professional degree courses"],
+      "eligibility_tags": ["national", "income_below_600000", "capf_ward", "min_60_percent", "undergraduate"],
+      "benefit_tags": ["maintenance_allowance"],
+      "searchable_text": "PM Scholarship for wards of Central Armed Police Forces pursuing 1st professional degree with family income below ₹6 lakh, providing ₹36,200 to ₹41,800 per year."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-NAT-EDU-034",
+    "scheme_name": "NBCFDC Scholarship for OBC Students (National)",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": "Ministry of Social Justice and Empowerment, Government of India",
+    "department": "National Backward Classes Finance and Development Corporation (NBCFDC)",
+    "state": "National",
+    "description": "NBCFDC provides scholarships and educational loans at concessional rates to students from Other Backward Classes and Economically Backward Classes to enable them to pursue higher education.",
+    "official_website": "https://nbcfdc.gov.in",
+    "application_portal": "https://nbcfdc.gov.in",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+    "eligibility": {
+      "education_level": "Undergraduate, Postgraduate and Professional courses",
+      "course_type": "Professional degree and diploma courses (engineering, medical, management, etc.)",
+      "year_of_study": "Any year",
+      "institution_type": "Government and recognized institutions",
+      "income_limit": "Annual family income below ₹3,00,000",
+      "caste_category": ["OBC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Indian citizen belonging to OBC/EBC",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": []
+    },
+    "benefits": {
+      "tuition_fee_support": "Tuition fee as per institution",
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹1,000 per month for day scholars; ₹2,500 for hostellers",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": ["Educational loans at 4% interest for courses not covered by scholarship"]
+    },
+    "required_documents": ["Aadhaar Card", "OBC Certificate", "Income Certificate", "Admission letter", "Bank passbook", "Previous mark sheet"],
+    "application": {
+      "application_mode": "Online via NBCFDC portal or through State Channelising Agencies (SCAs)",
+      "application_steps": ["Apply through state SCA or NBCFDC portal", "Upload OBC certificate and income proof", "Submit for verification"],
+      "processing_time": null,
+      "renewal_required": true
+    },
+    "ai_metadata": {
+      "keywords": ["NBCFDC scholarship OBC", "National Backward Classes Finance scholarship", "OBC scholarship professional course"],
+      "target_students": ["OBC students pursuing UG, PG and professional courses with income below ₹3 lakh"],
+      "eligibility_tags": ["national", "income_below_300000", "obc_only", "undergraduate", "postgraduate", "professional"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance"],
+      "searchable_text": "NBCFDC Scholarship for OBC students pursuing professional and higher education with income below ₹3 lakh, providing tuition fee support and monthly maintenance."
+    }
   }
 ]
