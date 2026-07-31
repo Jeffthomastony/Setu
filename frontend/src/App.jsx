@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import StudentForm from "./components/StudentForm";
 import SeniorCitizenForm from "./components/SeniorCitizenForm";
 import ResultCard from "./components/ResultCard";
@@ -82,8 +82,79 @@ function generateSeniorProfileSummary(profile) {
   return { line1, line2 };
 }
 
-// ── Shared profile-form + results flow (used by both the student and senior
-// citizen matching pages, which differ only in form fields and copy) ────────
+// ── Filter bars ────────────────────────────────────────────────────────────────
+const STUDENT_FILTERS = [
+  { id: "all",        label: "All"           },
+  { id: "national",   label: "🌐 National"    },
+  { id: "state",      label: "📍 State-Specific" },
+  { id: "female",     label: "👩 Girls Only"  },
+  { id: "disability", label: "♿ Disability"  },
+  { id: "high",       label: "⭐ 80%+ Match"  },
+];
+
+const SENIOR_FILTERS = [
+  { id: "all",        label: "All"           },
+  { id: "national",   label: "🌐 National"    },
+  { id: "state",      label: "📍 State-Specific" },
+  { id: "female",     label: "👩 Women Only"  },
+  { id: "disability", label: "♿ Disability"  },
+  { id: "high",       label: "⭐ 80%+ Match"  },
+];
+
+function FilterBar({ filters, active, onChange, total, shown }) {
+  return (
+    <div className="filter-bar">
+      <div className="filter-chips">
+        {filters.map((f) => (
+          <button
+            key={f.id}
+            className={`filter-chip ${active === f.id ? "active" : ""}`}
+            onClick={() => onChange(f.id)}
+            type="button"
+          >
+            {f.label}
+          </button>
+        ))}
+      </div>
+      <span className="filter-count">
+        Showing <strong>{shown}</strong> of <strong>{total}</strong> matched schemes
+      </span>
+    </div>
+  );
+}
+
+function applyFilter(results, filter) {
+  switch (filter) {
+    case "national":
+      return results.filter(
+        (r) => !r.state || r.state.toLowerCase() === "national" ||
+               r.state.toLowerCase().includes("india")
+      );
+    case "state":
+      return results.filter(
+        (r) => r.state && r.state.toLowerCase() !== "national" &&
+               !r.state.toLowerCase().includes("india")
+      );
+    case "female":
+      return results.filter((r) =>
+        r.criteria_breakdown?.some(
+          (c) => c.criterion === "Gender" && c.matched
+        )
+      );
+    case "disability":
+      return results.filter((r) =>
+        r.criteria_breakdown?.some(
+          (c) => c.criterion === "Disability" && c.matched
+        )
+      );
+    case "high":
+      return results.filter((r) => r.overall_score >= 80);
+    default:
+      return results;
+  }
+}
+
+// ── Shared profile-form + results flow ────────────────────────────────────────
 function MatchFlow({
   title,
   subheading,
@@ -95,7 +166,20 @@ function MatchFlow({
   error,
   onSubmit,
   onBack,
+  savedFormData,
+  onFormDataChange,
+  filterList = STUDENT_FILTERS,
 }) {
+  const [activeFilter, setActiveFilter] = useState("all");
+
+
+  const filtered = results ? applyFilter(results, activeFilter) : null;
+
+  // Reset filter when new results arrive
+  useEffect(() => {
+    setActiveFilter("all");
+  }, [results]);
+
   return (
     <main className="page-content">
       <button className="back-link" onClick={onBack} aria-label="Back to home">
@@ -107,7 +191,12 @@ function MatchFlow({
         <p className="form-subheading">{subheading}</p>
       </div>
 
-      <FormComponent onSubmit={onSubmit} loading={loading} />
+      <FormComponent
+        onSubmit={onSubmit}
+        loading={loading}
+        initialData={savedFormData}
+        onDataChange={onFormDataChange}
+      />
 
       {error && (
         <p className="error-banner" role="alert">
@@ -164,26 +253,40 @@ function MatchFlow({
             </div>
           )}
 
-          <div className="results-header">
-            <span className="results-title">{resultsTitle}</span>
-            <span className="results-count-badge">{results.length}</span>
-          </div>
-
           {results.length === 0 ? (
-            <div className="empty-state">
+            <div className="empty-state animate-fade-up">
               <span className="empty-state-icon">🎯</span>
               <h3>No high-confidence matches found</h3>
               <p>
-                No schemes passed the confidence threshold for your profile.
-                Try adjusting your details or check the Search tab for broader results.
+                No schemes passed the confidence threshold for your current profile.
+                Try adjusting your income, education level, or category — or use
+                the <strong>Search tab</strong> to browse schemes directly.
               </p>
             </div>
           ) : (
-            <div className="results-list">
-              {results.map((r, i) => (
-                <ResultCard key={r.scheme_id} result={r} index={i} />
-              ))}
-            </div>
+            <>
+              <FilterBar
+                filters={filterList}
+                active={activeFilter}
+                onChange={setActiveFilter}
+                total={results.length}
+                shown={filtered.length}
+              />
+
+              {filtered.length === 0 ? (
+                <div className="empty-state animate-fade-up" style={{ marginTop: 16 }}>
+                  <span className="empty-state-icon">🔍</span>
+                  <h3>No results for this filter</h3>
+                  <p>Try a different filter to see your matches.</p>
+                </div>
+              ) : (
+                <div className="results-list">
+                  {filtered.map((r, i) => (
+                    <ResultCard key={r.scheme_id} result={r} index={i} />
+                  ))}
+                </div>
+              )}
+            </>
           )}
         </section>
       )}
@@ -197,6 +300,14 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [submittedProfile, setSubmittedProfile] = useState(null);
+
+  // Preserve form data across Back navigation
+  const [studentFormData, setStudentFormData] = useState(null);
+  const [seniorFormData, setSeniorFormData] = useState(null);
+
+  // Senior Accessibility Mode — larger text, high contrast, slower speech
+  const [seniorMode, setSeniorMode] = useState(false);
+
   // Initial app splash screen
   const [appReady, setAppReady] = useState(false);
   const [initProgress, setInitProgress] = useState(0);
@@ -258,6 +369,7 @@ function App() {
     setResults(null);
     setError(null);
     setSubmittedProfile(null);
+    // Note: we do NOT clear studentFormData / seniorFormData so Back works
   }
 
   // Show loading screen until app is ready
@@ -274,7 +386,7 @@ function App() {
       : null;
 
   return (
-    <div className="app-shell">
+    <div className={`app-shell${seniorMode ? " senior-mode" : ""}`}>
       {/* Sticky header — only when not on landing */}
       {view !== "landing" && (
         <header className="app-header-bar">
@@ -285,6 +397,24 @@ function App() {
           >
             <Logo size={34} />
           </button>
+          {view === "senior-form" && (
+            <button
+              className={`senior-mode-toggle ${seniorMode ? "active" : ""}`}
+              onClick={() => setSeniorMode((v) => !v)}
+              type="button"
+              aria-pressed={seniorMode}
+              title={seniorMode ? "Switch to standard view" : "Switch to large-text senior-friendly view"}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                <line x1="11" y1="8" x2="11" y2="14" />
+                <line x1="8" y1="11" x2="14" y2="11" />
+              </svg>
+              {seniorMode ? "Standard View" : "Senior-Friendly View"}
+            </button>
+          )}
         </header>
       )}
 
@@ -304,6 +434,8 @@ function App() {
           error={error}
           onSubmit={handleSubmit}
           onBack={goHome}
+          savedFormData={studentFormData}
+          onFormDataChange={setStudentFormData}
         />
       )}
 
@@ -319,8 +451,12 @@ function App() {
           error={error}
           onSubmit={handleSubmit}
           onBack={goHome}
+          savedFormData={seniorFormData}
+          onFormDataChange={setSeniorFormData}
+          filterList={SENIOR_FILTERS}
         />
       )}
+
     </div>
   );
 }

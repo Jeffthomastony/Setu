@@ -38,6 +38,24 @@ async def lifespan(app: FastAPI):
     except Exception as exc:
         logger.warning("Could not pre-load embedding model: %s", exc)
 
+    # Pre-compute and cache scheme criteria + embeddings so the first real
+    # /match request doesn't pay the NLP + embedding cost.
+    try:
+        from app.api.routes import load_schemes, load_senior_schemes
+        from app.matching.cache import get_criteria, get_scheme_embeddings
+        student_schemes = load_schemes()
+        senior_schemes = load_senior_schemes()
+        get_criteria(student_schemes)
+        get_scheme_embeddings(student_schemes)
+        get_criteria(senior_schemes)
+        get_scheme_embeddings(senior_schemes)
+        logger.info(
+            "Scheme cache warm-up complete — %d student schemes, %d senior schemes",
+            len(student_schemes), len(senior_schemes),
+        )
+    except Exception as exc:
+        logger.warning("Scheme cache warm-up failed (non-fatal): %s", exc)
+
     yield  # Application runs here
 
 

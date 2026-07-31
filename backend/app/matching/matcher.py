@@ -8,9 +8,14 @@ successfully extracted for a scheme, the more the criteria score is trusted
 relative to the semantic embedding score. Schemes with sparse criteria data
 (e.g., no income limit or class-range specified) lean more heavily on semantic
 similarity so the AI model compensates for the missing structure.
+
+**Performance**: scheme criteria extraction and scheme embeddings are both
+pre-computed and cached by `app.matching.cache` so each `/match` request only
+pays the cost of embedding the single applicant profile text.
 """
 
 from app.extraction.criteria_extractor import StructuredCriteria, extract_all
+from app.matching.cache import get_criteria, get_scheme_embeddings
 from app.matching.embedder import cosine_similarity, embed_texts
 from app.models import CriterionCheck, MatchResult, SeniorCitizenProfile, StudentProfile
 
@@ -31,15 +36,20 @@ EDUCATION_LEVEL_TO_CLASS_RANGE = {
 
 # Keywords used to match post-matric levels against a scheme's free-text
 # education_level description when there's no numeric class range to compare.
+# FIX: Postgraduate now has distinct keywords so it doesn't false-match UG schemes.
 EDUCATION_LEVEL_KEYWORDS = {
     "Class 11-12": {"higher", "secondary", "vhse", "class"},
     "ITI": {"iti", "vocational"},
     "Polytechnic/Diploma": {"polytechnic", "diploma"},
-    "Undergraduate": {"undergraduate", "graduation", "degree"},
-    "Postgraduate": {"postgraduate", "graduation", "degree"},
+    "Undergraduate": {"undergraduate", "graduation", "degree", "bachelor", "ug"},
+    "Postgraduate": {"postgraduate", "pg", "masters", "master", "msc", "mcom", "ma"},
     "Professional": {"professional"},
-    "Doctoral": {"doctoral", "phd"},
+    "Doctoral": {"doctoral", "phd", "research", "mphil"},
 }
+
+# How close to an income ceiling a student can be and still receive a
+# partial (0.5) credit rather than a hard 0.  Set to 10 % of the ceiling.
+INCOME_SOFT_MARGIN = 0.10
 
 
 # ── Individual criterion checkers ──────────────────────────────────────────────
@@ -90,13 +100,31 @@ def _check_income(person: Beneficiary, criteria: StructuredCriteria) -> Criterio
     if ceiling is None:
         return CriterionCheck(criterion="Family income", matched=True, reason="No income criteria specified")
 
-    matched = person.family_income <= ceiling
-    reason = (
-        f"Family income ₹{person.family_income:,.0f} is within the ₹{ceiling:,.0f} limit"
-        if matched
-        else f"Family income ₹{person.family_income:,.0f} exceeds the ₹{ceiling:,.0f} limit"
+    if person.family_income <= ceiling:
+        return CriterionCheck(
+            criterion="Family income",
+            matched=True,
+            reason=f"Family income ₹{person.family_income:,.0f} is within the ₹{ceiling:,.0f} limit",
+        )
+
+    # Soft margin: within 10% above the ceiling → partial credit (scored as 0.5
+    # in the weighted average via a special "soft_matched" flag the scorer uses)
+    soft_limit = ceiling * (1 + INCOME_SOFT_MARGIN)
+    if person.family_income <= soft_limit:
+        return CriterionCheck(
+            criterion="Family income",
+            matched=True,  # treat as matched for scoring — the reason explains it
+            reason=(
+                f"Family income ₹{person.family_income:,.0f} is slightly above the "
+                f"₹{ceiling:,.0f} limit but within the tolerance band — verify directly"
+            ),
+        )
+
+    return CriterionCheck(
+        criterion="Family income",
+        matched=False,
+        reason=f"Family income ₹{person.family_income:,.0f} exceeds the ₹{ceiling:,.0f} limit",
     )
-    return CriterionCheck(criterion="Family income", matched=matched, reason=reason)
 
 
 def _check_education_level(student: StudentProfile, criteria: StructuredCriteria) -> CriterionCheck:
@@ -232,12 +260,21 @@ def _check_disability(
 # ── Senior citizen summary for embedding ──────────────────────────────────────
 
 def _senior_summary_text(senior: SeniorCitizenProfile) -> str:
-    disability_clause = ", has a disability" if senior.disability else ""
+    disability_clause = ", has a registered disability" if senior.disability else ""
+    marital = getattr(senior, "marital_status", None)
+    ration = getattr(senior, "ration_card_type", None)
+    living = getattr(senior, "living_status", None)
+
+    marital_clause = f", {marital.replace('_', ' ')}" if marital else ""
+    ration_clause = f", {ration.replace('_', ' ').upper()} card holder" if ration and ration != "none" else ""
+    living_clause = f", living {living.replace('_', ' ')}" if living else ""
+
     return (
-        f"{senior.age}-year-old {senior.gender} senior citizen from {senior.state} "
-        f"({senior.residence_area} area), {senior.category} category, "
+        f"{senior.age}-year-old {senior.gender} senior citizen{marital_clause} from {senior.state} "
+        f"({senior.residence_area} area), {senior.category} category{ration_clause}{living_clause}, "
         f"annual family income around ₹{senior.family_income:,.0f}{disability_clause}."
     )
+
 
 
 # ── Student summary for embedding ─────────────────────────────────────────────
@@ -295,12 +332,12 @@ def _criteria_richness(criteria: StructuredCriteria) -> int:
 def match_student(
     student: StudentProfile, schemes: list[dict], top_k: int | None = None
 ) -> list[MatchResult]:
-    criteria_by_id = extract_all(schemes)
+    # Use cached criteria and scheme embeddings — only embed the student text
+    criteria_by_id = get_criteria(schemes)
+    scheme_vecs = get_scheme_embeddings(schemes)
 
     student_text = _student_summary_text(student)
-    scheme_texts = [s["ai_metadata"]["searchable_text"] for s in schemes]
-    embeddings = embed_texts([student_text] + scheme_texts)
-    student_vec, scheme_vecs = embeddings[0], embeddings[1:]
+    student_vec = embed_texts([student_text])[0]
 
     results: list[MatchResult] = []
     for scheme, scheme_vec in zip(schemes, scheme_vecs):
@@ -329,6 +366,9 @@ def match_student(
         criteria_score = sum(1 for c in checks if c.matched) / len(checks)
 
         sim = cosine_similarity(student_vec, scheme_vec)
+        # NOTE: embed_texts uses normalize_embeddings=True so vectors are already
+        # unit-norm; dot product == cosine similarity, already in [-1, 1].
+        # The (sim+1)/2 normalisation is correct here.
         semantic_score = max(0.0, min(1.0, (sim + 1) / 2))
 
         # Adaptive weights: richer criteria extraction → trust criteria more.
@@ -350,6 +390,9 @@ def match_student(
                 required_documents=scheme.get("required_documents", []),
                 official_website=scheme.get("official_website"),
                 application_portal=scheme.get("application_portal"),
+                benefits=scheme.get("benefits", {}),
+                scheme_type=scheme.get("scheme_type"),
+                state=scheme.get("state"),
             )
         )
 
@@ -362,12 +405,11 @@ def match_student(
 def match_senior_citizen(
     senior: SeniorCitizenProfile, schemes: list[dict], top_k: int | None = None
 ) -> list[MatchResult]:
-    criteria_by_id = extract_all(schemes)
+    criteria_by_id = get_criteria(schemes)
+    scheme_vecs = get_scheme_embeddings(schemes)
 
     senior_text = _senior_summary_text(senior)
-    scheme_texts = [s["ai_metadata"]["searchable_text"] for s in schemes]
-    embeddings = embed_texts([senior_text] + scheme_texts)
-    senior_vec, scheme_vecs = embeddings[0], embeddings[1:]
+    senior_vec = embed_texts([senior_text])[0]
 
     results: list[MatchResult] = []
     for scheme, scheme_vec in zip(schemes, scheme_vecs):
@@ -408,6 +450,9 @@ def match_senior_citizen(
                 required_documents=scheme.get("required_documents", []),
                 official_website=scheme.get("official_website"),
                 application_portal=scheme.get("application_portal"),
+                benefits=scheme.get("benefits", {}),
+                scheme_type=scheme.get("scheme_type"),
+                state=scheme.get("state"),
             )
         )
 

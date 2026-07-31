@@ -1053,6 +1053,109 @@ details[open] .docs-summary-chevron { transform: rotate(90deg); }
   text-transform: uppercase;
 }
 
+/* ============================================================
+   FILTER BAR & CHIPS
+   ============================================================ */
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.filter-chips {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.filter-chip {
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill, 99px);
+  border: 1px solid var(--clr-border);
+  background: var(--clr-surface);
+  color: var(--clr-text-muted);
+  cursor: pointer;
+  transition: all 0.2s var(--ease-out);
+}
+
+.filter-chip:hover {
+  border-color: var(--clr-border-hover);
+  color: var(--clr-text);
+  background: var(--clr-surface-2);
+}
+
+.filter-chip.active {
+  background: rgba(237,28,36,0.12);
+  border-color: var(--clr-accent);
+  color: var(--clr-accent);
+}
+
+.filter-count {
+  font-size: 0.78rem;
+  color: var(--clr-text-muted);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   LANDING STATS
+   ============================================================ */
+
+.landing-stats {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 16px 0 24px;
+  font-size: 0.8rem;
+  color: var(--clr-text-muted);
+  justify-content: center;
+}
+
+.landing-stat strong {
+  color: var(--clr-text);
+  font-weight: 700;
+}
+
+.landing-stat-divider {
+  opacity: 0.3;
+}
+
+/* ============================================================
+   BENEFITS PILLS & DESCRIPTION
+   ============================================================ */
+
+.benefits-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.benefit-pill {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: var(--radius-xs);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--clr-text-muted);
+}
+
+.result-description {
+  font-size: 0.82rem;
+  color: var(--clr-text-muted);
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+
 
 @media (max-width: 640px) {
   .landing-hero { padding: 60px 20px 90px; }
@@ -1396,4 +1499,180 @@ details[open] .docs-summary-chevron { transform: rotate(90deg); }
   background: rgba(255,107,53,0.08);
   color: var(--clr-accent-2);
   border: 1px solid rgba(255,107,53,0.18);
+}
+
+/* ============================================================
+   SENIOR MODE TOGGLE BUTTON
+   ============================================================ */
+
+.senior-mode-toggle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 7px 14px;
+  border-radius: var(--radius-pill, 99px);
+  border: 1px solid var(--clr-border);
+  background: var(--clr-surface);
+  color: var(--clr-text-muted);
+  cursor: pointer;
+  transition: all 0.2s var(--ease-out);
+  margin-left: auto;
+}
+
+.senior-mode-toggle:hover {
+  border-color: var(--clr-accent);
+  color: var(--clr-accent);
+  background: rgba(237,28,36,0.07);
+}
+
+.senior-mode-toggle.active {
+  background: rgba(237,28,36,0.12);
+  border-color: var(--clr-accent);
+  color: var(--clr-accent);
+}
+
+/* ============================================================
+   SENIOR ACCESSIBILITY MODE — .senior-mode on .app-shell
+   ============================================================ */
+
+.senior-mode {
+  /* Bump all text up by ~25% for readability */
+  font-size: 1.1rem !important;
+  line-height: 1.7 !important;
+}
+
+.senior-mode h2,
+.senior-mode h3,
+.senior-mode .result-card-title {
+  font-size: 1.35rem !important;
+}
+
+.senior-mode .form-field label {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+}
+
+.senior-mode input,
+.senior-mode select,
+.senior-mode textarea {
+  font-size: 1.05rem !important;
+  padding: 14px 16px !important;
+  min-height: 52px !important;
+}
+
+/* Larger, more tappable buttons */
+.senior-mode .submit-btn,
+.senior-mode .form-submit-btn,
+.senior-mode button:not(.speech-btn):not(.senior-mode-toggle):not(.logo-button):not(.back-link) {
+  font-size: 1.05rem !important;
+  padding: 16px 24px !important;
+  min-height: 54px !important;
+}
+
+/* Higher-contrast text */
+.senior-mode .result-department,
+.senior-mode .result-description,
+.senior-mode .ai-insight-line1,
+.senior-mode .ai-insight-line2 {
+  color: #b0b0b0 !important; /* lighter muted text for senior mode */
+}
+
+/* Larger score badges */
+.senior-mode .score-badge {
+  font-size: 0.95rem !important;
+  padding: 7px 14px !important;
+}
+
+/* Bigger filter chips */
+.senior-mode .filter-chip {
+  font-size: 0.9rem !important;
+  padding: 9px 18px !important;
+}
+
+/* Benefit pills slightly larger */
+.senior-mode .benefit-pill {
+  font-size: 0.82rem !important;
+  padding: 5px 11px !important;
+}
+
+/* ============================================================
+   CAREGIVER BANNER
+   ============================================================ */
+
+.caregiver-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 200, 100, 0.06);
+  border: 1px solid rgba(255, 200, 100, 0.15);
+  margin-bottom: 20px;
+}
+
+.caregiver-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.caregiver-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  font-size: 0.82rem;
+  color: var(--clr-text-muted);
+  line-height: 1.5;
+}
+
+.caregiver-text strong {
+  color: #e8c97a;
+  font-size: 0.85rem;
+}
+
+/* ============================================================
+   SPEECH / LISTEN BUTTON
+   ============================================================ */
+
+.speech-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill, 99px);
+  border: 1px solid var(--clr-border);
+  background: var(--clr-surface);
+  color: var(--clr-text-muted);
+  cursor: pointer;
+  transition: all 0.2s var(--ease-out);
+  flex-shrink: 0;
+  letter-spacing: 0.03em;
+}
+
+.speech-btn:hover {
+  border-color: rgba(96, 165, 250, 0.5);
+  color: rgb(147, 197, 253);
+  background: rgba(96, 165, 250, 0.08);
+}
+
+.speech-btn.speaking {
+  background: rgba(96, 165, 250, 0.12);
+  border-color: rgba(96, 165, 250, 0.4);
+  color: rgb(147, 197, 253);
+  animation: pulse-listen 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse-listen {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+/* In senior mode, make the listen button bigger */
+.senior-mode .speech-btn {
+  font-size: 0.85rem !important;
+  padding: 7px 14px !important;
 }

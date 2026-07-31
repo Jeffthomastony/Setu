@@ -1,6 +1,49 @@
 import { useState } from "react";
 import { askScheme, explainScheme } from "../api";
 
+function SpeechButton({ textToSpeak }) {
+  const [speaking, setSpeaking] = useState(false);
+
+  function toggleSpeech() {
+    if (!("speechSynthesis" in window)) return;
+
+    if (speaking) {
+      window.speechSynthesis.cancel();
+      setSpeaking(false);
+      return;
+    }
+
+    window.speechSynthesis.cancel();
+    const utterance = new SpeechSynthesisUtterance(textToSpeak);
+    utterance.rate = 0.9; // Slightly slower for elderly/clear listening
+    utterance.onend = () => setSpeaking(false);
+    utterance.onerror = () => setSpeaking(false);
+    setSpeaking(true);
+    window.speechSynthesis.speak(utterance);
+  }
+
+  if (!("speechSynthesis" in window)) return null;
+
+  return (
+    <button
+      className={`speech-btn ${speaking ? "speaking" : ""}`}
+      onClick={toggleSpeech}
+      type="button"
+      title={speaking ? "Stop reading" : "Read aloud"}
+      aria-label={speaking ? "Stop reading" : "Read aloud"}
+    >
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" />
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
+      </svg>
+      {speaking ? "Pause" : "Listen"}
+    </button>
+  );
+}
+
+
 // ── Match summary — client-side template over the backend's real criteria breakdown ──
 function generateMatchSummary(criteria_breakdown) {
   if (!criteria_breakdown || criteria_breakdown.length === 0) return null;
@@ -258,13 +301,17 @@ export default function ResultCard({ result, index = 0 }) {
     >
       {/* Header */}
       <div className="result-card-header">
-        <h3 className="result-card-title">{result.scheme_name}</h3>
+        <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
+          <h3 className="result-card-title">{result.scheme_name}</h3>
+          <SpeechButton textToSpeak={`${result.scheme_name}. ${result.description || ""}`} />
+        </div>
         <ScoreBadge
           score={displayScore}
           label={scoreLabel}
           showConfidence={!isSearchResult}
         />
       </div>
+
 
       {/* Department */}
       {result.department && (
@@ -279,7 +326,20 @@ export default function ResultCard({ result, index = 0 }) {
         </p>
       )}
 
-      {/* State tag — only for search results */}
+      {/* State tag — match results */}
+      {!isSearchResult && result.state && result.state.toLowerCase() !== "national" && (
+        <p className="result-department" style={{ marginTop: "4px" }}>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+            aria-hidden="true" style={{ flexShrink: 0 }}>
+            <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z" />
+            <circle cx="12" cy="10" r="3" />
+          </svg>
+          {result.state}
+        </p>
+      )}
+
+      {/* State tag — search results */}
       {isSearchResult && result.state && (
         <p className="result-department" style={{ marginTop: "4px" }}>
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
@@ -292,14 +352,30 @@ export default function ResultCard({ result, index = 0 }) {
         </p>
       )}
 
-      {/* Description — only for search results */}
-      {isSearchResult && result.description && (
-        <p style={{
-          fontSize: "0.85rem",
-          color: "var(--text-secondary, #888)",
-          margin: "8px 0 0",
-          lineHeight: 1.5,
-        }}>
+      {/* Benefits pills */}
+      {result.benefits && Object.keys(result.benefits).length > 0 && (() => {
+        const pills = [];
+        const b = result.benefits;
+        if (b.tuition_fee_reimbursement) pills.push(`💳 ${b.tuition_fee_reimbursement}`);
+        if (b.monthly_stipend) pills.push(`📅 ₹${Number(b.monthly_stipend).toLocaleString("en-IN")}/mo`);
+        if (b.annual_amount) pills.push(`💰 ₹${Number(b.annual_amount).toLocaleString("en-IN")}/yr`);
+        if (b.one_time_grant) pills.push(`🎁 ₹${Number(b.one_time_grant).toLocaleString("en-IN")} grant`);
+        if (b.laptop_grant) pills.push("💻 Laptop grant");
+        if (b.hostel_charges) pills.push("🏠 Hostel covered");
+        if (b.book_allowance) pills.push("📚 Book allowance");
+        if (!pills.length && b.description) pills.push(`💡 ${b.description}`);
+        return pills.length > 0 ? (
+          <div className="benefits-pills">
+            {pills.slice(0, 4).map((p, i) => (
+              <span key={i} className="benefit-pill">{p}</span>
+            ))}
+          </div>
+        ) : null;
+      })()}
+
+      {/* Description */}
+      {result.description && (
+        <p className="result-description">
           {result.description}
         </p>
       )}

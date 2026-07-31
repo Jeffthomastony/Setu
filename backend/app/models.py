@@ -52,6 +52,11 @@ class SeniorCitizenProfile(BaseModel):
     residence_area: Literal["rural", "urban"]
     gender: Literal["male", "female", "other"]
     disability: bool = False
+    # Optional enrichment fields — improve senior citizen scheme matching
+    marital_status: Optional[str] = None       # 'married', 'widowed', 'single', 'divorced_abandoned'
+    ration_card_type: Optional[str] = None     # 'bpl', 'aay_antyodaya', 'apl', 'priority_household', 'none'
+    living_status: Optional[str] = None        # 'with_family', 'living_alone', 'old_age_home'
+
 
 
 class CriterionCheck(BaseModel):
@@ -71,6 +76,11 @@ class MatchResult(BaseModel):
     required_documents: list[str]
     official_website: Optional[str] = None
     application_portal: Optional[str] = None
+    # Extra fields forwarded from scheme JSON for richer UI display
+    benefits: dict = Field(default_factory=dict)
+    scheme_type: Optional[str] = None
+    state: Optional[str] = None
+    description: Optional[str] = None
 
 
 class SchemeSearchResult(BaseModel):

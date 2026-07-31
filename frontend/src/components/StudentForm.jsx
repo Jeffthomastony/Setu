@@ -116,8 +116,8 @@ function FormField({ label, hint, error, children }) {
   );
 }
 
-export default function StudentForm({ onSubmit, loading }) {
-  const [form, setForm] = useState(INITIAL_STATE);
+export default function StudentForm({ onSubmit, loading, initialData, onDataChange }) {
+  const [form, setForm] = useState(initialData || INITIAL_STATE);
   const [errors, setErrors] = useState({});
   const [touched, setTouched] = useState({});
   const [stateSearch, setStateSearch] = useState("");
@@ -132,7 +132,11 @@ export default function StudentForm({ onSubmit, loading }) {
   );
 
   function update(field, value) {
-    setForm((prev) => ({ ...prev, [field]: value }));
+    setForm((prev) => {
+      const next = { ...prev, [field]: value };
+      if (onDataChange) onDataChange(next);
+      return next;
+    });
     if (touched[field]) validate({ ...form, [field]: value });
   }
 

@@ -77,6 +77,20 @@ export default function LandingPage({ onSelect }) {
           hear about.
         </p>
 
+        <div className="landing-stats animate-fade-up delay-200">
+          <span className="landing-stat">
+            <strong>72+</strong> verified schemes
+          </span>
+          <span className="landing-stat-divider">·</span>
+          <span className="landing-stat">
+            <strong>20+</strong> states covered
+          </span>
+          <span className="landing-stat-divider">·</span>
+          <span className="landing-stat">
+            <strong>100%</strong> free &amp; private
+          </span>
+        </div>
+
         <div className="landing-trust animate-fade-up delay-300">
           <TrustChip icon="🔒" label="Privacy-first" />
           <TrustChip icon="🧠" label="AI-matched" />

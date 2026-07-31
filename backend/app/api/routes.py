@@ -15,7 +15,7 @@ SENIOR_SCHEMES_PATH = Path(__file__).resolve().parent.parent / "data" / "senior_
 _schemes_cache: list[dict] | None = None
 _senior_schemes_cache: list[dict] | None = None
 
-MIN_MATCH_SCORE = 70.0
+MIN_MATCH_SCORE = 55.0
 MIN_SEARCH_SCORE = 30.0  # lower bar for keyword/semantic search
 
 # Canonical list of Indian states and UTs used for fuzzy state normalization.
@@ -31,13 +31,58 @@ INDIAN_STATES = [
 ]
 
 
-def normalize_state(state: str) -> str:
-    """Fuzzy-match user input to a canonical Indian state/UT name.
+# Map of major Indian cities → canonical state name.
+# Lets students type "Mumbai" or "Bengaluru" and get the right state.
+CITY_TO_STATE: dict[str, str] = {
+    "mumbai": "Maharashtra", "pune": "Maharashtra", "nagpur": "Maharashtra",
+    "nashik": "Maharashtra", "aurangabad": "Maharashtra",
+    "delhi": "Delhi", "new delhi": "Delhi",
+    "bengaluru": "Karnataka", "bangalore": "Karnataka", "mysuru": "Karnataka",
+    "mysore": "Karnataka", "hubli": "Karnataka", "mangalore": "Karnataka",
+    "chennai": "Tamil Nadu", "coimbatore": "Tamil Nadu", "madurai": "Tamil Nadu",
+    "kolkata": "West Bengal", "howrah": "West Bengal", "siliguri": "West Bengal",
+    "hyderabad": "Telangana", "warangal": "Telangana", "karimnagar": "Telangana",
+    "ahmedabad": "Gujarat", "surat": "Gujarat", "vadodara": "Gujarat",
+    "rajkot": "Gujarat",
+    "jaipur": "Rajasthan", "jodhpur": "Rajasthan", "udaipur": "Rajasthan",
+    "kota": "Rajasthan",
+    "lucknow": "Uttar Pradesh", "kanpur": "Uttar Pradesh", "agra": "Uttar Pradesh",
+    "varanasi": "Uttar Pradesh", "allahabad": "Uttar Pradesh",
+    "patna": "Bihar", "gaya": "Bihar", "bhagalpur": "Bihar",
+    "bhopal": "Madhya Pradesh", "indore": "Madhya Pradesh", "gwalior": "Madhya Pradesh",
+    "jabalpur": "Madhya Pradesh",
+    "raipur": "Chhattisgarh", "bhilai": "Chhattisgarh",
+    "ranchi": "Jharkhand", "jamshedpur": "Jharkhand", "dhanbad": "Jharkhand",
+    "chandigarh": "Chandigarh",
+    "bhubaneswar": "Odisha", "cuttack": "Odisha",
+    "thiruvananthapuram": "Kerala", "kochi": "Kerala", "kozhikode": "Kerala",
+    "trivandrum": "Kerala",
+    "guwahati": "Assam", "dibrugarh": "Assam",
+    "dehradun": "Uttarakhand", "haridwar": "Uttarakhand",
+    "shimla": "Himachal Pradesh", "dharamsala": "Himachal Pradesh",
+    "amritsar": "Punjab", "ludhiana": "Punjab", "jalandhar": "Punjab",
+    "srinagar": "Jammu and Kashmir", "jammu": "Jammu and Kashmir",
+    "gangtok": "Sikkim",
+    "aizawl": "Mizoram", "imphal": "Manipur", "shillong": "Meghalaya",
+    "kohima": "Nagaland", "itanagar": "Arunachal Pradesh", "agartala": "Tripura",
+    "panaji": "Goa",
+    "visakhapatnam": "Andhra Pradesh", "vijayawada": "Andhra Pradesh",
+    "vizag": "Andhra Pradesh",
+    "puducherry": "Puducherry", "pondicherry": "Puducherry",
+}
 
-    Uses difflib's sequence matching with a 0.6 cutoff so common typos
-    ('Kerla', 'Karnatka') and case variants ('kerala') resolve correctly.
-    Falls back to the original string if no match is found above cutoff.
+
+def normalize_state(state: str) -> str:
+    """Resolve a city name or fuzzy state spelling to a canonical Indian state/UT.
+
+    1. Exact city lookup (e.g. 'Mumbai' → 'Maharashtra').
+    2. Difflib fuzzy match against canonical state list (handles typos like
+       'Kerla' → 'Kerala').
+    3. Falls back to the original string if nothing matches.
     """
+    lower = state.strip().lower()
+    if lower in CITY_TO_STATE:
+        return CITY_TO_STATE[lower]
     matches = difflib.get_close_matches(state.strip(), INDIAN_STATES, n=1, cutoff=0.6)
     return matches[0] if matches else state.strip()
 
@@ -94,12 +139,17 @@ def match(student: StudentProfile):
     students see confident matches rather than every low-relevance scheme.
     """
     schemes = load_schemes()
-    # AI step: normalize state before matching
+    # AI step: normalize state before matching (city name → state, typo correction)
     student = student.model_copy(update={"state": normalize_state(student.state)})
     try:
         results = match_student(student, schemes)
     except Exception as exc:
         raise HTTPException(status_code=500, detail=f"Matching failed: {exc}") from exc
+    # Enrich with description from the source scheme JSON
+    scheme_map = {s["scheme_id"]: s for s in schemes}
+    for r in results:
+        if r.scheme_id in scheme_map:
+            r.description = scheme_map[r.scheme_id].get("description")
     return [r for r in results if r.overall_score >= MIN_MATCH_SCORE]
 
 
@@ -118,6 +168,10 @@ def match_senior(senior: SeniorCitizenProfile):
         results = match_senior_citizen(senior, schemes)
     except Exception as exc:
         raise HTTPException(status_code=500, detail=f"Matching failed: {exc}") from exc
+    scheme_map = {s["scheme_id"]: s for s in schemes}
+    for r in results:
+        if r.scheme_id in scheme_map:
+            r.description = scheme_map[r.scheme_id].get("description")
     return [r for r in results if r.overall_score >= MIN_MATCH_SCORE]
 
 
