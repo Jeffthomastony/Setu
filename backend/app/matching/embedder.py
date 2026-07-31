@@ -1,59 +1,66 @@
-"""Semantic embedding wrapper using spaCy's pretrained word vectors
-(en_core_web_md). Used to semantically compare a student's profile against
-each scheme's `searchable_text`, so relevant-but-not-exact matches still
-surface (per the Setu abstract: "surfacing not just exact fits but close,
+"""Semantic embedding wrapper using a pretrained sentence-transformer model
+(all-MiniLM-L6-v2, via Hugging Face's `sentence-transformers` library). Used
+to semantically compare a student's profile / search query against each
+scheme's `searchable_text`, so relevant-but-not-exact matches still surface
+(per the Setu abstract: "surfacing not just exact fits but close,
 easily-overlooked matches").
 
-Word vectors (rather than a transformer sentence-embedding model) are used
-here because they run fully offline once the spaCy model is installed via
-`python -m spacy download en_core_web_md` -- no external API/model-hub call
-needed at request time, which also reinforces the privacy-first design.
+A transformer sentence-embedding model is used here (rather than averaging
+static spaCy word vectors) because it produces genuinely contextual sentence
+embeddings — e.g. it captures that "help for disabled students" and
+"scholarship for persons with disabilities" are semantically close even with
+almost no literal word overlap, which plain word-vector averaging handles
+far more weakly.
 
-Fallback: if en_core_web_md is unavailable, falls back to en_core_web_sm
-(no word vectors → zero vectors → semantic score is neutral 0.5).
+The model is downloaded once from the Hugging Face model hub (cached locally
+under `~/.cache/huggingface`, ~90MB) and then runs fully offline, entirely on
+this machine, at request time — preserving Setu's privacy-first design; no
+student data or query text is ever sent to an external API.
+
+Fallback: if the model can't be loaded (e.g. no internet on first run and no
+local cache), embeddings degrade to zero vectors so cosine similarity is
+always neutral (0) rather than the app crashing.
 """
 
 import threading
 
 import numpy as np
-import spacy
 
-_MODEL_PRIORITY = ["en_core_web_md", "en_core_web_sm"]
-_nlp = None
+_MODEL_NAME = "sentence-transformers/all-MiniLM-L6-v2"
+_model = None
+_load_failed = False
 _lock = threading.Lock()
 
 
-def get_nlp():
-    """Return the spaCy model, loading it once in a thread-safe manner.
+def get_model():
+    """Return the sentence-transformer model, loading it once, thread-safely.
 
-    Tries models in priority order; falls back to a blank pipeline with a
-    sentencizer if none are installed so the application stays usable.
+    Returns None if the model could not be loaded, so callers can fall back
+    gracefully instead of crashing.
     """
-    global _nlp
-    if _nlp is not None:
-        return _nlp
+    global _model, _load_failed
+    if _model is not None or _load_failed:
+        return _model
     with _lock:
-        if _nlp is not None:  # double-checked locking
-            return _nlp
-        for model_name in _MODEL_PRIORITY:
-            try:
-                _nlp = spacy.load(model_name)
-                return _nlp
-            except OSError:
-                continue
-        # Last resort: blank pipeline — semantic scores will all be 0
-        _nlp = spacy.blank("en")
-        _nlp.add_pipe("sentencizer")
-    return _nlp
+        if _model is not None or _load_failed:  # double-checked locking
+            return _model
+        try:
+            from sentence_transformers import SentenceTransformer
+            _model = SentenceTransformer(_MODEL_NAME)
+        except Exception:
+            _load_failed = True
+    return _model
 
 
 def embed_texts(texts: list[str]) -> np.ndarray:
-    nlp = get_nlp()
-    vectors = np.array([nlp(text).vector for text in texts], dtype=np.float32)
-    norms = np.linalg.norm(vectors, axis=1, keepdims=True)
-    # Avoid division by zero for zero-vectors (blank model fallback)
-    norms[norms == 0] = 1e-8
-    return vectors / norms
+    model = get_model()
+    if model is None:
+        # No model available — neutral zero vectors (all similarities become 0)
+        return np.zeros((len(texts), 1), dtype=np.float32)
+    vectors = model.encode(
+        texts, convert_to_numpy=True, normalize_embeddings=True, show_progress_bar=False
+    )
+    return vectors.astype(np.float32)
 
 
 def cosine_similarity(a: np.ndarray, b: np.ndarray) -> float:

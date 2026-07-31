@@ -27,11 +27,16 @@ async def lifespan(app: FastAPI):
         logger.warning("Could not pre-load en_core_web_sm: %s", exc)
 
     try:
-        from app.matching.embedder import get_nlp as get_md
-        get_md()
-        logger.info("spaCy en_core_web_md loaded ✓")
+        from app.matching.embedder import get_model
+        if get_model() is not None:
+            logger.info("Sentence-transformer embedding model loaded ✓")
+        else:
+            logger.warning(
+                "Sentence-transformer embedding model unavailable — "
+                "semantic scoring will fall back to neutral"
+            )
     except Exception as exc:
-        logger.warning("Could not pre-load en_core_web_md: %s", exc)
+        logger.warning("Could not pre-load embedding model: %s", exc)
 
     yield  # Application runs here
 

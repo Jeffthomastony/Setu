@@ -3,7 +3,11 @@ uvicorn[standard]==0.30.6
 pydantic==2.9.2
 spacy==3.7.5
 numpy==1.26.4
+sentence-transformers==3.0.1
 
 # after installing requirements, also run:
 #   python -m spacy download en_core_web_sm
-#   python -m spacy download en_core_web_md
+#
+# sentence-transformers downloads its model (all-MiniLM-L6-v2, ~90MB) from
+# the Hugging Face Hub the first time it's used, then caches it locally
+# under ~/.cache/huggingface — no internet needed on subsequent runs.
