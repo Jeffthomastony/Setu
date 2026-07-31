@@ -58,3 +58,15 @@ class MatchResult(BaseModel):
     required_documents: list[str]
     official_website: Optional[str] = None
     application_portal: Optional[str] = None
+
+
+class SchemeSearchResult(BaseModel):
+    scheme_id: str
+    scheme_name: str
+    department: Optional[str] = None
+    state: str
+    description: str
+    relevance_score: float
+    required_documents: list[str]
+    official_website: Optional[str] = None
+    application_portal: Optional[str] = None
