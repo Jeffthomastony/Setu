@@ -1,8 +1,8 @@
 fastapi==0.115.0
 uvicorn[standard]==0.30.6
 pydantic==2.9.2
-spacy==3.7.5
-numpy==1.26.4
+spacy>=3.7.5
+numpy>=1.26.4
 
 # after installing requirements, also run:
 #   python -m spacy download en_core_web_sm
