@@ -14,3 +14,14 @@ export async function matchStudent(profile) {
 
   return res.json();
 }
+
+export async function searchSchemes(query) {
+  const res = await fetch(`${API_BASE}/search?q=${encodeURIComponent(query)}`);
+
+  if (!res.ok) {
+    const detail = await res.json().catch(() => null);
+    throw new Error(detail?.detail ? JSON.stringify(detail.detail) : `Request failed (${res.status})`);
+  }
+
+  return res.json();
+}
