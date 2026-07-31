@@ -44,10 +44,10 @@ frontend/            React app (Vite)
       LandingPage.jsx    entry point: Search Schemes / Scholarships For You
       SearchPage.jsx      keyword + semantic search UI
       StudentForm.jsx     profile form (incl. optional religion, institution type)
-      ResultCard.jsx       ranked result with AI match summary + on-demand AI explanation
+      ResultCard.jsx       ranked result with match summary + on-demand AI explanation/Q&A
       LoadingScreen.jsx    animated splash shown while the app initializes
       Logo.jsx             reusable SVG bridge-motif logo
-    App.jsx             view routing + client-side "AI Profile Insight" summary
+    App.jsx             view routing + client-side profile summary
 ```
 
 ## Running it locally (for beginners)
@@ -108,7 +108,7 @@ Add a new entry to `backend/app/data/schemes.json` following the same shape as t
 
 - **NLP extraction**: eligibility fields (income ceilings, percentage thresholds, class/education ranges, age ranges, gender/disability restrictions) are free text in the source data; `app/extraction/criteria_extractor.py` uses spaCy (sentence segmentation, tokenization, lemmatization) plus targeted parsing to turn that prose into structured, comparable values.
 - **Adaptive recommendation system**: `app/matching/matcher.py` blends hard eligibility-criteria scoring with a semantic embedding similarity score, weighting each dynamically based on how much structured criteria could actually be extracted for a given scheme — not a fixed rule set.
-- **Generative explanation**: `/explain/{scheme_id}` turns the extracted structured criteria back into a natural-language paragraph (NLG), and the frontend generates plain-language match summaries and profile insights client-side from the match results — all grounded in the actual extracted/matched data, not free-form generation from an external model.
+- **Generative explanation**: `/explain/{scheme_id}` turns the extracted structured criteria back into a natural-language paragraph (NLG), grounded in the actual extracted data, not free-form generation from an external model. (The frontend's match/profile summary text is plain client-side templating over the real match results — not a model — and is labelled as such in the code.)
 - **Retrieval-grounded Q&A**: `/ask/{scheme_id}` (`app/qa/qa_engine.py`) turns a scheme's structured fields into a set of fact sentences, ranks them against a free-text question with the same semantic + keyword blend as search, and returns the top-matching facts verbatim — so answers are always traceable to a real field in the scheme record, never freely generated.
 - **Explainable AI**: every match returns a full criterion-by-criterion breakdown of why it did or didn't qualify.
 - **Privacy-first / responsible AI**: student profile data is processed in-memory for the single request and never persisted, logged, or transmitted elsewhere.
