@@ -1,0 +1,1049 @@
+[
+  {
+    "scheme_id": "SETU-KL-EDU-001",
+    "scheme_name": "e-Grantz Post-Matric Scholarship",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": null,
+    "department": "Scheduled Castes Development Department / Scheduled Tribes Development Department / Backward Classes Development Department, Government of Kerala",
+    "state": "Kerala",
+    "description": "e-Grantz is the Government of Kerala's centralized online system for disbursing post-matric educational assistance (fee concession and maintenance allowance) to SC, ST, OBC and OEC (Other Eligible Community) students through a single registration on the e-Grantz 3.0 portal.",
+    "official_website": "https://egrantz.kerala.gov.in/",
+    "application_portal": "https://egrantz.kerala.gov.in/",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+
+    "eligibility": {
+      "education_level": "Post-Matric: Higher Secondary/VHSE (Class 11-12), Polytechnic, Diploma, Undergraduate, Postgraduate, Professional and Doctoral courses",
+      "course_type": "General, Technical, Professional and Vocational courses approved by the concerned University or Board",
+      "year_of_study": "Any year of a post-matric course (renewable annually)",
+      "institution_type": "Government, Government-aided and recognized institutions within Kerala; select institutions outside Kerala also covered under specific components",
+      "income_limit": "No income limit for SC, ST and OEC students; annual family income below ₹1,00,000 for OBC students",
+      "caste_category": ["SC", "ST", "OBC", "OEC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Applicant or parent/guardian must be a permanent resident of Kerala",
+      "academic_percentage": null,
+      "attendance_requirement": "Minimum 75% monthly attendance required to remain eligible",
+      "other_conditions": [
+        "Student must not simultaneously avail more than one scholarship/stipend",
+        "Must be a regular student pursuing a post-matric course recognized by the University/Board"
+      ]
+    },
+
+    "benefits": {
+      "tuition_fee_support": "Reimbursement of tuition and special fees as per the approved fee structure of the course/institution",
+      "hostel_fee_support": null,
+      "maintenance_allowance": "Monthly stipend, reported to range from approximately ₹100 to ₹1,500 depending on course level and category",
+      "book_allowance": null,
+      "laptop_or_device_support": "Free Laptop Scheme component available for SC/ST students pursuing professional or postgraduate courses (exact grant amount not published on official sources reviewed)",
+      "travel_allowance": null,
+      "other_benefits": [
+        "Exam fee reimbursement (component-specific)"
+      ]
+    },
+
+    "required_documents": [
+      "Aadhaar Card",
+      "Community/Caste Certificate",
+      "Income Certificate",
+      "Bonafide/Study Certificate from institution",
+      "Bank Passbook copy (Aadhaar-linked)",
+      "Previous year's mark sheet"
+    ],
+
+    "application": {
+      "application_mode": "Online, with a signed printout submitted to the institution for verification",
+      "application_steps": [
+        "Complete One-Time Registration (OTR) on egrantz.kerala.gov.in using Aadhaar",
+        "Log in and complete the student profile (personal, academic and bank details)",
+        "Select the applicable post-matric scheme",
+        "Upload required documents",
+        "Submit the application online",
+        "Print the submitted application and hand it over to the institution/college office along with supporting documents"
+      ],
+      "processing_time": null,
+      "renewal_required": true
+    },
+
+    "ai_metadata": {
+      "keywords": ["e-Grantz", "post matric scholarship", "SC ST OBC OEC Kerala", "fee concession", "Kerala scholarship"],
+      "target_students": ["SC, ST, OBC and OEC students in Kerala pursuing post-matric education"],
+      "eligibility_tags": [
+        "kerala_domicile",
+        "sc_st_obc_oec",
+        "post_matric",
+        "income_limit_obc_100000",
+        "no_income_limit_sc_st_oec",
+        "attendance_75_percent"
+      ],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "laptop_support"],
+      "searchable_text": "e-Grantz Post-Matric Scholarship for SC, ST, OBC and OEC students of Kerala studying from Class 11 up to postgraduate and professional courses, providing tuition fee concession and monthly maintenance allowance via the e-Grantz 3.0 portal."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-KL-EDU-002",
+    "scheme_name": "National Means-cum-Merit Scholarship (NMMS)",
+    "scheme_type": "merit_scholarship",
+    "ministry": "Ministry of Education, Government of India (Centrally Sponsored Scheme)",
+    "department": "State Council of Educational Research and Training (SCERT), Kerala",
+    "state": "Kerala",
+    "description": "NMMS is a Centrally Sponsored Scheme launched to award scholarships to meritorious students from economically weaker sections to arrest their dropout at Class VIII and encourage them to continue education through the secondary and higher secondary stages. In Kerala, the selection examination is conducted by SCERT Kerala.",
+    "official_website": "http://nmmse.kerala.gov.in/",
+    "application_portal": "http://nmmse.kerala.gov.in/",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+
+    "eligibility": {
+      "education_level": "Class 8 (at time of the qualifying exam); scholarship continues through Class 9 to Class 12",
+      "course_type": "General secondary and higher secondary education",
+      "year_of_study": "Class 8 for the entrance exam; renewed annually through Class 12",
+      "institution_type": "Government and Government-aided schools under Government of Kerala only",
+      "income_limit": "Parental/family annual income not exceeding ₹3,50,000 from all sources",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Studying in a Government or Government-aided school in Kerala",
+      "academic_percentage": "Minimum 55% marks in Class 7 final examination (50% for SC/ST students)",
+      "attendance_requirement": null,
+      "other_conditions": [
+        "Not eligible if studying in Kendriya Vidyalaya, Jawahar Navodaya Vidyalaya, Sainik School, private schools, or residential/adopted schools under the state government",
+        "Selection is based on performance in the Mental Ability Test (MAT) and Scholastic Aptitude Test (SAT)",
+        "Must maintain satisfactory academic performance each year for scholarship renewal"
+      ]
+    },
+
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹12,000 per annum (₹1,000 per month), disbursed directly to the student's bank account",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+
+    "required_documents": [
+      "Class 7 mark sheet",
+      "Income certificate",
+      "Aadhaar Card/ID proof",
+      "Bank account passbook",
+      "School bonafide certificate"
+    ],
+
+    "application": {
+      "application_mode": "Online registration for the exam via nmmse.kerala.gov.in; written examination conducted offline at designated centers",
+      "application_steps": [
+        "Register/log in via Candidate Login on nmmse.kerala.gov.in",
+        "Fill in personal and school details",
+        "Upload required documents",
+        "Download the admit card",
+        "Appear for the NMMS examination (MAT and SAT)",
+        "Check results/merit list on the official portal"
+      ],
+      "processing_time": null,
+      "renewal_required": true
+    },
+
+    "ai_metadata": {
+      "keywords": ["NMMS", "National Means cum Merit Scholarship", "SCERT Kerala", "Class 8 scholarship exam", "means-cum-merit"],
+      "target_students": ["Class 8 students from economically weaker families studying in Government/Government-aided schools in Kerala"],
+      "eligibility_tags": [
+        "kerala_domicile",
+        "government_or_aided_school",
+        "income_below_350000",
+        "class_8_qualifying_exam",
+        "min_55_percent_class7_50_percent_sc_st"
+      ],
+      "benefit_tags": ["maintenance_allowance"],
+      "searchable_text": "National Means-cum-Merit Scholarship (NMMS) for Class 8 students of Government and Government-aided schools in Kerala with family income below ₹3.5 lakh, providing ₹12,000 per year to continue education through Class 12, administered by SCERT Kerala."
+    }
+  },
+
+  {
+    "scheme_id": "SETU-KL-EDU-003",
+    "scheme_name": "Snehapoorvam Scholarship",
+    "scheme_type": "state_scheme",
+    "ministry": null,
+    "department": "Department of Social Justice / Kerala Social Security Mission (KSSM)",
+    "state": "Kerala",
+    "description": "Snehapoorvam is a welfare scheme implemented through the Kerala Social Security Mission (Department of Social Justice) that provides monthly financial assistance to children who have lost one or both parents, to help prevent school/college dropout due to financial hardship.",
+    "official_website": "https://socialsecuritymission.gov.in/2024/05/04/snehapoorvam/",
+    "application_portal": "http://kssm.ikm.in/",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+
+    "eligibility": {
+      "education_level": "Class 1 to Degree/Professional courses (a separate child-welfare component covers children below 5 years)",
+      "course_type": "General school education, ITI, Polytechnic/Diploma, Graduation, Post-Graduation",
+      "year_of_study": "Any",
+      "institution_type": "Government, Government-aided and recognized private institutions in Kerala",
+      "income_limit": "Below Poverty Line (BPL) families are eligible; for Above Poverty Line (APL) families, annual income must be below ₹20,000 in rural areas and ₹22,375 in urban areas",
+      "caste_category": [],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Kerala",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": [
+        "Applicant must have lost one or both parents",
+        "Application must be submitted through the school/college where the student is currently studying",
+        "Institution verifies and forwards the application via the E-Suraksha portal to KSSM for approval and disbursal"
+      ]
+    },
+
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "Monthly financial assistance: ₹300 (Class 1-5), ₹500 (Class 6-10), ₹750 (Class 11-12), ₹1,000 (Degree/Professional courses); paid for a maximum of 10 months in an academic year",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+
+    "required_documents": [
+      "Application form (submitted through school/college)",
+      "Death certificate of deceased parent(s)",
+      "Income certificate",
+      "Aadhaar Card/ID proof",
+      "Bank passbook copy"
+    ],
+
+    "application": {
+      "application_mode": "Offline application submitted through the school/college; institution enters/verifies details via the E-Suraksha portal (kssm.ikm.in)",
+      "application_steps": [
+        "Obtain the application form from the school/college",
+        "Attach required documents (death certificate, income proof, Aadhaar)",
+        "Submit the completed application to the school/college head",
+        "Institution verifies and submits the application via the E-Suraksha portal",
+        "Application is forwarded to KSSM for approval and disbursal"
+      ],
+      "processing_time": null,
+      "renewal_required": true
+    },
+
+    "ai_metadata": {
+      "keywords": ["Snehapoorvam", "Kerala Social Security Mission", "orphan scholarship", "BPL students Kerala", "child welfare scholarship"],
+      "target_students": ["Orphaned or single-parent children in Kerala from BPL or low-income families"],
+      "eligibility_tags": [
+        "kerala_domicile",
+        "orphan_or_single_parent_loss",
+        "bpl_or_income_below_20000_rural_22375_urban",
+        "class_1_to_degree"
+      ],
+      "benefit_tags": ["maintenance_allowance"],
+      "searchable_text": "Snehapoorvam Scholarship by Kerala Social Security Mission provides monthly financial assistance ranging from ₹300 to ₹1,000 to children who have lost one or both parents, studying from Class 1 to degree/professional courses in Kerala."
+    }
+  },
+
+  {
+    "scheme_id": "MOCK-TN-EDU-001",
+    "scheme_name": "Tamil Nadu Chief Minister's Merit Scholarship",
+    "scheme_type": "merit_scholarship",
+    "ministry": null,
+    "department": "Directorate of Collegiate Education, Government of Tamil Nadu",
+    "state": "Tamil Nadu",
+    "description": "A mock/sample scheme (not verified against an official source) rewarding high-performing undergraduate students from Tamil Nadu with a merit-based scholarship.",
+    "official_website": "https://example.tn.gov.in/cm-merit-scholarship",
+    "application_portal": "https://example.tn.gov.in/apply",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+
+    "eligibility": {
+      "education_level": "Undergraduate courses in Government and Government-aided colleges",
+      "course_type": "General degree courses",
+      "year_of_study": "Any year, renewable annually",
+      "institution_type": "Government and Government-aided colleges in Tamil Nadu",
+      "income_limit": "Annual family income below ₹3,00,000",
+      "caste_category": [],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Tamil Nadu",
+      "academic_percentage": "Minimum 85% marks in the qualifying examination",
+      "attendance_requirement": null,
+      "other_conditions": []
+    },
+
+    "benefits": {
+      "tuition_fee_support": "Full tuition fee waiver",
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹2,000 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+
+    "required_documents": [
+      "Aadhaar Card",
+      "Income Certificate",
+      "Previous year's mark sheet",
+      "Bonafide Certificate"
+    ],
+
+    "application": {
+      "application_mode": "Online",
+      "application_steps": [
+        "Register on the college portal",
+        "Fill in academic and income details",
+        "Upload required documents",
+        "Submit for verification"
+      ],
+      "processing_time": null,
+      "renewal_required": true
+    },
+
+    "ai_metadata": {
+      "keywords": ["Tamil Nadu merit scholarship", "undergraduate scholarship", "high achiever scholarship"],
+      "target_students": ["High-performing undergraduate students in Tamil Nadu from low/middle-income families"],
+      "eligibility_tags": ["tamil_nadu_domicile", "income_below_300000", "undergraduate", "min_85_percent"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance"],
+      "searchable_text": "Tamil Nadu Chief Minister's Merit Scholarship for undergraduate students in Government colleges with over 85% marks and family income below ₹3 lakh, offering full tuition waiver and monthly stipend."
+    }
+  },
+
+  {
+    "scheme_id": "MOCK-KA-EDU-002",
+    "scheme_name": "Karnataka Vidyasiri Scholarship for Backward Classes",
+    "scheme_type": "state_scheme",
+    "ministry": null,
+    "department": "Department of Backward Classes Welfare, Government of Karnataka",
+    "state": "Karnataka",
+    "description": "A mock/sample scheme supporting OBC students in Karnataka pursuing higher secondary and diploma-level education with a maintenance allowance.",
+    "official_website": "https://example.karnataka.gov.in/vidyasiri",
+    "application_portal": "https://example.karnataka.gov.in/apply",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+
+    "eligibility": {
+      "education_level": "Class 11-12 and Polytechnic/Diploma courses",
+      "course_type": "General and technical diploma courses",
+      "year_of_study": "Any",
+      "institution_type": "Government and Government-aided institutions in Karnataka",
+      "income_limit": "Annual family income below ₹1,50,000 for OBC students",
+      "caste_category": ["OBC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Karnataka",
+      "academic_percentage": null,
+      "attendance_requirement": "Minimum 80% attendance required",
+      "other_conditions": []
+    },
+
+    "benefits": {
+      "tuition_fee_support": "Partial fee reimbursement",
+      "hostel_fee_support": "Free hostel accommodation where available",
+      "maintenance_allowance": "₹1,200 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+
+    "required_documents": [
+      "Aadhaar Card",
+      "Caste Certificate",
+      "Income Certificate",
+      "Bonafide Certificate"
+    ],
+
+    "application": {
+      "application_mode": "Online",
+      "application_steps": [
+        "Register on the department portal",
+        "Fill in academic and caste/income details",
+        "Upload required documents",
+        "Submit for institution verification"
+      ],
+      "processing_time": null,
+      "renewal_required": true
+    },
+
+    "ai_metadata": {
+      "keywords": ["Vidyasiri", "Karnataka OBC scholarship", "backward classes welfare"],
+      "target_students": ["OBC students in Karnataka pursuing Class 11-12 or diploma courses from low-income families"],
+      "eligibility_tags": ["karnataka_domicile", "obc_only", "income_below_150000", "class_11_to_diploma"],
+      "benefit_tags": ["tuition_fee_support", "hostel_fee_support", "maintenance_allowance"],
+      "searchable_text": "Karnataka Vidyasiri Scholarship for OBC students studying Class 11-12 or diploma courses with family income below ₹1.5 lakh, offering fee reimbursement, hostel support and monthly allowance."
+    }
+  },
+
+  {
+    "scheme_id": "MOCK-MH-EDU-003",
+    "scheme_name": "Maharashtra Rajarshi Shahu Merit Scholarship",
+    "scheme_type": "merit_scholarship",
+    "ministry": null,
+    "department": "Social Justice and Special Assistance Department, Government of Maharashtra",
+    "state": "Maharashtra",
+    "description": "A mock/sample scheme supporting SC and ST students in Maharashtra pursuing undergraduate and postgraduate education.",
+    "official_website": "https://example.maharashtra.gov.in/rajarshi-shahu",
+    "application_portal": "https://example.maharashtra.gov.in/apply",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+
+    "eligibility": {
+      "education_level": "Undergraduate and Postgraduate courses",
+      "course_type": "General, technical and professional degree courses",
+      "year_of_study": "Any year, renewable annually",
+      "institution_type": "Government and Government-aided institutions in Maharashtra",
+      "income_limit": "Annual family income below ₹2,50,000",
+      "caste_category": ["SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Maharashtra",
+      "academic_percentage": "Minimum 60% marks in the previous examination",
+      "attendance_requirement": null,
+      "other_conditions": []
+    },
+
+    "benefits": {
+      "tuition_fee_support": "Full tuition fee reimbursement",
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹1,500 per month",
+      "book_allowance": "₹1,000 per year",
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+
+    "required_documents": [
+      "Aadhaar Card",
+      "Caste Certificate",
+      "Income Certificate",
+      "Previous year's mark sheet"
+    ],
+
+    "application": {
+      "application_mode": "Online",
+      "application_steps": [
+        "Register on the Mahadbt portal",
+        "Fill in academic, caste and income details",
+        "Upload required documents",
+        "Submit for verification"
+      ],
+      "processing_time": null,
+      "renewal_required": true
+    },
+
+    "ai_metadata": {
+      "keywords": ["Rajarshi Shahu scholarship", "Maharashtra SC ST scholarship", "Mahadbt"],
+      "target_students": ["SC and ST students in Maharashtra pursuing undergraduate or postgraduate education"],
+      "eligibility_tags": ["maharashtra_domicile", "sc_st_only", "income_below_250000", "ug_pg", "min_60_percent"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance", "book_allowance"],
+      "searchable_text": "Maharashtra Rajarshi Shahu Merit Scholarship for SC and ST undergraduate and postgraduate students with family income below ₹2.5 lakh and at least 60% marks, offering full tuition reimbursement and monthly stipend."
+    }
+  },
+
+  {
+    "scheme_id": "MOCK-DL-EDU-004",
+    "scheme_name": "Pragati Scholarship for Girls in Technical Education",
+    "scheme_type": "central_scheme",
+    "ministry": "All India Council for Technical Education (mock/sample entry)",
+    "department": "AICTE",
+    "state": "Delhi",
+    "description": "A mock/sample scheme (loosely inspired by the real AICTE Pragati scheme, not verified) supporting girl students pursuing technical diploma or degree education.",
+    "official_website": "https://example.aicte-india.org/pragati",
+    "application_portal": "https://example.aicte-india.org/apply",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+
+    "eligibility": {
+      "education_level": "Polytechnic/Diploma and Undergraduate technical courses",
+      "course_type": "AICTE-approved technical diploma and degree courses",
+      "year_of_study": "First year of the technical course",
+      "institution_type": "AICTE-approved technical institutions",
+      "income_limit": "Annual family income below ₹8,00,000",
+      "caste_category": [],
+      "gender": "Female",
+      "disability": null,
+      "domicile": "Indian citizen",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": [
+        "Limited to two girl children per family, preference given to one girl child families"
+      ]
+    },
+
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹50,000 per year",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+
+    "required_documents": [
+      "Aadhaar Card",
+      "Income Certificate",
+      "Admission proof for technical course",
+      "Bank Passbook copy"
+    ],
+
+    "application": {
+      "application_mode": "Online",
+      "application_steps": [
+        "Register on the National Scholarship Portal",
+        "Fill in academic and income details",
+        "Upload required documents",
+        "Submit for institution verification"
+      ],
+      "processing_time": null,
+      "renewal_required": true
+    },
+
+    "ai_metadata": {
+      "keywords": ["Pragati scholarship", "girls technical education", "AICTE scholarship"],
+      "target_students": ["Girl students in the first year of AICTE-approved technical diploma or degree courses"],
+      "eligibility_tags": ["female_only", "technical_education", "income_below_800000", "first_year"],
+      "benefit_tags": ["maintenance_allowance"],
+      "searchable_text": "Pragati Scholarship for girl students in the first year of technical diploma or degree courses with family income below ₹8 lakh, offering ₹50,000 per year."
+    }
+  },
+
+  {
+    "scheme_id": "MOCK-DL-EDU-005",
+    "scheme_name": "Saksham Scholarship for Differently-Abled Students",
+    "scheme_type": "central_scheme",
+    "ministry": "All India Council for Technical Education (mock/sample entry)",
+    "department": "AICTE",
+    "state": "Delhi",
+    "description": "A mock/sample scheme (loosely inspired by the real AICTE Saksham scheme, not verified) supporting differently-abled students pursuing technical education.",
+    "official_website": "https://example.aicte-india.org/saksham",
+    "application_portal": "https://example.aicte-india.org/apply",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+
+    "eligibility": {
+      "education_level": "Polytechnic/Diploma and Undergraduate technical courses",
+      "course_type": "AICTE-approved technical diploma and degree courses",
+      "year_of_study": "First year of the technical course",
+      "institution_type": "AICTE-approved technical institutions",
+      "income_limit": "Annual family income below ₹8,00,000",
+      "caste_category": [],
+      "gender": "All",
+      "disability": "Minimum 40% disability as certified by a competent medical authority",
+      "domicile": "Indian citizen",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": []
+    },
+
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹50,000 per year",
+      "book_allowance": null,
+      "laptop_or_device_support": "Assistive devices support where applicable",
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+
+    "required_documents": [
+      "Aadhaar Card",
+      "Disability Certificate",
+      "Income Certificate",
+      "Admission proof for technical course"
+    ],
+
+    "application": {
+      "application_mode": "Online",
+      "application_steps": [
+        "Register on the National Scholarship Portal",
+        "Fill in academic, disability and income details",
+        "Upload required documents",
+        "Submit for institution verification"
+      ],
+      "processing_time": null,
+      "renewal_required": true
+    },
+
+    "ai_metadata": {
+      "keywords": ["Saksham scholarship", "disability technical education", "AICTE scholarship"],
+      "target_students": ["Differently-abled students in the first year of AICTE-approved technical courses"],
+      "eligibility_tags": ["disability_required", "technical_education", "income_below_800000", "first_year"],
+      "benefit_tags": ["maintenance_allowance", "assistive_device_support"],
+      "searchable_text": "Saksham Scholarship for differently-abled students in the first year of technical diploma or degree courses with family income below ₹8 lakh, offering ₹50,000 per year and assistive device support."
+    }
+  },
+
+  {
+    "scheme_id": "MOCK-UP-EDU-006",
+    "scheme_name": "Uttar Pradesh Post-Matric Scholarship",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": null,
+    "department": "Samaj Kalyan Vibhag, Government of Uttar Pradesh",
+    "state": "Uttar Pradesh",
+    "description": "A mock/sample scheme supporting economically weaker students in Uttar Pradesh across post-matric education levels.",
+    "official_website": "https://example.scholarship.up.gov.in/",
+    "application_portal": "https://example.scholarship.up.gov.in/apply",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+
+    "eligibility": {
+      "education_level": "Class 9-10 through Undergraduate courses",
+      "course_type": "General and technical courses",
+      "year_of_study": "Any",
+      "institution_type": "Government and Government-aided institutions in Uttar Pradesh",
+      "income_limit": "Annual family income below ₹2,00,000",
+      "caste_category": ["General", "OBC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Uttar Pradesh",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": []
+    },
+
+    "benefits": {
+      "tuition_fee_support": "Partial fee reimbursement",
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹600 per month",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+
+    "required_documents": [
+      "Aadhaar Card",
+      "Income Certificate",
+      "Bonafide Certificate",
+      "Bank Passbook copy"
+    ],
+
+    "application": {
+      "application_mode": "Online",
+      "application_steps": [
+        "Register on the UP Scholarship portal",
+        "Fill in academic and income details",
+        "Upload required documents",
+        "Submit for institution verification"
+      ],
+      "processing_time": null,
+      "renewal_required": true
+    },
+
+    "ai_metadata": {
+      "keywords": ["UP post matric scholarship", "Uttar Pradesh scholarship", "Samaj Kalyan"],
+      "target_students": ["General and OBC students in Uttar Pradesh from low-income families studying Class 9 through undergraduate"],
+      "eligibility_tags": ["up_domicile", "general_obc", "income_below_200000", "class_9_to_ug"],
+      "benefit_tags": ["tuition_fee_support", "maintenance_allowance"],
+      "searchable_text": "Uttar Pradesh Post-Matric Scholarship for General and OBC students from Class 9 through undergraduate with family income below ₹2 lakh, offering partial fee reimbursement and monthly allowance."
+    }
+  },
+
+  {
+    "scheme_id": "MOCK-BR-EDU-007",
+    "scheme_name": "Bihar Mukhyamantri Kanya Utthan Yojana",
+    "scheme_type": "state_scheme",
+    "ministry": null,
+    "department": "Department of Education, Government of Bihar",
+    "state": "Bihar",
+    "description": "A mock/sample scheme (loosely inspired by a real Bihar scheme, not verified) supporting girl students across all education levels with financial assistance at key milestones.",
+    "official_website": "https://example.education.bihar.gov.in/kanya-utthan",
+    "application_portal": "https://example.education.bihar.gov.in/apply",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+
+    "eligibility": {
+      "education_level": "Class 1-5 through Doctoral courses",
+      "course_type": "General education at all levels",
+      "year_of_study": "Any",
+      "institution_type": "Government and Government-aided institutions in Bihar",
+      "income_limit": "No income limit",
+      "caste_category": [],
+      "gender": "Female",
+      "disability": null,
+      "domicile": "Permanent resident of Bihar",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": []
+    },
+
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "One-time payments at various stages, ranging from ₹300 to ₹50,000 depending on milestone",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": ["Sanitary hygiene kit support at secondary level"]
+    },
+
+    "required_documents": [
+      "Aadhaar Card",
+      "Birth Certificate",
+      "Bonafide Certificate",
+      "Bank Passbook copy"
+    ],
+
+    "application": {
+      "application_mode": "Online, through school/institution",
+      "application_steps": [
+        "Register through the school/institution portal",
+        "Fill in personal and academic details",
+        "Upload required documents",
+        "Submit for verification"
+      ],
+      "processing_time": null,
+      "renewal_required": true
+    },
+
+    "ai_metadata": {
+      "keywords": ["Kanya Utthan Yojana", "Bihar girl child scheme", "girl student welfare Bihar"],
+      "target_students": ["Girl students in Bihar from Class 1 through doctoral studies"],
+      "eligibility_tags": ["bihar_domicile", "female_only", "no_income_limit", "class_1_to_doctoral"],
+      "benefit_tags": ["maintenance_allowance"],
+      "searchable_text": "Bihar Mukhyamantri Kanya Utthan Yojana provides milestone-based financial assistance to girl students from Class 1 through doctoral studies in Bihar, with no income restriction."
+    }
+  },
+
+  {
+    "scheme_id": "MOCK-WB-EDU-008",
+    "scheme_name": "West Bengal Swami Vivekananda Merit-cum-Means Scholarship",
+    "scheme_type": "merit_scholarship",
+    "ministry": null,
+    "department": "Department of Higher Education, Government of West Bengal",
+    "state": "West Bengal",
+    "description": "A mock/sample scheme supporting meritorious students from economically weaker families in West Bengal from higher secondary through postgraduate levels.",
+    "official_website": "https://example.svmcm.wb.gov.in/",
+    "application_portal": "https://example.svmcm.wb.gov.in/apply",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+
+    "eligibility": {
+      "education_level": "Class 11-12 through Postgraduate courses",
+      "course_type": "General, technical and professional courses",
+      "year_of_study": "Any, renewable annually",
+      "institution_type": "Government and Government-aided institutions in West Bengal",
+      "income_limit": "Annual family income below ₹2,50,000",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of West Bengal",
+      "academic_percentage": "Minimum 75% marks in the qualifying examination",
+      "attendance_requirement": null,
+      "other_conditions": []
+    },
+
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹1,000 to ₹5,000 per month depending on course level",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+
+    "required_documents": [
+      "Aadhaar Card",
+      "Income Certificate",
+      "Previous year's mark sheet",
+      "Bank Passbook copy"
+    ],
+
+    "application": {
+      "application_mode": "Online",
+      "application_steps": [
+        "Register on the SVMCM portal",
+        "Fill in academic and income details",
+        "Upload required documents",
+        "Submit for institution verification"
+      ],
+      "processing_time": null,
+      "renewal_required": true
+    },
+
+    "ai_metadata": {
+      "keywords": ["Swami Vivekananda Scholarship", "SVMCM", "West Bengal merit-cum-means"],
+      "target_students": ["Meritorious students in West Bengal from low-income families, Class 11 through postgraduate"],
+      "eligibility_tags": ["west_bengal_domicile", "income_below_250000", "class_11_to_pg", "min_75_percent"],
+      "benefit_tags": ["maintenance_allowance"],
+      "searchable_text": "West Bengal Swami Vivekananda Merit-cum-Means Scholarship for students from Class 11 through postgraduate with over 75% marks and family income below ₹2.5 lakh, offering a monthly stipend."
+    }
+  },
+
+  {
+    "scheme_id": "MOCK-RJ-EDU-009",
+    "scheme_name": "Rajasthan Mukhyamantri Uchch Shiksha Scholarship",
+    "scheme_type": "state_scheme",
+    "ministry": null,
+    "department": "Department of College Education, Government of Rajasthan",
+    "state": "Rajasthan",
+    "description": "A mock/sample scheme supporting undergraduate and postgraduate students in Rajasthan from middle-income families.",
+    "official_website": "https://example.rajasthan.gov.in/uchch-shiksha",
+    "application_portal": "https://example.rajasthan.gov.in/apply",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+
+    "eligibility": {
+      "education_level": "Undergraduate and Postgraduate courses",
+      "course_type": "General degree courses",
+      "year_of_study": "Any, renewable annually",
+      "institution_type": "Government and Government-aided institutions in Rajasthan",
+      "income_limit": "Annual family income below ₹8,00,000",
+      "caste_category": ["General", "OBC"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Rajasthan",
+      "academic_percentage": "Minimum 65% marks in the qualifying examination",
+      "attendance_requirement": null,
+      "other_conditions": []
+    },
+
+    "benefits": {
+      "tuition_fee_support": "Partial fee reimbursement",
+      "hostel_fee_support": null,
+      "maintenance_allowance": null,
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+
+    "required_documents": [
+      "Aadhaar Card",
+      "Income Certificate",
+      "Previous year's mark sheet"
+    ],
+
+    "application": {
+      "application_mode": "Online",
+      "application_steps": [
+        "Register on the SSO Rajasthan portal",
+        "Fill in academic and income details",
+        "Upload required documents",
+        "Submit for verification"
+      ],
+      "processing_time": null,
+      "renewal_required": true
+    },
+
+    "ai_metadata": {
+      "keywords": ["Mukhyamantri Uchch Shiksha", "Rajasthan scholarship", "SSO Rajasthan"],
+      "target_students": ["Undergraduate and postgraduate students in Rajasthan with over 65% marks from middle-income families"],
+      "eligibility_tags": ["rajasthan_domicile", "general_obc", "income_below_800000", "ug_pg", "min_65_percent"],
+      "benefit_tags": ["tuition_fee_support"],
+      "searchable_text": "Rajasthan Mukhyamantri Uchch Shiksha Scholarship for undergraduate and postgraduate students with over 65% marks and family income below ₹8 lakh, offering partial fee reimbursement."
+    }
+  },
+
+  {
+    "scheme_id": "MOCK-GJ-EDU-010",
+    "scheme_name": "Gujarat SC/ST Post-Matric Scholarship",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": null,
+    "department": "Directorate of Scheduled Castes Welfare, Government of Gujarat",
+    "state": "Gujarat",
+    "description": "A mock/sample scheme supporting SC and ST students in Gujarat across post-matric education levels.",
+    "official_website": "https://example.digitalgujarat.gov.in/scst-scholarship",
+    "application_portal": "https://example.digitalgujarat.gov.in/apply",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+
+    "eligibility": {
+      "education_level": "Class 11-12 through Doctoral courses",
+      "course_type": "General, technical and professional courses",
+      "year_of_study": "Any, renewable annually",
+      "institution_type": "Government and Government-aided institutions in Gujarat",
+      "income_limit": "No income limit",
+      "caste_category": ["SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Gujarat",
+      "academic_percentage": null,
+      "attendance_requirement": "Minimum 75% attendance required",
+      "other_conditions": []
+    },
+
+    "benefits": {
+      "tuition_fee_support": "Full tuition fee reimbursement",
+      "hostel_fee_support": "Free hostel accommodation where available",
+      "maintenance_allowance": "₹1,000 to ₹2,000 per month depending on course level",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+
+    "required_documents": [
+      "Aadhaar Card",
+      "Caste Certificate",
+      "Bonafide Certificate",
+      "Bank Passbook copy"
+    ],
+
+    "application": {
+      "application_mode": "Online",
+      "application_steps": [
+        "Register on the Digital Gujarat portal",
+        "Fill in academic and caste details",
+        "Upload required documents",
+        "Submit for institution verification"
+      ],
+      "processing_time": null,
+      "renewal_required": true
+    },
+
+    "ai_metadata": {
+      "keywords": ["Gujarat SC ST scholarship", "post matric Gujarat", "Digital Gujarat scholarship"],
+      "target_students": ["SC and ST students in Gujarat from Class 11 through doctoral studies"],
+      "eligibility_tags": ["gujarat_domicile", "sc_st_only", "no_income_limit", "class_11_to_doctoral", "attendance_75_percent"],
+      "benefit_tags": ["tuition_fee_support", "hostel_fee_support", "maintenance_allowance"],
+      "searchable_text": "Gujarat SC/ST Post-Matric Scholarship for SC and ST students from Class 11 through doctoral studies with no income limit, offering full tuition reimbursement, hostel support and monthly allowance."
+    }
+  },
+
+  {
+    "scheme_id": "MOCK-PB-EDU-011",
+    "scheme_name": "Punjab Ashirwad Scholarship for Orphan Students",
+    "scheme_type": "state_scheme",
+    "ministry": null,
+    "department": "Department of Social Security, Government of Punjab",
+    "state": "Punjab",
+    "description": "A mock/sample scheme supporting orphaned or single-parent children in Punjab from school through undergraduate education.",
+    "official_website": "https://example.socialsecurity.punjab.gov.in/ashirwad",
+    "application_portal": "https://example.socialsecurity.punjab.gov.in/apply",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+
+    "eligibility": {
+      "education_level": "Class 1-5 through Undergraduate courses",
+      "course_type": "General education",
+      "year_of_study": "Any",
+      "institution_type": "Government, Government-aided and recognized private institutions in Punjab",
+      "income_limit": "Annual family income below ₹1,00,000",
+      "caste_category": [],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Punjab",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": [
+        "Applicant must have lost one or both parents"
+      ]
+    },
+
+    "benefits": {
+      "tuition_fee_support": null,
+      "hostel_fee_support": null,
+      "maintenance_allowance": "₹500 to ₹1,200 per month depending on education level",
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+
+    "required_documents": [
+      "Aadhaar Card",
+      "Death Certificate of deceased parent(s)",
+      "Income Certificate",
+      "Bank Passbook copy"
+    ],
+
+    "application": {
+      "application_mode": "Offline, submitted through school/institution",
+      "application_steps": [
+        "Obtain the application form from the school/institution",
+        "Attach required documents",
+        "Submit to the school/institution head",
+        "Institution forwards the application for approval"
+      ],
+      "processing_time": null,
+      "renewal_required": true
+    },
+
+    "ai_metadata": {
+      "keywords": ["Ashirwad scholarship", "Punjab orphan scheme", "single parent scholarship Punjab"],
+      "target_students": ["Orphaned or single-parent children in Punjab from low-income families, Class 1 through undergraduate"],
+      "eligibility_tags": ["punjab_domicile", "orphan_or_single_parent_loss", "income_below_100000", "class_1_to_ug"],
+      "benefit_tags": ["maintenance_allowance"],
+      "searchable_text": "Punjab Ashirwad Scholarship provides monthly financial assistance to orphaned or single-parent children from Class 1 through undergraduate with family income below ₹1 lakh."
+    }
+  },
+
+  {
+    "scheme_id": "MOCK-AP-EDU-012",
+    "scheme_name": "Andhra Pradesh Jagananna Vidya Deevena",
+    "scheme_type": "post_matric_scholarship",
+    "ministry": null,
+    "department": "Department of Social Welfare, Government of Andhra Pradesh",
+    "state": "Andhra Pradesh",
+    "description": "A mock/sample scheme (loosely inspired by a real Andhra Pradesh scheme, not verified) providing full tuition fee reimbursement to undergraduate students from low and middle-income families.",
+    "official_website": "https://example.jnanabhumi.ap.gov.in/vidyadeevena",
+    "application_portal": "https://example.jnanabhumi.ap.gov.in/apply",
+    "application_start_date": null,
+    "application_end_date": null,
+    "last_updated": "2026-07-31",
+
+    "eligibility": {
+      "education_level": "Undergraduate courses",
+      "course_type": "General, technical and professional degree courses",
+      "year_of_study": "Any year, renewable annually",
+      "institution_type": "Government and Government-aided colleges in Andhra Pradesh",
+      "income_limit": "Annual family income below ₹2,50,000",
+      "caste_category": ["General", "OBC", "SC", "ST"],
+      "gender": "All",
+      "disability": null,
+      "domicile": "Permanent resident of Andhra Pradesh",
+      "academic_percentage": null,
+      "attendance_requirement": null,
+      "other_conditions": []
+    },
+
+    "benefits": {
+      "tuition_fee_support": "Full tuition fee reimbursement",
+      "hostel_fee_support": null,
+      "maintenance_allowance": null,
+      "book_allowance": null,
+      "laptop_or_device_support": null,
+      "travel_allowance": null,
+      "other_benefits": []
+    },
+
+    "required_documents": [
+      "Aadhaar Card",
+      "Caste Certificate",
+      "Income Certificate",
+      "Bank Passbook copy"
+    ],
+
+    "application": {
+      "application_mode": "Online",
+      "application_steps": [
+        "Register on the Jnanabhumi portal",
+        "Fill in academic, caste and income details",
+        "Upload required documents",
+        "Submit for verification"
+      ],
+      "processing_time": null,
+      "renewal_required": true
+    },
+
+    "ai_metadata": {
+      "keywords": ["Jagananna Vidya Deevena", "Andhra Pradesh tuition fee scheme", "Jnanabhumi scholarship"],
+      "target_students": ["Undergraduate students in Andhra Pradesh from families with income below ₹2.5 lakh"],
+      "eligibility_tags": ["andhra_pradesh_domicile", "general_obc_sc_st", "income_below_250000", "undergraduate"],
+      "benefit_tags": ["tuition_fee_support"],
+      "searchable_text": "Andhra Pradesh Jagananna Vidya Deevena provides full tuition fee reimbursement to undergraduate students with family income below ₹2.5 lakh, across all categories."
+    }
+  }
+]
