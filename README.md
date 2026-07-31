@@ -27,7 +27,7 @@ No student data is ever saved or sent anywhere — matching happens entirely in-
 ```
 backend/            FastAPI app (the AI/matching engine)
   app/
-    data/            schemes.json — the scheme knowledge base (72 entries)
+    data/            schemes.json — the scheme knowledge base (57 entries, each verified real with a working official link)
     extraction/       NLP criteria extraction (spaCy)
     matching/         embeddings + adaptive-weighted matching/scoring engine
     qa/               retrieval-grounded Q&A over a scheme's structured data
@@ -103,7 +103,7 @@ Open `http://localhost:5173` in your browser (or the next port Vite picks if 517
 
 ## Adding more schemes
 
-Add a new entry to `backend/app/data/schemes.json` following the same shape as the existing 72. No code changes needed — extraction, matching, search, and explanation all pick it up automatically. The dataset currently spans 20 states plus national-level schemes, across scheme types including merit, post-matric, pre-matric, welfare, disability, girl-education, research fellowship, overseas scholarship, and coaching-support schemes.
+Add a new entry to `backend/app/data/schemes.json` following the same shape as the existing 57. No code changes needed — extraction, matching, search, and explanation all pick it up automatically. The dataset currently spans 20 states plus national-level schemes, across scheme types including merit, post-matric, pre-matric, welfare, disability, girl-education, research fellowship, overseas scholarship, and coaching-support schemes. Every entry has been checked against an official/verified source and a working application or information link — no placeholder or mock data.
 
 ## Why this counts as "AI, not just an API wrapper"
 
