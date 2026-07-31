@@ -70,3 +70,18 @@ class SchemeSearchResult(BaseModel):
     required_documents: list[str]
     official_website: Optional[str] = None
     application_portal: Optional[str] = None
+
+
+class AskRequest(BaseModel):
+    question: str = Field(..., min_length=1, max_length=500)
+
+
+class AskResponse(BaseModel):
+    answer: str
+    scheme_id: Optional[str] = None
+    scheme_name: Optional[str] = None
+    matched_intent: str
+    confidence: float
+    source_fields: list[str]
+    official_website: Optional[str] = None
+    application_portal: Optional[str] = None

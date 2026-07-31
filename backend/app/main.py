@@ -5,7 +5,7 @@ from app.api.routes import router
 
 app = FastAPI(
     title="Setu API",
-    description="AI-powered scheme & scholarship discovery matching engine",
+    description="AI-powered government scheme & opportunity discovery platform",
     version="0.1.0",
 )
 

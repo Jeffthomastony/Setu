@@ -5,7 +5,8 @@ from fastapi import APIRouter
 
 from app.matching.embedder import cosine_similarity, embed_texts
 from app.matching.matcher import match_student
-from app.models import MatchResult, SchemeSearchResult, StudentProfile
+from app.models import AskRequest, AskResponse, MatchResult, SchemeSearchResult, StudentProfile
+from app.qa.answer_engine import answer_question
 
 router = APIRouter()
 
@@ -80,6 +81,32 @@ def search_schemes(q: str):
 
     results.sort(key=lambda r: r.relevance_score, reverse=True)
     return results[:10]
+
+
+@router.post("/ask", response_model=AskResponse)
+def ask(payload: AskRequest):
+    """Answer a free-text question about a scheme.
+
+    This is retrieval + template filling, not free-form generation: the
+    question is embedded and matched to the closest scheme via the same
+    embedding pipeline used elsewhere, then the answer is assembled from
+    that scheme's structured fields. It cannot invent facts about a scheme,
+    and it declines to answer when nothing matches confidently.
+    """
+    schemes = load_schemes()
+    result = answer_question(payload.question, schemes)
+    scheme = next((s for s in schemes if s["scheme_id"] == result.scheme_id), None) if result.scheme_id else None
+
+    return AskResponse(
+        answer=result.answer,
+        scheme_id=result.scheme_id,
+        scheme_name=result.scheme_name,
+        matched_intent=result.matched_intent,
+        confidence=result.confidence,
+        source_fields=result.source_fields,
+        official_website=scheme.get("official_website") if scheme else None,
+        application_portal=scheme.get("application_portal") if scheme else None,
+    )
 
 
 @router.post("/match", response_model=list[MatchResult])

@@ -5,7 +5,8 @@ export default function LandingPage({ onSelect }) {
     <div className="landing">
       <Logo size={72} />
       <p className="tagline">
-        "Setu" means bridge — find the scholarships and government schemes you qualify for but never hear about.
+        "Setu" means bridge — an intelligent bridge between you and the government schemes and opportunities you
+        qualify for but never hear about.
       </p>
 
       <div className="landing-options">
