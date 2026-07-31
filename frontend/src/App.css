@@ -5,20 +5,134 @@
   text-align: left;
 }
 
-.app-header {
-  text-align: center;
-  margin-bottom: 32px;
-}
-
-.app-header h1 {
-  color: var(--accent);
-  margin-bottom: 4px;
-}
-
 .tagline {
   max-width: 520px;
   margin: 0 auto;
   color: var(--text);
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--accent);
+}
+
+.logo-text {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--heading);
+}
+
+.landing .logo .logo-text {
+  font-size: 44px;
+}
+
+.app-header-bar {
+  display: flex;
+  align-items: center;
+  padding: 8px 0 16px;
+}
+
+.logo-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.landing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 64px 20px 40px;
+  gap: 24px;
+}
+
+.landing-options {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.landing-option {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 240px;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--code-bg);
+  cursor: pointer;
+  text-align: left;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.landing-option:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow);
+}
+
+.landing-option-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.landing-option-desc {
+  font-size: 14px;
+  color: var(--text);
+}
+
+.back-link {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  margin-bottom: 16px;
+}
+
+.search-page {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.search-form {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.search-form input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  font-size: 15px;
+}
+
+.search-form button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.search-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .student-form {
