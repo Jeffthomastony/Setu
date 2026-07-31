@@ -8,8 +8,8 @@ import LoadingScreen from "./components/LoadingScreen";
 import { matchStudent } from "./api";
 import "./App.css";
 
-// ── AI Profile Insight Generator (client-side NLG) ───────────────────────────
-function generateProfileInsight(profile) {
+// ── Profile summary generator (client-side template, not a model) ───────────
+function generateProfileSummary(profile) {
   const income = profile.family_income;
   const incomeStr =
     income >= 100000
@@ -121,9 +121,9 @@ function App() {
     return <LoadingScreen message={initMessage} progress={initProgress} />;
   }
 
-  // Derive AI insight for the submitted profile
-  const profileInsight =
-    submittedProfile && results ? generateProfileInsight(submittedProfile) : null;
+  // Derive a plain-language summary of the submitted profile
+  const profileSummary =
+    submittedProfile && results ? generateProfileSummary(submittedProfile) : null;
 
   return (
     <div className="app-shell">
@@ -198,8 +198,8 @@ function App() {
               className="results-section"
               aria-live="polite"
             >
-              {/* AI Profile Insight Panel */}
-              {profileInsight && (
+              {/* Profile Summary Panel */}
+              {profileSummary && (
                 <div className="ai-insight-panel animate-fade-up">
                   <div className="ai-insight-header">
                     <span className="ai-insight-icon">
@@ -208,11 +208,10 @@ function App() {
                         <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                       </svg>
                     </span>
-                    <span className="ai-insight-title">AI Profile Insight</span>
-                    <span className="ai-insight-badge">POWERED BY AI</span>
+                    <span className="ai-insight-title">Your Profile Summary</span>
                   </div>
-                  <p className="ai-insight-line1">{profileInsight.line1}</p>
-                  <p className="ai-insight-line2">{profileInsight.line2}</p>
+                  <p className="ai-insight-line1">{profileSummary.line1}</p>
+                  <p className="ai-insight-line2">{profileSummary.line2}</p>
                 </div>
               )}
 

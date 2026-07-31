@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { askScheme, explainScheme } from "../api";
 
-// ── AI match summary generator (client-side NLG) ─────────────────────────────
-function generateAISummary(criteria_breakdown) {
+// ── Match summary — client-side template over the backend's real criteria breakdown ──
+function generateMatchSummary(criteria_breakdown) {
   if (!criteria_breakdown || criteria_breakdown.length === 0) return null;
 
   const matched = criteria_breakdown.filter((c) => c.matched);
@@ -304,9 +304,9 @@ export default function ResultCard({ result, index = 0 }) {
         </p>
       )}
 
-      {/* AI Summary — only for match results */}
+      {/* Match summary — only for match results */}
       {!isSearchResult && result.criteria_breakdown && (() => {
-        const summary = generateAISummary(result.criteria_breakdown);
+        const summary = generateMatchSummary(result.criteria_breakdown);
         return summary ? (
           <p style={{
             fontSize: "0.82rem",
