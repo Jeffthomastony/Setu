@@ -81,6 +81,8 @@ class StructuredCriteria:
     eligible_categories: list = field(default_factory=list)
     requires_orphan_or_single_parent: bool = False
     state: Optional[str] = None
+    gender_requirement: Optional[str] = None
+    requires_disability: bool = False
 
 
 def extract_criteria(scheme: dict) -> StructuredCriteria:
@@ -152,6 +154,16 @@ def extract_criteria(scheme: dict) -> StructuredCriteria:
     other_conditions_text = " ".join(elig.get("other_conditions") or [])
     if re.search(r"lost (one or both|a|one)?\s?parent", other_conditions_text, re.IGNORECASE):
         criteria.requires_orphan_or_single_parent = True
+
+    # --- Gender restriction (only set when the scheme actually restricts by
+    # gender; "All"/empty means no restriction) ---
+    gender_text = (elig.get("gender") or "").strip()
+    if gender_text and gender_text.lower() not in ("all", "any", "everyone"):
+        criteria.gender_requirement = gender_text
+
+    # --- Disability requirement ---
+    if elig.get("disability"):
+        criteria.requires_disability = True
 
     return criteria
 

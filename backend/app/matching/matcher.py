@@ -150,6 +150,43 @@ def _check_parent_status(student: StudentProfile, criteria: StructuredCriteria) 
     return CriterionCheck(criterion="Parent status", matched=matched, reason=reason)
 
 
+GENDER_ALIASES = {
+    "female": "female",
+    "girls": "female",
+    "girl": "female",
+    "women": "female",
+    "male": "male",
+    "boys": "male",
+    "boy": "male",
+    "men": "male",
+}
+
+
+def _check_gender(student: StudentProfile, criteria: StructuredCriteria) -> CriterionCheck | None:
+    if not criteria.gender_requirement:
+        return None
+    normalized = GENDER_ALIASES.get(criteria.gender_requirement.strip().lower(), criteria.gender_requirement.strip().lower())
+    matched = student.gender == normalized
+    reason = (
+        f"Scheme is open to {criteria.gender_requirement} students and student qualifies"
+        if matched
+        else f"Scheme is restricted to {criteria.gender_requirement} students"
+    )
+    return CriterionCheck(criterion="Gender", matched=matched, reason=reason)
+
+
+def _check_disability(student: StudentProfile, criteria: StructuredCriteria) -> CriterionCheck | None:
+    if not criteria.requires_disability:
+        return None
+    matched = student.disability
+    reason = (
+        "Scheme is for students with disabilities and student qualifies"
+        if matched
+        else "Scheme is restricted to students with disabilities"
+    )
+    return CriterionCheck(criterion="Disability status", matched=matched, reason=reason)
+
+
 def _student_summary_text(student: StudentProfile) -> str:
     disability_clause = ", has a disability" if student.disability else ""
     return (
@@ -184,6 +221,12 @@ def match_student(
         parent_check = _check_parent_status(student, criteria)
         if parent_check:
             checks.append(parent_check)
+        gender_check = _check_gender(student, criteria)
+        if gender_check:
+            checks.append(gender_check)
+        disability_check = _check_disability(student, criteria)
+        if disability_check:
+            checks.append(disability_check)
 
         criteria_score = sum(1 for c in checks if c.matched) / len(checks)
 
