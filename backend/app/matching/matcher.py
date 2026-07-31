@@ -1,6 +1,7 @@
 """Matching engine: combines hard eligibility-criteria checks (from the NLP
 extraction step) with semantic similarity (embeddings) into a ranked,
-explainable list of scheme matches for a student.
+explainable list of scheme matches for a beneficiary (student or senior
+citizen).
 
 Scoring uses **adaptive weighting**: the more structured criteria fields were
 successfully extracted for a scheme, the more the criteria score is trusted
@@ -11,7 +12,12 @@ similarity so the AI model compensates for the missing structure.
 
 from app.extraction.criteria_extractor import StructuredCriteria, extract_all
 from app.matching.embedder import cosine_similarity, embed_texts
-from app.models import CriterionCheck, MatchResult, StudentProfile
+from app.models import CriterionCheck, MatchResult, SeniorCitizenProfile, StudentProfile
+
+# Shared demographic fields (state, category, family_income, residence_area,
+# gender, age, disability) are identical in name and meaning across profile
+# types, so the criterion-checkers below accept either.
+Beneficiary = StudentProfile | SeniorCitizenProfile
 
 # Approximate numeric class for each schooling-stage education level, used to
 # compare against a scheme's parsed min_class/max_class range.
@@ -38,32 +44,32 @@ EDUCATION_LEVEL_KEYWORDS = {
 
 # ── Individual criterion checkers ──────────────────────────────────────────────
 
-def _check_state(student: StudentProfile, criteria: StructuredCriteria) -> CriterionCheck:
+def _check_state(person: Beneficiary, criteria: StructuredCriteria) -> CriterionCheck:
     if not criteria.state or criteria.state.lower() in ("national", "all", "india", "pan india"):
         return CriterionCheck(criterion="State", matched=True, reason="No state restriction — open to all states")
-    matched = student.state.strip().lower() == criteria.state.strip().lower()
+    matched = person.state.strip().lower() == criteria.state.strip().lower()
     reason = (
         f"Scheme is for residents of {criteria.state}"
         if matched
-        else f"Scheme is limited to {criteria.state}; student is from {student.state}"
+        else f"Scheme is limited to {criteria.state}; applicant is from {person.state}"
     )
     return CriterionCheck(criterion="State", matched=matched, reason=reason)
 
 
-def _check_category(student: StudentProfile, criteria: StructuredCriteria) -> CriterionCheck:
+def _check_category(person: Beneficiary, criteria: StructuredCriteria) -> CriterionCheck:
     if not criteria.eligible_categories:
         return CriterionCheck(criterion="Category", matched=True, reason="Open to all categories")
-    matched = student.category.upper() in criteria.eligible_categories
+    matched = person.category.upper() in criteria.eligible_categories
     reason = (
-        f"{student.category} is an eligible category"
+        f"{person.category} is an eligible category"
         if matched
         else f"Scheme is limited to {', '.join(criteria.eligible_categories)}"
     )
     return CriterionCheck(criterion="Category", matched=matched, reason=reason)
 
 
-def _check_income(student: StudentProfile, criteria: StructuredCriteria) -> CriterionCheck:
-    category = student.category.upper()
+def _check_income(person: Beneficiary, criteria: StructuredCriteria) -> CriterionCheck:
+    category = person.category.upper()
 
     if category in [c.upper() for c in criteria.no_income_limit_categories]:
         return CriterionCheck(
@@ -77,18 +83,18 @@ def _check_income(student: StudentProfile, criteria: StructuredCriteria) -> Crit
     if ceiling is None and (criteria.income_ceiling_rural or criteria.income_ceiling_urban):
         ceiling = (
             criteria.income_ceiling_rural
-            if student.residence_area == "rural"
+            if person.residence_area == "rural"
             else criteria.income_ceiling_urban
         )
 
     if ceiling is None:
         return CriterionCheck(criterion="Family income", matched=True, reason="No income criteria specified")
 
-    matched = student.family_income <= ceiling
+    matched = person.family_income <= ceiling
     reason = (
-        f"Family income ₹{student.family_income:,.0f} is within the ₹{ceiling:,.0f} limit"
+        f"Family income ₹{person.family_income:,.0f} is within the ₹{ceiling:,.0f} limit"
         if matched
-        else f"Family income ₹{student.family_income:,.0f} exceeds the ₹{ceiling:,.0f} limit"
+        else f"Family income ₹{person.family_income:,.0f} exceeds the ₹{ceiling:,.0f} limit"
     )
     return CriterionCheck(criterion="Family income", matched=matched, reason=reason)
 
@@ -163,12 +169,12 @@ def _check_parent_status(
 
 
 def _check_gender(
-    student: StudentProfile, criteria: StructuredCriteria
+    person: Beneficiary, criteria: StructuredCriteria
 ) -> CriterionCheck | None:
     """Only adds a check if the scheme restricts to a specific gender."""
     if criteria.gender_restriction is None:
         return None  # Open to all — not a scored criterion
-    matched = student.gender == criteria.gender_restriction
+    matched = person.gender == criteria.gender_restriction
     reason = (
         f"Scheme is open to {criteria.gender_restriction} applicants and you qualify"
         if matched
@@ -178,12 +184,12 @@ def _check_gender(
 
 
 def _check_age(
-    student: StudentProfile, criteria: StructuredCriteria
+    person: Beneficiary, criteria: StructuredCriteria
 ) -> CriterionCheck | None:
     """Only adds a check when a scheme specifies an age range or limit."""
     if criteria.min_age is None and criteria.max_age is None:
         return None
-    age = student.age
+    age = person.age
     if criteria.min_age is not None and criteria.max_age is not None:
         matched = criteria.min_age <= age <= criteria.max_age
         reason = (
@@ -209,18 +215,29 @@ def _check_age(
 
 
 def _check_disability(
-    student: StudentProfile, criteria: StructuredCriteria
+    person: Beneficiary, criteria: StructuredCriteria
 ) -> CriterionCheck | None:
     """Only adds a check when a scheme explicitly requires a disability."""
     if not criteria.requires_disability:
         return None
-    matched = student.disability
+    matched = person.disability
     reason = (
         "Scheme is for persons with disability and you have indicated a disability"
         if matched
         else "Scheme requires the applicant to have a registered disability"
     )
     return CriterionCheck(criterion="Disability", matched=matched, reason=reason)
+
+
+# ── Senior citizen summary for embedding ──────────────────────────────────────
+
+def _senior_summary_text(senior: SeniorCitizenProfile) -> str:
+    disability_clause = ", has a disability" if senior.disability else ""
+    return (
+        f"{senior.age}-year-old {senior.gender} senior citizen from {senior.state} "
+        f"({senior.residence_area} area), {senior.category} category, "
+        f"annual family income around ₹{senior.family_income:,.0f}{disability_clause}."
+    )
 
 
 # ── Student summary for embedding ─────────────────────────────────────────────
@@ -316,6 +333,64 @@ def match_student(
 
         # Adaptive weights: richer criteria extraction → trust criteria more.
         # richness in [0, 10] → criteria_weight in [0.40, 0.65]
+        richness = _criteria_richness(criteria)
+        criteria_weight = round(0.40 + (richness / 10) * 0.25, 4)
+        semantic_weight = round(1.0 - criteria_weight, 4)
+        overall = round((criteria_weight * criteria_score + semantic_weight * semantic_score) * 100, 1)
+
+        results.append(
+            MatchResult(
+                scheme_id=scheme["scheme_id"],
+                scheme_name=scheme["scheme_name"],
+                department=scheme.get("department"),
+                overall_score=overall,
+                semantic_score=round(semantic_score * 100, 1),
+                criteria_score=round(criteria_score * 100, 1),
+                criteria_breakdown=checks,
+                required_documents=scheme.get("required_documents", []),
+                official_website=scheme.get("official_website"),
+                application_portal=scheme.get("application_portal"),
+            )
+        )
+
+    results.sort(key=lambda r: r.overall_score, reverse=True)
+    return results[:top_k] if top_k else results
+
+
+# ── Senior citizen matching function ───────────────────────────────────────────
+
+def match_senior_citizen(
+    senior: SeniorCitizenProfile, schemes: list[dict], top_k: int | None = None
+) -> list[MatchResult]:
+    criteria_by_id = extract_all(schemes)
+
+    senior_text = _senior_summary_text(senior)
+    scheme_texts = [s["ai_metadata"]["searchable_text"] for s in schemes]
+    embeddings = embed_texts([senior_text] + scheme_texts)
+    senior_vec, scheme_vecs = embeddings[0], embeddings[1:]
+
+    results: list[MatchResult] = []
+    for scheme, scheme_vec in zip(schemes, scheme_vecs):
+        criteria = criteria_by_id[scheme["scheme_id"]]
+
+        # Core mandatory checks (always included)
+        checks = [
+            _check_state(senior, criteria),
+            _check_category(senior, criteria),
+            _check_income(senior, criteria),
+        ]
+
+        # Optional checks — only added when the scheme actually constrains that field
+        for optional_fn in (_check_gender, _check_age, _check_disability):
+            result = optional_fn(senior, criteria)
+            if result is not None:
+                checks.append(result)
+
+        criteria_score = sum(1 for c in checks if c.matched) / len(checks)
+
+        sim = cosine_similarity(senior_vec, scheme_vec)
+        semantic_score = max(0.0, min(1.0, (sim + 1) / 2))
+
         richness = _criteria_richness(criteria)
         criteria_weight = round(0.40 + (richness / 10) * 0.25, 4)
         semantic_weight = round(1.0 - criteria_weight, 4)
