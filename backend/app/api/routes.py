@@ -162,6 +162,30 @@ def search(q: str = Query(..., min_length=1, description="Free-text search query
     return results[:10]
 
 
+@router.get("/ask/{scheme_id}")
+def ask_scheme(
+    scheme_id: str,
+    q: str = Query(..., min_length=1, description="Free-text question about the scheme"),
+):
+    """Retrieval-grounded Q&A: answer a free-text question about one scheme.
+
+    The answer is assembled entirely from the scheme's own structured data
+    (eligibility, benefits, application process, documents) — the question
+    is matched against generated fact sentences via semantic + keyword
+    scoring, and the best-matching facts are returned verbatim. Nothing is
+    freely generated, so every answer is traceable to a specific field in
+    the scheme record.
+    """
+    from app.qa.qa_engine import answer_question
+
+    schemes = load_schemes()
+    scheme = next((s for s in schemes if s["scheme_id"] == scheme_id), None)
+    if not scheme:
+        raise HTTPException(status_code=404, detail=f"Scheme '{scheme_id}' not found")
+
+    return answer_question(scheme, q)
+
+
 @router.get("/explain/{scheme_id}")
 def explain_scheme(scheme_id: str):
     """Generate a natural-language AI explanation of what a scheme is looking for.

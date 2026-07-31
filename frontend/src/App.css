@@ -1294,6 +1294,79 @@ details[open] .docs-summary-chevron { transform: rotate(90deg); }
 }
 
 /* ============================================================
+   ASK ABOUT THIS SCHEME — RETRIEVAL-GROUNDED Q&A PANEL
+   ============================================================ */
+
+.ask-panel-wrap {
+  margin: 10px 0 4px;
+  border-top: 1px solid var(--clr-border);
+  padding-top: 12px;
+}
+
+.ask-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.ask-input {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--clr-border);
+  background: var(--clr-surface);
+  color: var(--clr-text-strong);
+  font-size: 0.85rem;
+  font-family: var(--font-sans);
+  transition: border-color 0.18s, box-shadow 0.18s;
+}
+
+.ask-input:focus {
+  outline: none;
+  border-color: var(--clr-accent);
+  box-shadow: 0 0 0 3px var(--clr-accent-glow);
+}
+
+.ask-submit-btn {
+  padding: 10px 18px;
+  border-radius: var(--radius-xs);
+  border: none;
+  background: var(--gradient-accent);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.18s, transform 0.18s var(--ease-spring);
+}
+
+.ask-submit-btn:hover:not(:disabled) { transform: translateY(-1px); }
+.ask-submit-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+.answer-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.answer-text {
+  font-size: 0.875rem;
+  color: var(--clr-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.ask-disclaimer {
+  font-size: 0.7rem;
+  color: var(--clr-text-muted);
+  font-style: italic;
+  margin: 0;
+}
+
+/* ============================================================
    CONFIDENCE LABEL + SCORE BADGE WRAP
    ============================================================ */
 

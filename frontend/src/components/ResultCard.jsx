@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { explainScheme } from "../api";
+import { askScheme, explainScheme } from "../api";
 
 // ── AI match summary generator (client-side NLG) ─────────────────────────────
 function generateAISummary(criteria_breakdown) {
@@ -153,6 +153,96 @@ function WhyMatchedPanel({ schemeId }) {
   );
 }
 
+// ── AI "Ask about this scheme" panel (retrieval-grounded Q&A) ────────────────
+function AskPanel({ schemeId }) {
+  const [open, setOpen] = useState(false);
+  const [question, setQuestion] = useState("");
+  const [answer, setAnswer] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  async function handleAsk(e) {
+    e.preventDefault();
+    const trimmed = question.trim();
+    if (!trimmed || loading) return;
+    setLoading(true);
+    setError(null);
+    try {
+      const result = await askScheme(schemeId, trimmed);
+      setAnswer(result);
+    } catch (err) {
+      setError(err.message || "Could not get an answer.");
+      setAnswer(null);
+    } finally {
+      setLoading(false);
+    }
+  }
+
+  return (
+    <div className="ask-panel-wrap">
+      <button
+        className={`why-matched-btn ${open ? "open" : ""}`}
+        onClick={() => setOpen((o) => !o)}
+        type="button"
+        aria-expanded={open}
+      >
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 2-3 4" />
+          <path d="M12 17h.01" />
+        </svg>
+        {open ? "Hide" : "Ask about this scheme"}
+        <svg
+          className={`why-chevron ${open ? "rotated" : ""}`}
+          width="13" height="13" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+        >
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+
+      {open && (
+        <div className="why-matched-panel animate-fade-up">
+          <p className="ask-hint" style={{ marginBottom: "10px" }}>
+            Ask a question and get an answer sourced from this scheme's own eligibility,
+            benefits, and application details — nothing is made up.
+          </p>
+          <form className="ask-form" onSubmit={handleAsk}>
+            <input
+              type="text"
+              className="ask-input"
+              placeholder="e.g. Is there an income limit? What documents do I need?"
+              value={question}
+              onChange={(e) => setQuestion(e.target.value)}
+            />
+            <button type="submit" className="ask-submit-btn" disabled={loading || !question.trim()}>
+              {loading ? "Asking…" : "Ask"}
+            </button>
+          </form>
+
+          {loading && (
+            <div className="why-matched-loading">
+              <span className="spinner" style={{ width: 14, height: 14, borderWidth: 2 }} />
+              Searching this scheme's data…
+            </div>
+          )}
+          {error && <p className="why-matched-error">{error}</p>}
+          {answer && !loading && (
+            <div className="answer-card">
+              <p className="answer-text">{answer.answer}</p>
+              <p className="ask-disclaimer">
+                Answer generated from {answer.scheme_name}'s official structured data —
+                always confirm on the official website before applying.
+              </p>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}
+
 export default function ResultCard({ result, index = 0 }) {
   const delayClass = `delay-${Math.min(index * 100, 500)}`;
 
@@ -264,6 +354,9 @@ export default function ResultCard({ result, index = 0 }) {
       {!isSearchResult && (
         <WhyMatchedPanel schemeId={result.scheme_id} />
       )}
+
+      {/* AI "Ask about this scheme" — retrieval-grounded Q&A, all result types */}
+      <AskPanel schemeId={result.scheme_id} />
 
       {/* Documents */}
       {result.required_documents?.length > 0 && (

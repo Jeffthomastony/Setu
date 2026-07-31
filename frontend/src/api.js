@@ -77,3 +77,9 @@ export async function explainScheme(schemeId) {
   const res = await guardedFetch(url);
   return res.json();
 }
+
+export async function askScheme(schemeId, question) {
+  const url = `${API_BASE}/ask/${encodeURIComponent(schemeId)}?q=${encodeURIComponent(question)}`;
+  const res = await guardedFetch(url);
+  return res.json();
+}

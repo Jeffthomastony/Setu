@@ -30,7 +30,8 @@ backend/            FastAPI app (the AI/matching engine)
     data/            schemes.json — the scheme knowledge base (72 entries)
     extraction/       NLP criteria extraction (spaCy)
     matching/         embeddings + adaptive-weighted matching/scoring engine
-    api/              FastAPI routes (match, search, explain, schemes, health)
+    qa/               retrieval-grounded Q&A over a scheme's structured data
+    api/              FastAPI routes (match, search, explain, ask, schemes, health)
     models.py         request/response schemas
     main.py           app entrypoint (pre-warms spaCy models on startup)
   scripts/
@@ -97,6 +98,7 @@ Open `http://localhost:5173` in your browser (or the next port Vite picks if 517
 | `POST /match` | Full profile-based matching — returns ranked schemes scoring ≥70% |
 | `GET /search?q=` | Keyword + semantic search — returns up to 10 results scoring ≥30% |
 | `GET /explain/{scheme_id}` | AI-generated plain-language explanation of a scheme's eligibility |
+| `GET /ask/{scheme_id}?q=` | Retrieval-grounded Q&A — answers a free-text question about one scheme, sourced from its structured data |
 
 ## Adding more schemes
 
@@ -107,12 +109,12 @@ Add a new entry to `backend/app/data/schemes.json` following the same shape as t
 - **NLP extraction**: eligibility fields (income ceilings, percentage thresholds, class/education ranges, age ranges, gender/disability restrictions) are free text in the source data; `app/extraction/criteria_extractor.py` uses spaCy (sentence segmentation, tokenization, lemmatization) plus targeted parsing to turn that prose into structured, comparable values.
 - **Adaptive recommendation system**: `app/matching/matcher.py` blends hard eligibility-criteria scoring with a semantic embedding similarity score, weighting each dynamically based on how much structured criteria could actually be extracted for a given scheme — not a fixed rule set.
 - **Generative explanation**: `/explain/{scheme_id}` turns the extracted structured criteria back into a natural-language paragraph (NLG), and the frontend generates plain-language match summaries and profile insights client-side from the match results — all grounded in the actual extracted/matched data, not free-form generation from an external model.
+- **Retrieval-grounded Q&A**: `/ask/{scheme_id}` (`app/qa/qa_engine.py`) turns a scheme's structured fields into a set of fact sentences, ranks them against a free-text question with the same semantic + keyword blend as search, and returns the top-matching facts verbatim — so answers are always traceable to a real field in the scheme record, never freely generated.
 - **Explainable AI**: every match returns a full criterion-by-criterion breakdown of why it did or didn't qualify.
 - **Privacy-first / responsible AI**: student profile data is processed in-memory for the single request and never persisted, logged, or transmitted elsewhere.
 
 ## Future scope
 
-- A retrieval-grounded Q&A feature (ask a free-text question about a specific scheme and get an answer sourced from its structured data) was prototyped but is not currently wired into the app.
 - Live web search + extraction pipeline to automatically ingest new schemes from government portals, on top of the curated dataset.
 - Optional account creation to save a profile for returning users (would need to be reconciled with the privacy-first design above).
 - Expand beyond scholarships/schemes to internships and skill development programs, and beyond students to other citizen groups (farmers, workers, senior citizens, persons with disabilities, job seekers).
