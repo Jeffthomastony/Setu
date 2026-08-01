@@ -257,6 +257,46 @@ def _check_disability(
     return CriterionCheck(criterion="Disability", matched=matched, reason=reason)
 
 
+# ── Senior-citizen-only criterion checkers ─────────────────────────────────────
+# (marital_status / ration_card_type only exist on SeniorCitizenProfile, so
+# these aren't part of the shared Beneficiary checks above.)
+
+def _check_marital_status(
+    senior: SeniorCitizenProfile, criteria: StructuredCriteria
+) -> CriterionCheck | None:
+    """Only adds a check when a scheme is restricted to widows (e.g. IGNWPS)."""
+    if not criteria.requires_widowed:
+        return None
+    matched = senior.marital_status == "widowed"
+    reason = (
+        "Scheme is for widows and you have indicated widowed status"
+        if matched
+        else "Scheme is restricted to widowed applicants"
+    )
+    return CriterionCheck(criterion="Marital status", matched=matched, reason=reason)
+
+
+# Ration-card categories treated as meeting a scheme's BPL requirement.
+# AAY (Antyodaya) is the poorest-of-BPL tier; PHH (Priority Household) is a
+# distinct NFSA category and is NOT the same as BPL, so it doesn't count.
+BPL_EQUIVALENT_RATION_CARDS = {"bpl", "aay_antyodaya"}
+
+
+def _check_bpl_status(
+    senior: SeniorCitizenProfile, criteria: StructuredCriteria
+) -> CriterionCheck | None:
+    """Only adds a check when a scheme requires BPL status (many pension schemes do)."""
+    if not criteria.requires_bpl:
+        return None
+    matched = senior.ration_card_type in BPL_EQUIVALENT_RATION_CARDS
+    reason = (
+        "Scheme requires BPL status and your ration card qualifies"
+        if matched
+        else "Scheme is restricted to Below Poverty Line (BPL) households"
+    )
+    return CriterionCheck(criterion="BPL status", matched=matched, reason=reason)
+
+
 # ── Senior citizen summary for embedding ──────────────────────────────────────
 
 def _senior_summary_text(senior: SeniorCitizenProfile) -> str:
@@ -301,7 +341,8 @@ def _criteria_richness(criteria: StructuredCriteria) -> int:
 
     Used to calibrate the adaptive scoring weight: high richness → trust the
     criteria score more; low richness → lean on the semantic embedding more.
-    Max possible value is 10.
+    Max possible value is 10 for student schemes; 12 for senior-citizen
+    schemes that also gate on widowhood and/or BPL status.
     """
     richness = 0
     if criteria.income_ceiling_general is not None:
@@ -323,6 +364,10 @@ def _criteria_richness(criteria: StructuredCriteria) -> int:
     if criteria.requires_disability:
         richness += 1
     if criteria.requires_orphan_or_single_parent:
+        richness += 1
+    if criteria.requires_widowed:
+        richness += 1
+    if criteria.requires_bpl:
         richness += 1
     return richness
 
@@ -423,7 +468,13 @@ def match_senior_citizen(
         ]
 
         # Optional checks — only added when the scheme actually constrains that field
-        for optional_fn in (_check_gender, _check_age, _check_disability):
+        for optional_fn in (
+            _check_gender,
+            _check_age,
+            _check_disability,
+            _check_marital_status,
+            _check_bpl_status,
+        ):
             result = optional_fn(senior, criteria)
             if result is not None:
                 checks.append(result)

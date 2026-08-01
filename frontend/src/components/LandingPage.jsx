@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import Logo from "./Logo";
+import { getSchemeStats } from "../api";
 
 function TrustChip({ icon, label }) {
   return (
@@ -58,6 +60,18 @@ const SeniorIcon = () => (
 );
 
 export default function LandingPage({ onSelect }) {
+  // Live scheme/state counts — falls back to null (stats bar hidden) if the
+  // backend isn't reachable yet, rather than showing a stale hardcoded number.
+  const [stats, setStats] = useState(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    getSchemeStats()
+      .then((s) => { if (!cancelled) setStats(s); })
+      .catch(() => {}); // backend not up yet — just skip the stats bar
+    return () => { cancelled = true; };
+  }, []);
+
   return (
     <div className="landing">
       {/* Hero */}
@@ -77,19 +91,21 @@ export default function LandingPage({ onSelect }) {
           hear about.
         </p>
 
-        <div className="landing-stats animate-fade-up delay-200">
-          <span className="landing-stat">
-            <strong>72+</strong> verified schemes
-          </span>
-          <span className="landing-stat-divider">·</span>
-          <span className="landing-stat">
-            <strong>20+</strong> states covered
-          </span>
-          <span className="landing-stat-divider">·</span>
-          <span className="landing-stat">
-            <strong>100%</strong> free &amp; private
-          </span>
-        </div>
+        {stats && (
+          <div className="landing-stats animate-fade-up delay-200">
+            <span className="landing-stat">
+              <strong>{stats.totalSchemes}</strong> verified schemes
+            </span>
+            <span className="landing-stat-divider">·</span>
+            <span className="landing-stat">
+              <strong>{stats.totalStates}</strong> states covered
+            </span>
+            <span className="landing-stat-divider">·</span>
+            <span className="landing-stat">
+              <strong>100%</strong> free &amp; private
+            </span>
+          </div>
+        )}
 
         <div className="landing-trust animate-fade-up delay-300">
           <TrustChip icon="🔒" label="Privacy-first" />

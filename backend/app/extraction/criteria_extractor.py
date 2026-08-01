@@ -31,7 +31,13 @@ PERCENT_RE = re.compile(r"(\d{1,3})\s?%")
 CLASS_RE = re.compile(r"class\s*(\d{1,2})", re.IGNORECASE)
 AGE_RANGE_RE = re.compile(r"(\d{1,2})\s*(?:to|-)\s*(\d{1,2})\s*years?", re.IGNORECASE)
 AGE_MAX_RE = re.compile(r"(?:below|under|up to|upto)\s*(\d{1,2})\s*years?", re.IGNORECASE)
-AGE_MIN_RE = re.compile(r"(?:above|atleast|at least|minimum)\s*(\d{1,2})\s*years?", re.IGNORECASE)
+# Qualifier-before-number phrasing: "above 60 years", "at least 60 years"
+AGE_MIN_PREFIX_RE = re.compile(r"(?:above|atleast|at least|minimum)\s*(\d{1,2})\s*years?", re.IGNORECASE)
+# Number-before-qualifier phrasing: "60 years and above", "70 years of age or above"
+AGE_MIN_POSTFIX_RE = re.compile(
+    r"(\d{1,2})\s*years?\s*(?:of age\s*)?(?:and above|or above|and over|or older|and older|\+)",
+    re.IGNORECASE,
+)
 
 # Presence of any of these alongside a numeric class mention means the range
 # actually extends into higher education (e.g. "Class 1 to Degree/
@@ -108,6 +114,8 @@ class StructuredCriteria:
     min_age: Optional[int] = None
     max_age: Optional[int] = None
     requires_disability: bool = False
+    requires_widowed: bool = False
+    requires_bpl: bool = False
 
 
 def extract_criteria(scheme: dict) -> StructuredCriteria:
@@ -180,6 +188,17 @@ def extract_criteria(scheme: dict) -> StructuredCriteria:
     if re.search(r"lost (one or both|a|one)?\s?parent", other_conditions_text, re.IGNORECASE):
         criteria.requires_orphan_or_single_parent = True
 
+    # --- Widowhood requirement, detected from prose in other_conditions
+    # (e.g. widow pension schemes) ---
+    if re.search(r"\bwidow", other_conditions_text, re.IGNORECASE):
+        criteria.requires_widowed = True
+
+    # --- BPL / Below Poverty Line requirement, detected from the income
+    # eligibility text (many pension schemes gate on BPL status rather than,
+    # or in addition to, a numeric income ceiling) ---
+    if re.search(r"\bBPL\b|below poverty line", income_text, re.IGNORECASE):
+        criteria.requires_bpl = True
+
     # --- Gender restriction ---
     criteria.gender_restriction = _extract_gender_restriction(elig.get("gender"))
 
@@ -197,7 +216,7 @@ def extract_criteria(scheme: dict) -> StructuredCriteria:
             max_match = AGE_MAX_RE.search(age_text)
             if max_match:
                 criteria.max_age = int(max_match.group(1))
-            min_match = AGE_MIN_RE.search(age_text)
+            min_match = AGE_MIN_PREFIX_RE.search(age_text) or AGE_MIN_POSTFIX_RE.search(age_text)
             if min_match:
                 criteria.min_age = int(min_match.group(1))
 

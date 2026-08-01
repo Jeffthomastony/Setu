@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import StudentForm from "./components/StudentForm";
 import SeniorCitizenForm from "./components/SeniorCitizenForm";
 import ResultCard from "./components/ResultCard";
@@ -265,6 +265,11 @@ function MatchFlow({
             </div>
           ) : (
             <>
+              <div className="results-header">
+                <span className="results-title">{resultsTitle}</span>
+                <span className="results-count-badge">{results.length}</span>
+              </div>
+
               <FilterBar
                 filters={filterList}
                 active={activeFilter}

@@ -354,16 +354,17 @@ export default function ResultCard({ result, index = 0 }) {
 
       {/* Benefits pills */}
       {result.benefits && Object.keys(result.benefits).length > 0 && (() => {
-        const pills = [];
         const b = result.benefits;
-        if (b.tuition_fee_reimbursement) pills.push(`💳 ${b.tuition_fee_reimbursement}`);
-        if (b.monthly_stipend) pills.push(`📅 ₹${Number(b.monthly_stipend).toLocaleString("en-IN")}/mo`);
-        if (b.annual_amount) pills.push(`💰 ₹${Number(b.annual_amount).toLocaleString("en-IN")}/yr`);
-        if (b.one_time_grant) pills.push(`🎁 ₹${Number(b.one_time_grant).toLocaleString("en-IN")} grant`);
-        if (b.laptop_grant) pills.push("💻 Laptop grant");
-        if (b.hostel_charges) pills.push("🏠 Hostel covered");
-        if (b.book_allowance) pills.push("📚 Book allowance");
-        if (!pills.length && b.description) pills.push(`💡 ${b.description}`);
+        const truncate = (text, max = 60) =>
+          text.length > max ? `${text.slice(0, max - 1)}…` : text;
+        const pills = [];
+        if (b.tuition_fee_support) pills.push(`🎓 ${truncate(b.tuition_fee_support)}`);
+        if (b.maintenance_allowance) pills.push(`💰 ${truncate(b.maintenance_allowance)}`);
+        if (b.hostel_fee_support) pills.push(`🏠 ${truncate(b.hostel_fee_support)}`);
+        if (b.book_allowance) pills.push(`📚 ${truncate(b.book_allowance)}`);
+        if (b.laptop_or_device_support) pills.push(`💻 ${truncate(b.laptop_or_device_support)}`);
+        if (b.travel_allowance) pills.push(`🚌 ${truncate(b.travel_allowance)}`);
+        for (const extra of b.other_benefits || []) pills.push(`✨ ${truncate(extra)}`);
         return pills.length > 0 ? (
           <div className="benefits-pills">
             {pills.slice(0, 4).map((p, i) => (

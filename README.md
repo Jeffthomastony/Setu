@@ -22,7 +22,7 @@ The applicant's state input is also fuzzy-normalized against the canonical list 
 
 No applicant data is ever saved or sent anywhere — matching happens entirely in-memory for the duration of the request.
 
-**Senior citizens** get the same matching pipeline through a separate profile (`SeniorCitizenProfile`: age, income, category, state, gender, disability) and a dedicated dataset of 8 real, verified pension/health/welfare schemes (`POST /match/senior`) — reusing the same NLP extraction, adaptive-weighted scoring, explain, and Q&A engines, just checked against age/income/category/state/gender/disability criteria instead of education criteria.
+**Senior citizens** get the same matching pipeline through a separate profile (`SeniorCitizenProfile`: age, income, category, state, gender, disability, plus optional marital status, ration-card type, and living arrangement) and a dedicated dataset of 16 real, verified pension/health/assistive-device schemes (`POST /match/senior`) — reusing the same NLP extraction, adaptive-weighted scoring, explain, and Q&A engines. Marital status and ration-card type aren't just semantic hints — schemes that gate on widowhood (e.g. the Widow Pension Scheme) or BPL status are checked as explicit, explainable rule-based criteria, the same way income and age are.
 
 ## Project structure
 
@@ -30,30 +30,40 @@ No applicant data is ever saved or sent anywhere — matching happens entirely i
 backend/            FastAPI app (the AI/matching engine)
   app/
     data/            schemes.json — student/general scheme knowledge base (57 entries)
-                     senior_citizen_schemes.json — senior-citizen scheme knowledge base (8 entries)
+                     senior_citizen_schemes.json — senior-citizen scheme knowledge base (16 entries)
                      both verified real with working official links
     extraction/       NLP criteria extraction (spaCy)
     matching/         embeddings + adaptive-weighted matching/scoring engine
                      (match_student + match_senior_citizen, sharing the same criterion checkers)
+                     cache.py — pre-computed/cached scheme criteria + embeddings so a
+                     /match request only pays the cost of embedding the applicant's own text
     qa/               retrieval-grounded Q&A over a scheme's structured data
     api/              FastAPI routes (match, match/senior, search, explain, ask, schemes, health)
+                     city→state resolution (e.g. "Mumbai" → "Maharashtra") on top of typo correction
     models.py         request/response schemas
-    main.py           app entrypoint (pre-warms spaCy models on startup)
+    main.py           app entrypoint (pre-warms spaCy + embedding models, warms the scheme cache)
   scripts/
-    test_matching.py  quick manual sanity check, no server needed
+    test_matching.py     quick manual sanity check, no server needed
+    validate_schemes.py  data-quality gate — runs the real extractor against every scheme and
+                         flags unparsed age/income fields, duplicate IDs, and placeholder links
   requirements.txt
 
 frontend/            React app (Vite)
   src/
     components/
       LandingPage.jsx      entry point: Search Schemes / Scholarships For You / Schemes For Senior Citizens
+                           (scheme/state counts are fetched live, not hardcoded)
       SearchPage.jsx        keyword + semantic search UI
       StudentForm.jsx       student profile form (incl. optional religion, institution type)
-      SeniorCitizenForm.jsx senior citizen profile form (age, income, category, state, gender, disability)
-      ResultCard.jsx         ranked result with match summary + on-demand AI explanation/Q&A
+      SeniorCitizenForm.jsx senior citizen profile form (age, income, category, state, gender,
+                           disability, marital status, ration-card type, living arrangement)
+      ResultCard.jsx         ranked result with match summary, on-demand AI explanation/Q&A,
+                           benefit highlights, and a text-to-speech "Listen" button
       LoadingScreen.jsx      animated splash shown while the app initializes
       Logo.jsx               reusable SVG bridge-motif logo
-    App.jsx             view routing, shared MatchFlow (form+results) for both citizen groups, client-side profile summaries
+    App.jsx             view routing, shared MatchFlow (form+results, results filter bar,
+                        persisted form data on Back) for both citizen groups, client-side
+                        profile summaries, "Senior-Friendly View" high-contrast/large-text toggle
 ```
 
 ## Running it locally (for beginners)
@@ -102,15 +112,17 @@ Open `http://localhost:5173` in your browser (or the next port Vite picks if 517
 |---|---|
 | `GET /health` | Liveness check |
 | `GET /schemes` | Lightweight listing of all schemes across every dataset (debug/admin use) |
-| `POST /match` | Student profile-based matching — returns ranked schemes scoring ≥70% |
-| `POST /match/senior` | Senior citizen profile-based matching — returns ranked schemes scoring ≥70% |
+| `POST /match` | Student profile-based matching — returns ranked schemes scoring ≥55% |
+| `POST /match/senior` | Senior citizen profile-based matching — returns ranked schemes scoring ≥55% |
 | `GET /search?q=` | Keyword + semantic search across all datasets — returns up to 10 results scoring ≥30% |
 | `GET /explain/{scheme_id}` | AI-generated plain-language explanation of a scheme's eligibility (any dataset) |
 | `GET /ask/{scheme_id}?q=` | Retrieval-grounded Q&A — answers a free-text question about one scheme, sourced from its structured data (any dataset) |
 
 ## Adding more schemes
 
-Add a new entry to `backend/app/data/schemes.json` (students/general) or `backend/app/data/senior_citizen_schemes.json` (senior citizens) following the same shape as the existing entries. No code changes needed — extraction, matching, search, explain, and ask all pick it up automatically since `/explain` and `/ask` look up scheme IDs across every dataset. The student dataset spans 20 states plus national-level schemes, across scheme types including merit, post-matric, pre-matric, welfare, disability, girl-education, research fellowship, overseas scholarship, and coaching-support schemes; the senior-citizen dataset spans old-age pension, assistive-device, and health-insurance schemes across 5 states plus national coverage. Every entry in both datasets has been checked against an official/verified source and a working application or information link — no placeholder or mock data.
+Add a new entry to `backend/app/data/schemes.json` (students/general) or `backend/app/data/senior_citizen_schemes.json` (senior citizens) following the same shape as the existing entries. No code changes needed — extraction, matching, search, explain, and ask all pick it up automatically since `/explain` and `/ask` look up scheme IDs across every dataset. The student dataset spans 19 states plus national-level schemes, across scheme types including merit, post-matric, pre-matric, welfare, disability, girl-education, research fellowship, overseas scholarship, and coaching-support schemes; the senior-citizen dataset spans old-age pension, widow/disability pension, assistive-device, and health-insurance schemes across 11 states plus national coverage. Every entry in both datasets has been checked against an official/verified source and a working application or information link — no placeholder or mock data.
+
+**Before committing new/edited scheme entries**, run `python scripts/validate_schemes.py` — it runs the real extraction pipeline against every scheme and fails if an age/income field doesn't actually parse into a structured value, or if a scheme_id/name is duplicated. This exists because that exact class of bug shipped once (several schemes phrased age as "60 years and above", which an earlier version of the extractor's regex didn't recognise, silently dropping the age check).
 
 ## Why this counts as "AI, not just an API wrapper"
 

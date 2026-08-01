@@ -93,3 +93,15 @@ export async function askScheme(schemeId, question) {
   const res = await guardedFetch(url);
   return res.json();
 }
+
+// Fetches the live scheme count/state count for the landing page trust stats,
+// so those numbers stay accurate as the dataset grows instead of being hardcoded.
+export async function getSchemeStats() {
+  const url = `${API_BASE}/schemes`;
+  const res = await guardedFetch(url);
+  const schemes = await res.json();
+  const states = new Set(
+    schemes.map((s) => s.state).filter((s) => s && s.toLowerCase() !== "national")
+  );
+  return { totalSchemes: schemes.length, totalStates: states.size };
+}

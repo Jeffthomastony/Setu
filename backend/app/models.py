@@ -53,9 +53,11 @@ class SeniorCitizenProfile(BaseModel):
     gender: Literal["male", "female", "other"]
     disability: bool = False
     # Optional enrichment fields — improve senior citizen scheme matching
-    marital_status: Optional[str] = None       # 'married', 'widowed', 'single', 'divorced_abandoned'
-    ration_card_type: Optional[str] = None     # 'bpl', 'aay_antyodaya', 'apl', 'priority_household', 'none'
-    living_status: Optional[str] = None        # 'with_family', 'living_alone', 'old_age_home'
+    marital_status: Optional[Literal["married", "widowed", "single", "divorced_abandoned"]] = None
+    ration_card_type: Optional[
+        Literal["bpl", "aay_antyodaya", "priority_household", "apl", "none"]
+    ] = None
+    living_status: Optional[Literal["with_family", "living_alone", "old_age_home"]] = None
 
 
 

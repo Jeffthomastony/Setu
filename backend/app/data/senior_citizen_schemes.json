@@ -606,98 +606,6 @@
     }
   },
   {
-    "scheme_id": "SETU-NAT-SEN-009",
-    "scheme_name": "Ayushman Vaya Vandana Yojana (AB-PMJAY for 70+)",
-    "scheme_type": "health_insurance",
-    "ministry": "Ministry of Health and Family Welfare",
-    "department": "National Health Authority, Ayushman Bharat PM-JAY",
-    "state": "National",
-    "description": "All senior citizens aged 70 years and above are entitled to a health insurance cover of up to Rs 5 lakh per year under Ayushman Bharat PM-JAY, regardless of their income or existing insurance. Launched in 2024, it covers hospitalisation, surgeries, and critical illnesses across empanelled hospitals.",
-    "official_website": "https://abdm.gov.in",
-    "application_portal": "https://beneficiary.nha.gov.in",
-    "application_start_date": null,
-    "application_end_date": null,
-    "last_updated": "2026-07-31",
-    "eligibility": {
-      "academic_percentage": null,
-      "caste_category": [],
-      "disability": null,
-      "gender": "All",
-      "income_limit": "No income limit — open to all senior citizens aged 70+",
-      "age": "Applicants must be 70 years of age or above",
-      "other_conditions": ["Indian citizen with valid Aadhaar"]
-    },
-    "benefits": {
-      "annual_amount": 500000,
-      "description": "Free health insurance cover up to Rs 5 lakh per year; cashless treatment at 25,000+ empanelled hospitals across India"
-    },
-    "required_documents": [
-      "Aadhaar Card (mandatory)",
-      "Age proof",
-      "Passport-size photograph"
-    ],
-    "application": {
-      "application_mode": "Apply via Ayushman App, Common Service Centres (CSC), or empanelled hospital helpdesk",
-      "application_steps": [
-        "Download Ayushman App or visit beneficiary.nha.gov.in",
-        "Enter Aadhaar or mobile number",
-        "Complete eKYC verification",
-        "Receive Ayushman Vaya Vandana Card"
-      ],
-      "renewal_required": false
-    },
-    "ai_metadata": {
-      "tags": ["health_insurance", "national", "70_plus", "no_income_limit"],
-      "benefit_tags": ["health_coverage"],
-      "searchable_text": "Ayushman Vaya Vandana Yojana provides free Rs 5 lakh annual health insurance to all senior citizens aged 70 and above regardless of income. Cashless treatment at empanelled hospitals. Launched 2024 under Ayushman Bharat PM-JAY."
-    }
-  },
-  {
-    "scheme_id": "SETU-NAT-SEN-010",
-    "scheme_name": "Rashtriya Vayoshri Yojana (RVY) — Assistive Devices for Elderly",
-    "scheme_type": "assistive_devices",
-    "ministry": "Ministry of Social Justice and Empowerment",
-    "department": "Department of Social Justice, ALIMCO",
-    "state": "National",
-    "description": "Rashtriya Vayoshri Yojana provides free assistive-living devices to senior citizens with age-related disabilities who belong to the BPL category. Devices provided include wheelchairs, hearing aids, spectacles, walking sticks, dentures, and elbow crutches through distribution camps.",
-    "official_website": "https://socialjustice.gov.in",
-    "application_portal": "https://alimco.in",
-    "application_start_date": null,
-    "application_end_date": null,
-    "last_updated": "2026-07-31",
-    "eligibility": {
-      "caste_category": [],
-      "gender": "All",
-      "income_limit": "Applicant must belong to a Below Poverty Line (BPL) household",
-      "age": "60 years and above",
-      "disability": "required — applicant must have an age-related disability or physical impairment"
-    },
-    "benefits": {
-      "description": "Free assistive devices: wheelchair, hearing aid, spectacles, walking stick, dentures, elbow crutches — one or more based on assessment"
-    },
-    "required_documents": [
-      "Aadhaar Card",
-      "BPL certificate or ration card",
-      "Age proof",
-      "Disability certificate (if available) or medical assessment at camp"
-    ],
-    "application": {
-      "application_mode": "Apply through District Social Welfare Officer or ALIMCO distribution camps",
-      "application_steps": [
-        "Contact your District Social Welfare Office or nearest ALIMCO regional office",
-        "Submit BPL and age proof documents",
-        "Undergo medical assessment at the distribution camp",
-        "Receive devices at the camp itself"
-      ],
-      "renewal_required": false
-    },
-    "ai_metadata": {
-      "tags": ["assistive_devices", "bpl", "disability", "national", "elderly"],
-      "benefit_tags": ["assistive_devices"],
-      "searchable_text": "Rashtriya Vayoshri Yojana provides free wheelchairs hearing aids spectacles walking sticks dentures to BPL senior citizens with disability aged 60 and above through ALIMCO distribution camps."
-    }
-  },
-  {
     "scheme_id": "SETU-NAT-SEN-011",
     "scheme_name": "Indira Gandhi National Widow Pension Scheme (IGNWPS)",
     "scheme_type": "widow_pension",
@@ -715,7 +623,10 @@
       "gender": "female",
       "income_limit": "Must belong to a Below Poverty Line (BPL) household",
       "age": "40 years and above (applicable from age 60 for senior citizen matching)",
-      "other_conditions": ["Widowed (husband deceased)", "Not remarried"]
+      "other_conditions": [
+        "Widowed (husband deceased)",
+        "Not remarried"
+      ]
     },
     "benefits": {
       "monthly_stipend": 300,
@@ -739,8 +650,15 @@
       "renewal_required": false
     },
     "ai_metadata": {
-      "tags": ["widow_pension", "bpl", "female", "national"],
-      "benefit_tags": ["maintenance_allowance"],
+      "tags": [
+        "widow_pension",
+        "bpl",
+        "female",
+        "national"
+      ],
+      "benefit_tags": [
+        "maintenance_allowance"
+      ],
       "searchable_text": "Indira Gandhi National Widow Pension Scheme IGNWPS provides Rs 300 per month to widowed women from BPL households aged 40 and above through NSAP. Central assistance topped up by states."
     }
   },
@@ -785,195 +703,16 @@
       "renewal_required": false
     },
     "ai_metadata": {
-      "tags": ["disability_pension", "bpl", "severe_disability", "national"],
-      "benefit_tags": ["maintenance_allowance"],
+      "tags": [
+        "disability_pension",
+        "bpl",
+        "severe_disability",
+        "national"
+      ],
+      "benefit_tags": [
+        "maintenance_allowance"
+      ],
       "searchable_text": "Indira Gandhi National Disability Pension Scheme IGNDPS provides Rs 300 per month to BPL senior citizens with severe disability 80 percent or more aged 18 to 79 through NSAP."
-    }
-  },
-  {
-    "scheme_id": "SETU-NAT-SEN-013",
-    "scheme_name": "Pradhan Mantri Vaya Vandana Yojana (PMVVY)",
-    "scheme_type": "pension_investment",
-    "ministry": "Ministry of Finance",
-    "department": "LIC of India",
-    "state": "National",
-    "description": "Pradhan Mantri Vaya Vandana Yojana is a government-backed guaranteed pension scheme for senior citizens aged 60 and above, operated through LIC of India. It offers a guaranteed return of 7.4% per annum with monthly pension payouts for a 10-year policy term. Maximum investment is Rs 15 lakh per senior citizen.",
-    "official_website": "https://licindia.in",
-    "application_portal": "https://licindia.in/pmvvy",
-    "application_start_date": null,
-    "application_end_date": null,
-    "last_updated": "2026-07-31",
-    "eligibility": {
-      "caste_category": [],
-      "gender": "All",
-      "income_limit": "No income restriction — open to all senior citizens",
-      "age": "60 years and above",
-      "other_conditions": ["Indian citizen", "Maximum investment Rs 15 lakh per senior"]
-    },
-    "benefits": {
-      "description": "Guaranteed 7.4% p.a. return with monthly pension payout; maximum pension up to Rs 9,250/month on Rs 15 lakh investment; death benefit: full purchase price returned to nominee"
-    },
-    "required_documents": [
-      "Age proof",
-      "Aadhaar Card",
-      "PAN Card",
-      "Bank passbook",
-      "Passport-size photograph"
-    ],
-    "application": {
-      "application_mode": "Apply at any LIC branch office or online at licindia.in",
-      "application_steps": [
-        "Visit LIC branch or licindia.in",
-        "Submit age proof and KYC documents",
-        "Choose investment amount (up to Rs 15 lakh)",
-        "Policy document issued; pension starts from next month"
-      ],
-      "renewal_required": false
-    },
-    "ai_metadata": {
-      "tags": ["pension_investment", "national", "guaranteed_return", "no_income_limit"],
-      "benefit_tags": ["monthly_pension"],
-      "searchable_text": "Pradhan Mantri Vaya Vandana Yojana PMVVY LIC guaranteed pension scheme for senior citizens 60 plus. 7.4% guaranteed return monthly pension up to Rs 9250 per month on Rs 15 lakh investment."
-    }
-  },
-  {
-    "scheme_id": "SETU-ST-SEN-001",
-    "scheme_name": "Delhi Old Age Pension Scheme",
-    "scheme_type": "old_age_pension",
-    "ministry": "Government of NCT of Delhi",
-    "department": "Department of Social Welfare, Delhi",
-    "state": "Delhi",
-    "description": "The Delhi Old Age Pension Scheme provides a monthly pension of Rs 2,000 to senior citizens aged 60–69 years and Rs 2,500 per month to those aged 70 and above, who are residents of Delhi with an annual family income below Rs 1 lakh.",
-    "official_website": "https://edistrict.delhigovt.nic.in",
-    "application_portal": "https://edistrict.delhigovt.nic.in",
-    "application_start_date": null,
-    "application_end_date": null,
-    "last_updated": "2026-07-31",
-    "eligibility": {
-      "caste_category": [],
-      "gender": "All",
-      "income_limit": "Annual family income below Rs 1,00,000",
-      "age": "Applicants must be 60 years of age or above",
-      "other_conditions": ["Delhi domicile / resident"]
-    },
-    "benefits": {
-      "monthly_stipend": 2000,
-      "description": "Rs 2,000/month (age 60–69) or Rs 2,500/month (age 70+)"
-    },
-    "required_documents": [
-      "Aadhaar Card",
-      "Delhi domicile/residence proof",
-      "Age proof",
-      "Income certificate",
-      "Bank passbook"
-    ],
-    "application": {
-      "application_mode": "Online via edistrict.delhigovt.nic.in or nearest Delhi Govt office",
-      "application_steps": [
-        "Register on edistrict.delhigovt.nic.in",
-        "Apply under Social Welfare > Old Age Pension",
-        "Upload residence, age, and income documents",
-        "Track status online"
-      ],
-      "renewal_required": true
-    },
-    "ai_metadata": {
-      "tags": ["old_age_pension", "delhi", "state_specific"],
-      "benefit_tags": ["maintenance_allowance"],
-      "searchable_text": "Delhi Old Age Pension provides Rs 2000 per month for age 60 to 69 and Rs 2500 per month for age 70 plus to residents with income below Rs 1 lakh per year. Apply at edistrict.delhigovt.nic.in."
-    }
-  },
-  {
-    "scheme_id": "SETU-ST-SEN-002",
-    "scheme_name": "Maharashtra Shravanbal Seva Rajya Nivrutti Vetan Yojana",
-    "scheme_type": "old_age_pension",
-    "ministry": "Government of Maharashtra",
-    "department": "Department of Social Justice and Special Assistance, Maharashtra",
-    "state": "Maharashtra",
-    "description": "Maharashtra's state old age pension scheme provides Rs 1,500 per month to senior citizens aged 65 and above who are Maharashtra domicile holders with no regular income. The scheme targets destitute elderly with no family support.",
-    "official_website": "https://aaplesarkar.mahaonline.gov.in",
-    "application_portal": "https://aaplesarkar.mahaonline.gov.in",
-    "application_start_date": null,
-    "application_end_date": null,
-    "last_updated": "2026-07-31",
-    "eligibility": {
-      "caste_category": [],
-      "gender": "All",
-      "income_limit": "No regular source of income; below poverty threshold",
-      "age": "65 years and above",
-      "other_conditions": ["Maharashtra domicile of at least 15 years", "No regular income"]
-    },
-    "benefits": {
-      "monthly_stipend": 1500,
-      "description": "Rs 1,500/month state pension"
-    },
-    "required_documents": [
-      "Aadhaar Card",
-      "Maharashtra domicile certificate (15 years)",
-      "Age proof",
-      "Income/no-income certificate",
-      "Bank passbook"
-    ],
-    "application": {
-      "application_mode": "Online via Aaple Sarkar portal or nearest District Social Welfare Office",
-      "application_steps": [
-        "Visit aaplesarkar.mahaonline.gov.in",
-        "Apply under Social Welfare schemes",
-        "Upload domicile, age, and income documents",
-        "Submit for District Social Welfare Office verification"
-      ],
-      "renewal_required": true
-    },
-    "ai_metadata": {
-      "tags": ["old_age_pension", "maharashtra", "state_specific", "destitute"],
-      "benefit_tags": ["maintenance_allowance"],
-      "searchable_text": "Maharashtra Shravanbal Seva pension Rs 1500 per month to senior citizens 65 plus with no regular income and 15 years Maharashtra domicile. Apply via Aaple Sarkar portal."
-    }
-  },
-  {
-    "scheme_id": "SETU-ST-SEN-003",
-    "scheme_name": "Tamil Nadu Chief Minister's Old Age Pension Scheme",
-    "scheme_type": "old_age_pension",
-    "ministry": "Government of Tamil Nadu",
-    "department": "Social Welfare and Women Empowerment Department, Tamil Nadu",
-    "state": "Tamil Nadu",
-    "description": "Tamil Nadu provides one of India's highest state-level old age pensions at Rs 1,200 per month to all eligible senior citizens aged 60 and above with no regular income. The scheme covers both rural and urban residents with Tamil Nadu domicile.",
-    "official_website": "https://www.tn.gov.in",
-    "application_portal": "https://tnpds.gov.in",
-    "application_start_date": null,
-    "application_end_date": null,
-    "last_updated": "2026-07-31",
-    "eligibility": {
-      "caste_category": [],
-      "gender": "All",
-      "income_limit": "No regular source of income",
-      "age": "60 years and above",
-      "other_conditions": ["Tamil Nadu resident / domicile"]
-    },
-    "benefits": {
-      "monthly_stipend": 1200,
-      "description": "Rs 1,200/month pension; additional supplements for certain beneficiaries"
-    },
-    "required_documents": [
-      "Aadhaar Card",
-      "Tamil Nadu domicile/residence proof",
-      "Age proof",
-      "Ration card",
-      "Bank passbook"
-    ],
-    "application": {
-      "application_mode": "Apply via Tamil Nadu Social Welfare office or tnpds.gov.in",
-      "application_steps": [
-        "Visit nearest Social Welfare office or tnpds.gov.in",
-        "Submit age, residency, and income documents",
-        "District-level verification before sanction"
-      ],
-      "renewal_required": true
-    },
-    "ai_metadata": {
-      "tags": ["old_age_pension", "tamil_nadu", "state_specific"],
-      "benefit_tags": ["maintenance_allowance"],
-      "searchable_text": "Tamil Nadu Chief Minister Old Age Pension Rs 1200 per month to senior citizens 60 plus with no income and Tamil Nadu domicile. Apply at tnpds.gov.in or Social Welfare offices."
     }
   },
   {
@@ -990,11 +729,18 @@
     "application_end_date": null,
     "last_updated": "2026-07-31",
     "eligibility": {
-      "caste_category": ["SC", "ST", "OBC", "General"],
+      "caste_category": [
+        "SC",
+        "ST",
+        "OBC",
+        "General"
+      ],
       "gender": "All",
-      "income_limit": "BPL household (family income below Rs 1.5 lakh per annum)",
-      "age": "60 years and above (SC/ST from age 55)",
-      "other_conditions": ["Karnataka domicile"]
+      "income_limit": "BPL household (family income below ₹1,50,000 per annum)",
+      "age": "Applicants must be above 65 years of age",
+      "other_conditions": [
+        "Karnataka domicile"
+      ]
     },
     "benefits": {
       "monthly_stipend": 1200,
@@ -1021,8 +767,16 @@
       "renewal_required": true
     },
     "ai_metadata": {
-      "tags": ["old_age_pension", "karnataka", "bpl", "state_specific", "sc_st"],
-      "benefit_tags": ["maintenance_allowance"],
+      "tags": [
+        "old_age_pension",
+        "karnataka",
+        "bpl",
+        "state_specific",
+        "sc_st"
+      ],
+      "benefit_tags": [
+        "maintenance_allowance"
+      ],
       "searchable_text": "Karnataka Sandhya Suraksha pension scheme Rs 1200 per month to senior citizens 60 plus from BPL families with Karnataka domicile. SC ST eligible from 55 years. Apply at sevasindhu.karnataka.gov.in."
     }
   },
@@ -1044,7 +798,10 @@
       "gender": "All",
       "income_limit": "Annual income below Rs 46,080 (rural) or Rs 56,460 (urban)",
       "age": "60 years and above",
-      "other_conditions": ["Uttar Pradesh resident / domicile", "Not receiving any other government pension"]
+      "other_conditions": [
+        "Uttar Pradesh resident / domicile",
+        "Not receiving any other government pension"
+      ]
     },
     "benefits": {
       "monthly_stipend": 1000,
@@ -1070,8 +827,14 @@
       "renewal_required": true
     },
     "ai_metadata": {
-      "tags": ["old_age_pension", "uttar_pradesh", "state_specific"],
-      "benefit_tags": ["maintenance_allowance"],
+      "tags": [
+        "old_age_pension",
+        "uttar_pradesh",
+        "state_specific"
+      ],
+      "benefit_tags": [
+        "maintenance_allowance"
+      ],
       "searchable_text": "Uttar Pradesh Vriddhavasta Old Age Pension Rs 1000 per month to UP residents 60 plus with income below Rs 46080 rural or Rs 56460 urban. Apply at sspy-up.gov.in."
     }
   },
@@ -1082,7 +845,7 @@
     "ministry": "Government of Rajasthan",
     "department": "Social Justice and Empowerment Department, Rajasthan",
     "state": "Rajasthan",
-    "description": "Rajasthan's Chief Minister Old Age Pension Yojana provides Rs 750–1000 per month to senior citizens aged 58 (women) or 60 (men) and above with annual income below Rs 48,000. The scheme is one of India's more inclusive, with a relatively low income ceiling.",
+    "description": "Rajasthan's Chief Minister Old Age Pension Yojana provides Rs 1,450 per month to senior citizens aged 58 (men) or 55 (women) and above with annual income below Rs 48,000. The scheme is one of India's more inclusive, with a relatively low income ceiling and early qualifying age for women.",
     "official_website": "https://rajssp.raj.nic.in",
     "application_portal": "https://rajssp.raj.nic.in",
     "application_start_date": null,
@@ -1092,12 +855,15 @@
       "caste_category": [],
       "gender": "All",
       "income_limit": "Annual family income below Rs 48,000",
-      "age": "60 years and above (women 58+)",
-      "other_conditions": ["Rajasthan domicile"]
+      "age": "Applicants must be above 58 years of age (women above 55 years of age)",
+      "other_conditions": [
+        "Rajasthan domicile"
+      ]
     },
     "benefits": {
       "monthly_stipend": 750,
-      "description": "Rs 750/month (age 60–74) or Rs 1,000/month (age 75+)"
+      "description": "Rs 750/month (age 60–74) or Rs 1,000/month (age 75+)",
+      "maintenance_allowance": "₹1,450 per month"
     },
     "required_documents": [
       "Aadhaar Card",
@@ -1117,9 +883,15 @@
       "renewal_required": false
     },
     "ai_metadata": {
-      "tags": ["old_age_pension", "rajasthan", "state_specific"],
-      "benefit_tags": ["maintenance_allowance"],
-      "searchable_text": "Rajasthan Chief Minister Old Age Pension Yojana Rs 750 to Rs 1000 per month to senior citizens 60 plus with income below Rs 48000. Apply at rajssp.raj.nic.in or Emitra centres."
+      "tags": [
+        "old_age_pension",
+        "rajasthan",
+        "state_specific"
+      ],
+      "benefit_tags": [
+        "maintenance_allowance"
+      ],
+      "searchable_text": "Rajasthan Chief Minister Old Age Pension Yojana provides Rs 1450 per month to senior citizens aged 58 and above (55 for women) with annual income below Rs 48,000."
     }
   },
   {
@@ -1129,7 +901,7 @@
     "ministry": "Government of Gujarat",
     "department": "Social Justice and Empowerment Department, Gujarat",
     "state": "Gujarat",
-    "description": "Gujarat's Vruddha Sahay pension provides Rs 400–500 per month to senior citizens aged 60 and above who are BPL or have no regular income. The scheme is delivered through the Social Justice portal and is accessible across all districts.",
+    "description": "Gujarat's Vrudh Sahay pension provides Rs 1,000 per month (age 60-79) or Rs 1,250 per month (age 80+) to senior citizens who are Gujarat residents of at least 10 years, with annual family income below Rs 1,20,000 (rural) or Rs 1,50,000 (urban). Delivered through the e-Samaj Kalyan portal.",
     "official_website": "https://esamajkalyan.gujarat.gov.in",
     "application_portal": "https://esamajkalyan.gujarat.gov.in",
     "application_start_date": null,
@@ -1138,13 +910,16 @@
     "eligibility": {
       "caste_category": [],
       "gender": "All",
-      "income_limit": "BPL or no regular source of income",
+      "income_limit": "Annual family income below ₹1,20,000 in rural areas or ₹1,50,000 in urban areas",
       "age": "60 years and above",
-      "other_conditions": ["Gujarat domicile"]
+      "other_conditions": [
+        "Permanent resident of Gujarat for at least 10 years"
+      ]
     },
     "benefits": {
       "monthly_stipend": 400,
-      "description": "Rs 400–500/month state pension; additional top-up for certain categories"
+      "description": "Rs 400–500/month state pension; additional top-up for certain categories",
+      "maintenance_allowance": "₹1,000 per month (age 60-79) or ₹1,250 per month (age 80+)"
     },
     "required_documents": [
       "Aadhaar Card",
@@ -1165,9 +940,16 @@
       "renewal_required": true
     },
     "ai_metadata": {
-      "tags": ["old_age_pension", "gujarat", "bpl", "state_specific"],
-      "benefit_tags": ["maintenance_allowance"],
-      "searchable_text": "Gujarat Vruddha Sahay Pension Yojana Rs 400 to Rs 500 per month to BPL senior citizens 60 plus with Gujarat domicile. Apply at esamajkalyan.gujarat.gov.in."
+      "tags": [
+        "old_age_pension",
+        "gujarat",
+        "bpl",
+        "state_specific"
+      ],
+      "benefit_tags": [
+        "maintenance_allowance"
+      ],
+      "searchable_text": "Gujarat Vrudh Sahay Yojana provides Rs 1000 to Rs 1250 per month to senior citizens aged 60 and above, resident in Gujarat for 10+ years, with annual income below Rs 1.2 lakh (rural) or Rs 1.5 lakh (urban)."
     }
   },
   {
@@ -1177,22 +959,25 @@
     "ministry": "Government of Andhra Pradesh",
     "department": "Women Development and Child Welfare Department, AP",
     "state": "Andhra Pradesh",
-    "description": "Andhra Pradesh's NTR Bharosa pension scheme (formerly IGNOAPS+) provides Rs 2,750–3,000 per month to senior citizens aged 65 and above from BPL households — one of India's highest state-level old age pensions. Delivered via Village/Ward Secretariats.",
-    "official_website": "https://navasakam.ap.gov.in",
-    "application_portal": "https://navasakam.ap.gov.in",
+    "description": "Andhra Pradesh's NTR Bharosa pension scheme provides Rs 4,000 per month to senior citizens aged 65 and above who are destitute, with monthly income up to Rs 10,000 (rural) or Rs 12,000 (urban) — one of India's higher state-level old age pensions. Delivered via Village/Ward Secretariats and the sspensions.ap.gov.in portal.",
+    "official_website": "https://sspensions.ap.gov.in",
+    "application_portal": "https://sspensions.ap.gov.in",
     "application_start_date": null,
     "application_end_date": null,
     "last_updated": "2026-07-31",
     "eligibility": {
       "caste_category": [],
       "gender": "All",
-      "income_limit": "BPL household",
+      "income_limit": "Monthly income up to ₹10,000 in rural areas or ₹12,000 in urban areas, and not already receiving another government pension (urban applicants)",
       "age": "65 years and above",
-      "other_conditions": ["Andhra Pradesh domicile"]
+      "other_conditions": [
+        "Andhra Pradesh domicile"
+      ]
     },
     "benefits": {
       "monthly_stipend": 2750,
-      "description": "Rs 2,750/month (age 65–79) or Rs 3,000/month (age 80+); one of India's highest state senior pensions"
+      "description": "Rs 2,750/month (age 65–79) or Rs 3,000/month (age 80+); one of India's highest state senior pensions",
+      "maintenance_allowance": "₹4,000 per month"
     },
     "required_documents": [
       "Aadhaar Card",
@@ -1211,9 +996,17 @@
       "renewal_required": false
     },
     "ai_metadata": {
-      "tags": ["old_age_pension", "andhra_pradesh", "bpl", "state_specific", "high_pension"],
-      "benefit_tags": ["maintenance_allowance"],
-      "searchable_text": "Andhra Pradesh NTR Bharosa Old Age Pension Rs 2750 per month for 65 to 79 age and Rs 3000 per month for 80 plus to BPL senior citizens. Apply at Village Secretariat. One of India highest state pensions."
+      "tags": [
+        "old_age_pension",
+        "andhra_pradesh",
+        "bpl",
+        "state_specific",
+        "high_pension"
+      ],
+      "benefit_tags": [
+        "maintenance_allowance"
+      ],
+      "searchable_text": "Andhra Pradesh NTR Bharosa old age pension provides Rs 4000 per month to destitute senior citizens aged 65 and above, delivered via Village/Ward Secretariats."
     }
   },
   {
@@ -1223,7 +1016,7 @@
     "ministry": "Government of Telangana",
     "department": "Social Welfare Department, Telangana",
     "state": "Telangana",
-    "description": "Telangana's Aasara pension provides Rs 2,016 per month to senior citizens aged 57 (women) or 61 (men) and above from BPL families. Pensions are delivered via Village Revenue Officers and credited directly to bank accounts.",
+    "description": "Telangana's Aasara pension provides Rs 4,000 per month to senior citizens aged 61 (men) or 57 (women) and above from BPL families. Pensions are delivered via Village Revenue Officers and credited directly to bank accounts.",
     "official_website": "https://www.telangana.gov.in",
     "application_portal": "https://aasara.telangana.gov.in",
     "application_start_date": null,
@@ -1234,11 +1027,14 @@
       "gender": "All",
       "income_limit": "BPL household",
       "age": "61 years and above (women from 57 years)",
-      "other_conditions": ["Telangana domicile"]
+      "other_conditions": [
+        "Telangana domicile"
+      ]
     },
     "benefits": {
       "monthly_stipend": 2016,
-      "description": "Rs 2,016/month pension (combined central + state)"
+      "description": "Rs 2,016/month pension (combined central + state)",
+      "maintenance_allowance": "₹4,000 per month"
     },
     "required_documents": [
       "Aadhaar Card",
@@ -1257,9 +1053,16 @@
       "renewal_required": false
     },
     "ai_metadata": {
-      "tags": ["old_age_pension", "telangana", "bpl", "state_specific"],
-      "benefit_tags": ["maintenance_allowance"],
-      "searchable_text": "Telangana Aasara Old Age Pension Rs 2016 per month to BPL senior citizens 61 plus men or 57 plus women with Telangana domicile. Apply at Mee Seva or Village Revenue Office."
+      "tags": [
+        "old_age_pension",
+        "telangana",
+        "bpl",
+        "state_specific"
+      ],
+      "benefit_tags": [
+        "maintenance_allowance"
+      ],
+      "searchable_text": "Telangana Aasara pension provides Rs 4000 per month to BPL senior citizens aged 61 and above (57 for women), delivered via Village Revenue Officers."
     }
   }
 ]
