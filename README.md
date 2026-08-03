@@ -38,6 +38,8 @@ backend/            FastAPI app (the AI/matching engine)
                      cache.py — pre-computed/cached scheme criteria + embeddings so a
                      /match request only pays the cost of embedding the applicant's own text
     qa/               retrieval-grounded Q&A over a scheme's structured data
+    discovery/        auto-discovery pipeline — fetcher, mapper, and validation gate for
+                     finding and vetting new schemes from external sources (see below)
     api/              FastAPI routes (match, match/senior, search, explain, ask, schemes, health)
                      city→state resolution (e.g. "Mumbai" → "Maharashtra") on top of typo correction
     models.py         request/response schemas
@@ -133,8 +135,26 @@ Add a new entry to `backend/app/data/schemes.json` (students/general) or `backen
 - **Explainable AI**: every match returns a full criterion-by-criterion breakdown of why it did or didn't qualify.
 - **Privacy-first / responsible AI**: applicant profile data is processed in-memory for the single request and never persisted, logged, or transmitted elsewhere.
 
+## Scheme discovery pipeline
+
+`backend/app/discovery/` + `backend/scripts/discover_schemes.py` implement the "automatically find new schemes" feature: a pluggable fetcher (a real `api.data.gov.in` implementation, or a local-file fetcher for testing/manual input) feeds a mapper that converts raw records into Setu's schema — reusing the same spaCy extraction pipeline the hand-curated schemes go through — and every candidate must pass a validation gate before it's merged:
+
+- Live HTTP reachability check on both links (rejects broken/fake URLs)
+- Keyword scan for "discontinued" / "no longer accepting applications" / etc.
+- Fuzzy duplicate-name detection against everything already in the dataset
+- Re-uses `validate_schemes.py`'s age/income parseability checks
+
+This pipeline **auto-merges** anything that passes the gate — there's no human-approval queue by design, which trades a review step for the gate being as strict as it reasonably can be. The one checkpoint that still exists is `git diff` before committing; always read it. Run it with:
+
+```bash
+cd backend
+python scripts/discover_schemes.py --source local --input scripts/sample_candidates.json --dataset student --dry-run
+```
+
+See the module docstrings for the real `data.gov.in` usage (needs a free API key and a resource ID you've found and verified yourself — no default is hardcoded, deliberately, since guessing one would repeat the exact "unverified data presented as trustworthy" mistake this project already had to fix once).
+
 ## Future scope
 
-- Live web search + extraction pipeline to automatically ingest new schemes from government portals, on top of the curated dataset.
+- Wire the discovery pipeline to more/better structured government data sources as they're found, and extend the gate's checks (e.g. cross-referencing scheme names against an official scheme registry, if one becomes available).
 - Optional account creation to save a profile for returning users (would need to be reconciled with the privacy-first design above).
 - Expand beyond scholarships/schemes to internships and skill development programs, and beyond students/senior citizens to further citizen groups (farmers, workers, persons with disabilities, job seekers).
